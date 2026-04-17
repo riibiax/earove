@@ -47,7 +47,7 @@ const ProjectCarousel = ({ images, className = "" }) => {
           </Carousel>
           <div className="projectCarouselNav">
             <button className="projectCarouselArrow" type="button" onClick={goToPrevious} aria-label="Previous slide">
-              <span className="carousel-control-prev-icon" aria-hidden="true" />
+              <span aria-hidden="true">&lt;</span>
             </button>
             <div className="carousel-indicators">
               {images.map((src, index) => (
@@ -62,7 +62,7 @@ const ProjectCarousel = ({ images, className = "" }) => {
               ))}
             </div>
             <button className="projectCarouselArrow" type="button" onClick={goToNext} aria-label="Next slide">
-              <span className="carousel-control-next-icon" aria-hidden="true" />
+              <span aria-hidden="true">&gt;</span>
             </button>
           </div>
         </div>
