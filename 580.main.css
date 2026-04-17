@@ -390,7 +390,7 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   padding-bottom: 0.15em;
 }
 
-#contact {
+.projectCarousel ~ #contact {
   margin-top: 2rem;
 }
 
