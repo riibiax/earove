@@ -170,6 +170,10 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   position: relative;
 }
 
+.projectCarousel {
+  margin-top: 2.25rem;
+}
+
 .projectCarouselNav .carousel-indicators {
   align-items: center;
   display: flex;
@@ -401,6 +405,10 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   padding-bottom: 0.15em;
 }
 
+#contact {
+  margin-top: 2rem;
+}
+
 #contact img {
   transition: transform 1.0s ease-in-out;
   width: 1.875em;
@@ -409,6 +417,7 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 #contact img:hover {
   transform: scale(1.5);
 }
+
 /* menu.css */
 #menu-bar {
   z-index: 100;
