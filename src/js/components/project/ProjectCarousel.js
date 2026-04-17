@@ -17,7 +17,7 @@ const slideLabels = [
 const getSlideAlt = (index) => `${slideLabels[index] || `${index + 1}th`} slide`;
 
 const ProjectCarousel = ({ images, className = "" }) => (
-  <div className={`container-fluid remove-paddings-margins ${className}`.trim()}>
+  <div className={`projectCarousel container-fluid remove-paddings-margins ${className}`.trim()}>
     <div className="row justify-content-center remove-paddings-margins">
       <div className="col-md-8 remove-paddings-margins">
         <Carousel fade interval={3000}>

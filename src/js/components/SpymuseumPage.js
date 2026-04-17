@@ -1,9 +1,23 @@
-﻿import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel';
+import React, { Component } from "react";
 import "../../css/main.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProjectCarousel from "./project/ProjectCarousel";
 import Contact from './Contact'; 
 import Nav from './Nav'; 
+
+const images = [
+  "img/spymuseum/pic01.jpg",
+  "img/spymuseum/pic02.jpg",
+  "img/spymuseum/pic03.jpg",
+  "img/spymuseum/pic04.jpg",
+  "img/spymuseum/pic05.jpg",
+  "img/spymuseum/pic06.jpg",
+  "img/spymuseum/pic07.jpg",
+  "img/spymuseum/pic08.jpg",
+  "img/spymuseum/pic09.jpg",
+  "img/spymuseum/pic10.jpg",
+];
+
 
 class SpymuseumPage extends Component {
   render() {
@@ -27,45 +41,7 @@ class SpymuseumPage extends Component {
             </div>
           </div>
         </div>
-
-        <div className="container-fluid remove-paddings-margins"> {/* Use container-fluid for full width */}
-          <div className="row justify-content-center remove-paddings-margins">
-            <div className="col-md-8 remove-paddings-margins "> {/* Adjust column size for larger screens and full width on smaller screens */}
-              <Carousel fade interval={3000}>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic01.jpg'} alt="First slide" />
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic02.jpg'} alt="Second slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic03.jpg'} alt="Third slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic04.jpg'} alt="Fourth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic05.jpg'} alt="Fifth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic06.jpg'} alt="Sixth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic07.jpg'} alt="Seventh slide" />   
-                </Carousel.Item> 
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic08.jpg'} alt="Eight slide" />   
-                </Carousel.Item>   
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic09.jpg'} alt="Ninth slide" />   
-                </Carousel.Item> 
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/spymuseum/pic10.jpg'} alt="Tenth slide" />   
-                </Carousel.Item>   
-              </Carousel>
-            </div>
-          </div>
-        </div>
+        <ProjectCarousel images={images} />
         <Contact /> 
       </>
     );

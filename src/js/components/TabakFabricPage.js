@@ -1,10 +1,21 @@
-﻿import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel';
+import React, { Component } from "react";
 import "../../css/main.css";
 import "../../css/tabakFabric.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProjectCarousel from "./project/ProjectCarousel";
 import Contact from './Contact'; 
 import Nav from './Nav'; 
+
+const images = [
+  "img/tabakfabrik/pic01.png",
+  "img/tabakfabrik/pic02.png",
+  "img/tabakfabrik/pic03.png",
+  "img/tabakfabrik/pic04.png",
+  "img/tabakfabrik/pic05.png",
+  "img/tabakfabrik/pic06.png",
+  "img/tabakfabrik/pic07.png",
+];
+
 
 class TabakFabrikPage extends Component {
   componentDidMount() {
@@ -74,36 +85,7 @@ class TabakFabrikPage extends Component {
             </div>
           </div>
         </div>
-
-        <div className="container-fluid remove-paddings-margins"> {/* Use container-fluid for full width */}
-          <div className="row justify-content-center remove-paddings-margins">
-            <div className="col-md-8 remove-paddings-margins"> {/* Adjust column size for larger screens and full width on smaller screens */}
-              <Carousel fade interval={3000}>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic01.png'} alt="First slide" />
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic02.png'} alt="Second slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic03.png'} alt="Third slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic04.png'} alt="Fourth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic05.png'} alt="Fifth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic06.png'} alt="Sixth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/tabakfabrik/pic07.png'} alt="Seventh slide" />   
-                </Carousel.Item>  
-              </Carousel>
-            </div>
-          </div>
-        </div>
+        <ProjectCarousel images={images} />
 
         <div className="threejs" id="main-threejs">
           <iframe id="viewer" name="viewer" src="/playframe.html" allowFullScreen></iframe>

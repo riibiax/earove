@@ -1,9 +1,22 @@
-﻿import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel';
+import React, { Component } from "react";
 import "../../css/main.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProjectCarousel from "./project/ProjectCarousel";
 import Contact from './Contact'; 
 import Nav from './Nav'; 
+
+const images = [
+  "img/machine/pic01.jpg",
+  "img/machine/pic02.jpg",
+  "img/machine/pic03.jpg",
+  "img/machine/pic04.jpg",
+  "img/machine/pic05.jpg",
+  "img/machine/pic06.jpg",
+  "img/machine/pic07.jpg",
+  "img/machine/pic08.jpg",
+  "img/machine/pic09.jpg",
+];
+
 
 class MachinePage extends Component {
   render() {
@@ -31,42 +44,7 @@ class MachinePage extends Component {
             </div>
           </div>
         </div>
-
-        <div className="container-fluid remove-paddings-margins"> {/* Use container-fluid for full width */}
-          <div className="row justify-content-center remove-paddings-margins">
-            <div className="col-md-8 remove-paddings-margins "> {/* Adjust column size for larger screens and full width on smaller screens */}
-              <Carousel fade interval={3000}>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic01.jpg'} alt="First slide" />
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic02.jpg'} alt="Second slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic03.jpg'} alt="Third slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic04.jpg'} alt="Fourth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic05.jpg'} alt="Fifth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic06.jpg'} alt="Sixth slide" />   
-                </Carousel.Item>  
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic07.jpg'} alt="Seventh slide" />   
-                </Carousel.Item>
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic08.jpg'} alt="Eight slide" />   
-                </Carousel.Item>   
-                <Carousel.Item>  
-                  <img className="d-block w-100" src={'img/machine/pic09.jpg'} alt="Ninth slide" />   
-                </Carousel.Item>  
-              </Carousel>
-            </div>
-          </div>
-        </div>
+        <ProjectCarousel images={images} />
         <Contact /> 
       </>
     );
