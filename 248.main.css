@@ -459,7 +459,6 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 .projectsMenuButton:hover,
 .projectsMenuButton:focus,
 .projectsMenuButton:active,
-.projectsMenuButton[aria-expanded='true'],
 .show-menu:hover,
 .show-menu:focus,
 .show-menu:active {
@@ -540,10 +539,12 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   letter-spacing: 0.18em;
   opacity: 0;
   padding: 0 0.55rem;
+  pointer-events: none;
   position: absolute;
   text-align: center;
   top: 0;
   transition: opacity 0.4s ease;
+  visibility: hidden;
   width: 100%;
 }
 
@@ -557,6 +558,7 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 .projectsDropdownLink:hover .projectsDropdownTitle,
 .projectsDropdownLink:focus .projectsDropdownTitle {
   opacity: 1;
+  visibility: visible;
 }
 
 #menu-bar li:last-child {
