@@ -74,14 +74,13 @@ const Nav = () => {
                     <ul className="projectsDropdown">
                       {projects.map(({ path, title, thumbnail }) => (
                         <li key={path}>
-                          <Link className="projectsDropdownLink" to={path}>
+                          <Link aria-label={title} className="projectsDropdownLink" to={path}>
                             <span
                               aria-hidden="true"
-                              className="projectsDropdownThumb"
+                              className="projectsDropdownImage"
                               style={{ backgroundImage: `url('${thumbnail}')` }}
-                            >
-                              <span className="projectsDropdownTitle">{title}</span>
-                            </span>
+                            />
+                            <span className="projectsDropdownTitle">{title}</span>
                           </Link>
                         </li>
                       ))}
