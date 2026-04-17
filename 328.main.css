@@ -411,7 +411,6 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: black;
 }
 
@@ -420,9 +419,14 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 }
 
 #menu-bar li a,
+.projectsMenuButton,
 .show-menu {
+  background: black;
+  border: 0;
   display: block;
   color: white;
+  font-family: inherit;
+  font-size: inherit;
   padding: 0.875em 1.875em;
   text-align: center;
   text-decoration: none;
@@ -432,6 +436,10 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 #menu-bar li a:hover,
 #menu-bar li a:focus,
 #menu-bar li a:active,
+.projectsMenuButton:hover,
+.projectsMenuButton:focus,
+.projectsMenuButton:active,
+.projectsMenuButton[aria-expanded='true'],
 .show-menu:hover,
 .show-menu:focus,
 .show-menu:active {
@@ -444,6 +452,60 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+}
+
+.projectsMenuItem {
+  position: relative;
+}
+
+.projectsMenuButton {
+  cursor: pointer;
+}
+
+.projectsDropdown {
+  border-top: 1px solid #fff;
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(11rem, 1fr));
+  left: 0;
+  max-height: min(78vh, 34rem);
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: min(32rem, 92vw);
+}
+
+#menu-bar .projectsDropdown li {
+  float: none;
+  width: auto;
+}
+
+#menu-bar .projectsDropdownLink {
+  align-items: center;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  letter-spacing: 0.12em;
+  min-height: 4.3rem;
+  padding: 0.45rem 0.75rem;
+  text-align: left;
+}
+
+.projectsDropdownThumb {
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  filter: grayscale(100%);
+  height: 2.8rem;
+  opacity: 0.75;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+  width: 3.5rem;
+}
+
+.projectsDropdownLink:hover .projectsDropdownThumb,
+.projectsDropdownLink:focus .projectsDropdownThumb {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 #menu-bar li:last-child {
@@ -512,9 +574,33 @@ input[type='checkbox']:checked ~ .show-menu {
   #menu li, li a {
     width: 100%;
   }
+  .projectsMenuButton {
+    width: 100%;
+  }
+  .projectsMenuItem {
+    position: static;
+  }
+  .projectsDropdown {
+    border-top: 0;
+    box-shadow: none;
+    grid-template-columns: 1fr;
+    max-height: 65vh;
+    position: static;
+    width: 100%;
+  }
+  #menu-bar .projectsDropdownLink {
+    grid-template-columns: 4.25rem minmax(0, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .projectsDropdownThumb {
+    height: 3rem;
+    width: 4.25rem;
+  }
   .show-menu {
     display:block;
   }
 }
+
 
 /*# sourceMappingURL=328.main.css.map*/
