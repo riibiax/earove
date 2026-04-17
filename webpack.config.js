@@ -4,10 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV === "production";
-const publicPath = isProduction ? "/earove/" : "/";
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === "production";
+  const publicPath = isProduction ? "/earove/" : "/";
 
-module.exports = {
+  return {
   entry: "./src/js/App.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -96,4 +97,5 @@ module.exports = {
     hot: true,
     port: 8080,
   },
+};
 };
