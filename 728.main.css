@@ -467,10 +467,10 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
   display: grid;
   grid-template-columns: repeat(2, minmax(11rem, 1fr));
-  left: 0;
   max-height: min(78vh, 34rem);
   overflow-y: auto;
   position: absolute;
+  right: 0;
   top: 100%;
   width: min(32rem, 92vw);
 }
