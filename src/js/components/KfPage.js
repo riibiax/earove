@@ -20,15 +20,11 @@ const KfPage = () => (
   <ProjectLayout>
     <ProjectIntro
       title="KF Watches"
-      left={
+      body={
         <>
           <p>At UDIMU SA, I worked on an interactive configurator for KF Watches, designed to help clients explore the brand's models in a clear and tactile way.</p>
           <p>The configurator lets visitors customize individual watch components, including colors and materials, through a touch screen interface.</p>
           <p>The main challenge was to render each watch with enough precision to communicate the quality of the materials and the complexity of the design.</p>
-        </>
-      }
-      right={
-        <>
           <p>Using Unity 3D and the HDRP render pipeline, I developed the real-time presentation, optimized the 3D models, lighting, and shaders, and paid particular attention to diamonds and metal parts. I also designed and implemented the interface and animations used to present the different watch models.</p>
           <p>Technologies: C#, Shaders, Unity3D, Blender.</p>
         </>
