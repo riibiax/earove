@@ -1,0 +1,13 @@
+﻿#linkedin {
+  width: 1.65em !important;
+  padding-bottom: 0.15em;
+}
+
+#contact img {
+  transition: transform 1.0s ease-in-out;
+  width: 1.875em;
+}
+
+#contact img:hover {
+  transform: scale(1.5);
+}

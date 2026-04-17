@@ -1,0 +1,19 @@
+﻿#about{ 
+  margin-top: 0em !important;
+  height:auto;
+}
+#about .titleParagraph {
+  font-weight: bold;
+}
+.columnsContainer { 
+  padding: .5em;
+  line-height: 1.5em;
+}
+.columnsContainer a{ 
+  color: white;
+}
+.titleParagraph{ 
+  letter-spacing: 0.25em; 
+  padding-bottom: 1.5em; 
+  padding-top: 1.5em;
+}

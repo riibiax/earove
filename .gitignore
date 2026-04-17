@@ -1,11 +1,6 @@
-data
 .cache/
-package-lock.json
-.DS_Store
 
 node_modules/
-src/
 dist/
-GitIgnore
-package.json
-webpack.config.js
+.DS_Store
+npm-debug.log*
