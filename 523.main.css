@@ -161,25 +161,25 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   column-gap: 30px;
 }
 
-.carousel {
+.projectCarousel .carousel {
   padding-bottom: 3rem;
 }
 
-.carousel-indicators {
+.projectCarousel .carousel-indicators {
   align-items: center;
   bottom: 0.85rem;
   gap: 0.35rem;
   margin-bottom: 0;
 }
 
-.carousel-indicators [data-bs-target] {
+.projectCarousel .carousel-indicators [data-bs-target] {
   height: 0.18rem;
   margin: 0;
   width: 1.75rem;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.projectCarousel .carousel-control-prev,
+.projectCarousel .carousel-control-next {
   bottom: 0.2rem;
   height: 2.5rem;
   opacity: 0.75;
@@ -187,18 +187,18 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   width: 2.5rem;
 }
 
-.carousel-control-prev {
+.projectCarousel .carousel-control-prev {
   left: max(1rem, calc(50% - 18rem));
 }
 
-.carousel-control-next {
+.projectCarousel .carousel-control-next {
   right: max(1rem, calc(50% - 18rem));
 }
 
-.carousel-control-prev:hover,
-.carousel-control-prev:focus,
-.carousel-control-next:hover,
-.carousel-control-next:focus {
+.projectCarousel .carousel-control-prev:hover,
+.projectCarousel .carousel-control-prev:focus,
+.projectCarousel .carousel-control-next:hover,
+.projectCarousel .carousel-control-next:focus {
   opacity: 1;
 }
 
@@ -266,19 +266,19 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
     display: none;
   }
 
-  .carousel {
+  .projectCarousel .carousel {
     padding-bottom: 2.5rem;
   }
 
-  .carousel-indicators [data-bs-target] {
+  .projectCarousel .carousel-indicators [data-bs-target] {
     width: 1.15rem;
   }
 
-  .carousel-control-prev {
+  .projectCarousel .carousel-control-prev {
     left: 0.25rem;
   }
 
-  .carousel-control-next {
+  .projectCarousel .carousel-control-next {
     right: 0.25rem;
   }
 }
