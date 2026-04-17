@@ -485,15 +485,13 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 .projectsDropdown {
   border-top: 1px solid #fff;
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(11rem, 1fr));
-  max-height: calc(100vh - 3rem);
-  max-height: min(78vh, 34rem);
+  display: block;
+  max-height: min(82vh, 38rem);
   overflow-y: auto;
-  position: fixed;
+  position: absolute;
   right: 0;
-  top: 3rem;
-  width: min(32rem, 92vw);
+  top: 100%;
+  width: 100%;
   z-index: 101;
 }
 
@@ -503,14 +501,12 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 }
 
 #menu-bar .projectsDropdownLink {
-  align-items: center;
-  display: grid;
-  gap: 0.85rem;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
+  display: block;
   letter-spacing: 0.12em;
-  min-height: 4.3rem;
-  padding: 0.45rem 0.75rem;
-  text-align: left;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: center;
 }
 
 .projectsDropdownThumb {
@@ -518,15 +514,41 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   background-size: cover;
   display: block;
   filter: grayscale(100%);
-  height: 2.8rem;
+  height: 5.25rem;
   opacity: 0.75;
-  transition: filter 0.4s ease, opacity 0.4s ease;
-  width: 3.5rem;
+  position: relative;
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  width: 100%;
+}
+
+.projectsDropdownTitle {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  display: flex;
+  font-size: 0.78rem;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  letter-spacing: 0.18em;
+  opacity: 0;
+  padding: 0 0.55rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: opacity 0.4s ease;
+  width: 100%;
 }
 
 .projectsDropdownLink:hover .projectsDropdownThumb,
 .projectsDropdownLink:focus .projectsDropdownThumb {
   filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.projectsDropdownLink:hover .projectsDropdownTitle,
+.projectsDropdownLink:focus .projectsDropdownTitle {
   opacity: 1;
 }
 
@@ -605,19 +627,18 @@ input[type='checkbox']:checked ~ .show-menu {
   .projectsDropdown {
     border-top: 0;
     box-shadow: none;
-    grid-template-columns: 1fr;
     max-height: 65vh;
     position: static;
     width: 100%;
   }
   #menu-bar .projectsDropdownLink {
-    grid-template-columns: 4.25rem minmax(0, 1fr);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    width: 100%;
   }
   .projectsDropdownThumb {
-    height: 3rem;
-    width: 4.25rem;
+    height: 5.5rem;
+  }
+  .projectsDropdownTitle {
+    font-size: 0.9rem;
   }
   .show-menu {
     display:block;
