@@ -79,8 +79,9 @@ const Nav = () => {
                               aria-hidden="true"
                               className="projectsDropdownThumb"
                               style={{ backgroundImage: `url('${thumbnail}')` }}
-                            />
-                            <span>{title}</span>
+                            >
+                              <span className="projectsDropdownTitle">{title}</span>
+                            </span>
                           </Link>
                         </li>
                       ))}
