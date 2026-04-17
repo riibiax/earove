@@ -166,12 +166,13 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   display: flex;
   justify-content: center;
   min-height: 3rem;
-  padding: 0.85rem 0 0.4rem;
+  padding: 0.15rem 0 0.4rem;
   position: relative;
 }
 
 .projectCarousel {
-  margin-top: 2.25rem;
+  margin-top: 0;
+  padding-top: 2.25rem;
 }
 
 .projectCarouselNav .carousel-indicators {
@@ -299,7 +300,7 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 
   .projectCarouselNav {
     min-height: 2.5rem;
-    padding-top: 0.65rem;
+    padding-top: 0.15rem;
   }
 
   .projectCarouselNav .carousel-indicators {
