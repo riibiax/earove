@@ -466,35 +466,42 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   border-top: 1px solid #fff;
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
   display: block;
+  left: 0;
+  margin: 0;
   max-height: min(82vh, 38rem);
   overflow-y: auto;
+  padding: 0;
   position: absolute;
-  right: 0;
   top: 100%;
   width: 100%;
   z-index: 101;
 }
 
-#menu-bar .projectsDropdown li {
+#menu-bar .projectsDropdown li,
+#menu-bar .projectsDropdown li:last-child {
+  display: block;
   float: none;
-  width: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 #menu-bar .projectsDropdownLink {
+  background: black;
   display: block;
-  letter-spacing: 0.12em;
+  height: 5.25rem;
   overflow: hidden;
   padding: 0;
   position: relative;
-  text-align: center;
+  width: 100%;
 }
 
-.projectsDropdownThumb {
+.projectsDropdownImage {
   background-position: center center;
   background-size: cover;
   display: block;
   filter: grayscale(100%);
-  height: 5.25rem;
+  height: 100%;
   opacity: 0.75;
   position: relative;
   transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
@@ -520,8 +527,8 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   width: 100%;
 }
 
-.projectsDropdownLink:hover .projectsDropdownThumb,
-.projectsDropdownLink:focus .projectsDropdownThumb {
+.projectsDropdownLink:hover .projectsDropdownImage,
+.projectsDropdownLink:focus .projectsDropdownImage {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.04);
@@ -612,10 +619,8 @@ input[type='checkbox']:checked ~ .show-menu {
     width: 100%;
   }
   #menu-bar .projectsDropdownLink {
-    width: 100%;
-  }
-  .projectsDropdownThumb {
     height: 5.5rem;
+    width: 100%;
   }
   .projectsDropdownTitle {
     font-size: 0.9rem;
