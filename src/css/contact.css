@@ -3,6 +3,10 @@
   padding-bottom: 0.15em;
 }
 
+#contact {
+  margin-top: 2rem;
+}
+
 #contact img {
   transition: transform 1.0s ease-in-out;
   width: 1.875em;
