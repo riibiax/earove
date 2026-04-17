@@ -20,14 +20,10 @@ const DeathLapPage = () => (
   <ProjectLayout>
     <ProjectIntro
       title="Death Lap"
-      left={
+      body={
         <>
           <p>At the end of 2018, OZWE Games began collaborating with Oculus Studios on Death Lap, a VR combat racing game. I was responsible for the main Unity 3D shaders, especially PBR metallic materials and visual effects, while keeping the rendering performance suitable for VR.</p>
           <p>I also contributed across the production: coding, network infrastructure, artificial intelligence, level design, SFX, UI, localization, VFX, optimization, debugging, and management.</p>
-        </>
-      }
-      right={
-        <>
           <p>Death Lap is a VR combat racing game that challenges you to drive to survive. Just point and shoot to destroy everything in your path. Hit the road, perform drifts and stunts, navigate traps, unleash your weapons and special abilities, and enjoy the chaos of its battlefields.</p>
           <p>Captured by Nitro Saint Payne, a maniacal and tragic showman, players are thrown into a deadly TV show where they must race and battle other drivers to win their freedom.</p>
           <p>Technologies: C#, Shaders, Unity3D, Blender.</p>

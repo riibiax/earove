@@ -25,14 +25,10 @@ const AnsharonlinePage = () => (
   <ProjectLayout>
     <ProjectIntro
       title="Anshar Online"
-      left={
+      body={
         <>
           <p>In 2017, I returned to Switzerland and joined OZWE Games to develop VR games. I first designed and implemented cinematics for Anshar Online, then continued as a graphics programmer focused on shaders and performance. I also worked as a game designer and developer, building levels and creating the game trailer.</p>
           <p>Anshar Online is a multiplayer space shooter where players fight cooperative battles across more than 50 missions, contracts, and assaults.</p>
-        </>
-      }
-      right={
-        <>
           <p>Players can race against each other, compete in 8-player deathmatches, and improve their ships through loot drops, resources, upgrades, and class changes.</p>
           <p>The project gave me the chance to work across cinematic direction, real-time graphics, level design, optimization, and production assets for a commercial VR title.</p>
           <p>Technologies: C#, Shaders, Unity3D, Blender.</p>
