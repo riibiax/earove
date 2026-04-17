@@ -15,13 +15,13 @@ class MonsPage extends Component {
             <div className="col-md-12"> 
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
-                  <p className="titleContainer">Mons â€“ CafÃ© Europa: BeeHive</p>
-                  <p>In March 2015 I delivered my first project as part of Ars Electronica Solutions team: GeoPulse BeeHive Mons.</p>
-                  <p>A part of the project is an Android/iOS App for collecting and contextualizing video content using geo-references. People could record videos that are stored and indexed in a Database. At the â€œCafÃ© Europaâ€ an interactive table enables the visitors of Mons,the European Capital of Culture, to view the stored videos that they find interesting in terms of topic or place.</p>
+                  <p className="titleContainer">Mons - Cafe Europa: BeeHive</p>
+                  <p>In March 2015, I delivered my first project as part of the Ars Electronica Solutions team: GeoPulse BeeHive Mons.</p>
+                  <p>One part of the project was an Android and iOS app for collecting and contextualizing video content through georeferences. People could record videos that were stored and indexed in a database. At Cafe Europa, an interactive table allowed visitors to Mons, the European Capital of Culture, to browse videos by topic or place.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The term BeeHive serves as the central metaphor: like in a society of bees, registered participants swarm out with their smartphones, capture footage of an event from a multitude of perspectives and return it (to the hive) to be ingested into the collective pool.</p>
+                  <p>BeeHive served as the central metaphor: like bees, registered participants moved through the city with their smartphones, captured events from multiple perspectives, and returned the material to a shared collective pool.</p>
                   <p>BeeHive is a co-production of Ars Electronica and Mons 2015 with the support of the Austrian Cultural Forum in Brussels, the Austrian Ministry of Culture and the Austrian Embassy.</p>
                 </div>
               </div>

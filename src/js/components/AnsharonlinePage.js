@@ -16,13 +16,13 @@ class AnsharonlinePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Anshar Online</p>
-                  <p>In 2017 I moved back to Switzerland and I joined the OZWE Games team to develop VR videogames. At the beginning my main task was to design and implement cinematics for a massively multiplayer online game (MMO), Anshar Online. After that, I continued to work as a Graphics Programmer focusing on the video game shaders and performances. As Game Designer/Developer I built some Anshar Online levels and I realized the videogame trailer.</p>
-                  <p>Anshar Online is an online multiplayer space shooter. The players can fight intense coop battles in over 50 missions, contracts and assaults, against ever more challenging opponents.</p>
+                  <p>In 2017, I returned to Switzerland and joined OZWE Games to develop VR games. I first designed and implemented cinematics for Anshar Online, then continued as a graphics programmer focused on shaders and performance. I also worked as a game designer and developer, building levels and creating the game trailer.</p>
+                  <p>Anshar Online is a multiplayer space shooter where players fight cooperative battles across more than 50 missions, contracts, and assaults.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>They can compete against other players in an exhilarating race to determine who among you is the fastest, and battle in an 8-player death match to determine who is the top ace.</p>
-                  <p>Each successful mission increases the player level and skill, preparing for the next fight. The players can customize theirs ships by mounting equipment obtained through in-game loot drops, as well as by selecting upgrades in exchange for obtained resources. Or switch ship classes and get themselves a tank or engineer ship, each with specialized weaponry, unique special abilities, and a variety of skins.</p>
+                  <p>Players can race against each other, compete in 8-player deathmatches, and improve their ships through loot drops, resources, upgrades, and class changes.</p>
+                  <p>The project gave me the chance to work across cinematic direction, real-time graphics, level design, optimization, and production assets for a commercial VR title.</p>
                   <p>Technologies: C#, Shaders, Unity3D, Blender.</p>
                 </div>
               </div>
@@ -38,15 +38,15 @@ class AnsharonlinePage extends Component {
               <img src="img/ao/award-ao-halo-award-2018-v3@2x.png" alt="&quot;Best VR Game&quot; Winner Bronze at the Halo Awards - VRDays Europe 2018" className="img-fluid" />
             </div>
             <div className="col-md-4 d-flex justify-content-center">
-              <img src="img/ao/award-ao-imga-2019-v3@2x.png" alt="Best VR Gameâ€ Nominated at the 15th IMGA San Francisco 2019" className="img-fluid" />
+              <img src="img/ao/award-ao-imga-2019-v3@2x.png" alt="&quot;Best VR Game&quot; Nominated at the 15th IMGA San Francisco 2019" className="img-fluid" />
             </div>
           </div>
           <div className="row justify-content-center awards">
             <div className="col-md-6 d-flex justify-content-center">
-              <img src="img/ao/award-ao-indigo-award-2019-v3@2x.png" alt="Best Mobile Gameâ€ Winner Gold category at the Indigo Award 2019" className="img-fluid" />
+              <img src="img/ao/award-ao-indigo-award-2019-v3@2x.png" alt="&quot;Best Mobile Game&quot; Winner Gold category at the Indigo Award 2019" className="img-fluid" />
             </div>
             <div className="col-md-6 d-flex justify-content-center">
-              <img src="img/ao/award-ao-ludicious-2019-v3@2x.png" alt="Best Swiss Gameâ€œ Nominated at the Ludicious &amp; SGDA Game Awards 2019" className="img-fluid" />
+              <img src="img/ao/award-ao-ludicious-2019-v3@2x.png" alt="&quot;Best Swiss Game&quot; Nominated at the Ludicious &amp; SGDA Game Awards 2019" className="img-fluid" />
             </div>
           </div>
         </div>

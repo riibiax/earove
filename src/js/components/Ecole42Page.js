@@ -16,13 +16,13 @@ class Ecole42Page extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Ecole 42 Renens</p>
-                  <p>During my tenure at the Swiss company UDIMU SA, we were tasked with creating installations for the innovative computer science school "42 Lausanne".</p>
-                  <p>In line with its vision, Ecole 42 aimed to offer visitors an exceptional experience, conveying its mission, educational opportunities, and ethos in a clear and engaging manner.</p>
-                  <p>The installation space was primarily designed for students of the school but also catered to visitors and staff from other parts of the building. To mark the school's inauguration, we developed an augmented reality (AR) treasure hunt accessible on iOS and Android devices.</p>
+                  <p>At UDIMU SA, I worked on a set of interactive installations for 42 Lausanne, the computer science school based on peer-to-peer learning.</p>
+                  <p>The space was designed for students, visitors, and staff, with the goal of communicating the school's mission and learning culture through playful interaction.</p>
+                  <p>For the inauguration, we created an augmented reality treasure hunt for iOS and Android devices.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>My role in this project encompassed both the design and IT development of interactive experiences using Unity 3D and React Js. Furthermore, the AR game was crafted utilizing Unity's AR Foundation Framework.</p>
+                  <p>My role covered both design and development, including interactive experiences built with Unity 3D and React JS. The AR game was developed with Unity's AR Foundation framework.</p>
                   <p>Technologies: C#, Shaders, Unity3D, AR Foundation Framework, Blender.</p>
                 </div>
               </div>

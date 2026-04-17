@@ -16,14 +16,14 @@ class MetecPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Primetals Technologies - METEC</p>
-                  <p>In June 2015, Ars Electronica Solutions has developed a unique immersive environment that allows visitors to explore the Primetals Technologies'technology, product and service portfolio during the METEC fair. Held every three years, METEC is the worldâ€™s most important event in metallurgical technology. </p>
-                  <p>Interactive walls, terminals, interactive tables and the central piece of the booth, made of 24 screens, in which 12 were rotating, were created for this event.</p>
-                  <p>The exhibits are spread out in an open space, and inspired by elements from metallurgical processes.</p>
+                  <p>In June 2015, Ars Electronica Solutions developed an immersive environment for Primetals Technologies at METEC, one of the world's leading events for metallurgical technology.</p>
+                  <p>The booth included interactive walls, terminals, tables, and a central installation made of 24 screens, 12 of which could rotate.</p>
+                  <p>The exhibits were distributed through an open space and inspired by elements from metallurgical processes.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>Ars Electronica Solutions designed the exhibition area for Primetals Technologies to convey information in an intuitive and playful way, while also reflecting the companyâ€™s status as one of the worldâ€™s leading high-tech enterprises. This creative approach to launching the new company name and corporate design mirrors the unique global standing of Primetals Technologies.</p>
-                  <p>My part for this project was related to the development of the interactive 4k Screen Walls to visualize Primetals Technologies's factories data.</p>
+                  <p>The exhibition area conveyed complex information in an intuitive and playful way, while supporting the launch of the company's new name and corporate design.</p>
+                  <p>My contribution focused on the development of the interactive 4K screen walls used to visualize factory data from Primetals Technologies.</p>
                   <p>Technologies: C++, Juce Framework, OpenGL, TUIO, PostgreSQL.</p>
                 </div>
               </div>

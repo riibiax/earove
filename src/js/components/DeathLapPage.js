@@ -16,13 +16,13 @@ class DeathLapPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Death Lap</p>
-                  <p>At the end of 2018 OZWE Games started a new collaboration with Oculus Studios to develop a VR shooter racing videogame: Death Lap. I was responsible for the implementation of the main shaders in Unity 3D, especially the PBR metallic shaders and the VFX. Trying to get the best visual result, I optimized the videogame performances getting astonished results for a VR videogame.</p>
-                  <p>For DeathLap I worked on all the components of the videogame like coding, network infrastructure, artificial intelligence, level design, SFX, UI, localization, VFX, optimization, debug and management.</p>
+                  <p>At the end of 2018, OZWE Games began collaborating with Oculus Studios on Death Lap, a VR combat racing game. I was responsible for the main Unity 3D shaders, especially PBR metallic materials and visual effects, while keeping the rendering performance suitable for VR.</p>
+                  <p>I also contributed across the production: coding, network infrastructure, artificial intelligence, level design, SFX, UI, localization, VFX, optimization, debugging, and management.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
                   <p>Death Lap is a VR combat racing game that challenges you to drive to survive. Just point and shoot to destroy everything in your path. Hit the road, perform drifts and stunts, navigate traps, unleash your weapons and special abilities, and enjoy the chaos of its battlefields.</p>
-                  <p>A darkly comic, combat racing game that will leave you howling with laughter as you put your life on the line. Captured by Nitro Saint Payne â€” a maniacal yet tragic man, you are thrown into his deadly TV show where you must race and battle other drivers to win your freedom.</p>
+                  <p>Captured by Nitro Saint Payne, a maniacal and tragic showman, players are thrown into a deadly TV show where they must race and battle other drivers to win their freedom.</p>
                   <p>Technologies: C#, Shaders, Unity3D, Blender.</p>
                 </div>
               </div>

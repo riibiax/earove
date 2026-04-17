@@ -16,14 +16,14 @@ class FireplacePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Fireplace</p>
-                  <p>"Fireplace" is an interactive lumino-kinetic device, designed to influence human psychology.</p>
-                  <p>The project is composed of a mobile app that records userâ€™s physical activities and of a domestic device that shows visual programs. The purpose of this device is to stimulate the userâ€™s mind by light programs that match brain waves.</p>
+                  <p>"Fireplace" is an interactive lumino-kinetic device designed to explore the psychological effects of light.</p>
+                  <p>The project combines a mobile app that records physical activity with a domestic device that plays visual light programs. These programs are designed around frequencies and patterns associated with brain waves.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>Flicker, colour combinations, light frequencies, intensity and patterns are used to influence userâ€™s psychology and to get an hypnotic visual show.</p>
-                  <p>This device experiments the possibilities of technological and human cognitive interaction.</p>
-                  <p>Technologies: OpenFrameworks & Arduino.</p>
+                  <p>Flicker, color combinations, light frequency, intensity, and pattern are used to create a hypnotic visual experience.</p>
+                  <p>The device experiments with the relationship between technology, perception, and cognitive response.</p>
+                  <p>Technologies: OpenFrameworks and Arduino.</p>
                 </div>
               </div>
             </div>

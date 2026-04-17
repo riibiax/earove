@@ -16,12 +16,12 @@ class VaudoisePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Vaudoise Assurances - The Way</p>
-                  <p>In 2021, I became a part of UDIMU SA, a dynamic company located in the Neuchatel region. My inaugural project involved crafting an interactive totem for Vaudoise Assurances. Vaudoise Assurances orchestrates escape games aimed at acquainting participants with the theme of retirement in a playful and inventive manner.</p>
-                  <p>Ever fantasized about fast-forwarding to age 65 in just 45 minutes? The sole rule of the game? Craft your life's narrative by following your heart's desires, unencumbered by concerns!</p>
+                  <p>In 2021, I joined UDIMU SA, a creative technology company based in the Neuchatel region. My first project there was an interactive totem for Vaudoise Assurances.</p>
+                  <p>The Way is an escape game designed to introduce the topic of retirement through a playful, imaginative experience: what if you could fast-forward to age 65 in just 45 minutes?</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>For this endeavor, I spearheaded the development of mini-games, the UI system, a localization feature to translate the game into multiple languages, an import mechanism to convert Excel data into Unity diagrams, and an assistance system designed to orient users throughout the experience.</p>
+                  <p>I developed the mini-games, UI system, localization tools, an Excel import pipeline for Unity diagrams, and an assistance system to guide users through the experience.</p>
                   <p>Technologies: C#, Shaders, Unity3D.</p>
                 </div>
               </div>

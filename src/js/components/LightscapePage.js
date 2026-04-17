@@ -16,13 +16,13 @@ class LightscapePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Lightscape</p>
-                  <p>"Lightscape" is an interactive and performative installation depicting the landscape seen by an migrant during his journey.</p>
-                  <p>Tracking his GPS location, the artwork uses landscapes' pictures from the social network Flicker and live weather forecast service, trying to show colors and light as faithful as possible.</p>
+                  <p>"Lightscape" is an interactive and performative installation depicting the landscape seen by a migrant during his journey.</p>
+                  <p>Using GPS location, the artwork combines landscape images from Flickr with live weather data, recreating local colors and light as faithfully as possible.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The top part of the device stands for the sky, the bottom part visualizes the soil and the mechanical part represents the silhouette in the landscape.</p>
-                  <p>The weather forecast animates the visual show.</p>
+                  <p>The upper part of the device represents the sky, the lower part visualizes the soil, and the mechanical element suggests a silhouette moving through the landscape.</p>
+                  <p>Weather forecasts continuously animate the visual composition.</p>
                   <p>&nbsp;</p>
                   <p>Technologies: OpenFrameworks, Arduino, Python scripts.</p>
                 </div>

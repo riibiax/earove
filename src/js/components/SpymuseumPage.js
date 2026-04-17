@@ -16,12 +16,12 @@ class SpymuseumPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Spy Museum - Berlin</p>
-                  <p>In September 2015 I participated with Ars Electronica Solutions at the realization of interactive installations for the Spy Museum in Berlin.</p>
-                  <p>The exhibits on permanent display deliver an experience that brings all of visitorsâ€™ senses into play to provide thrilling accounts of spectacular covert operations, mysterious cases of espionage and the legendary spies. Throughout more than 3,000 square meters of exhibition space, the Museum showcases a wide variety of authentic rarities from a collection assembled over many decades as well as elaborately produced replicas. Their state-of-the-art presentation employs innovative museum technology and takes a stylish multimedia approach.</p>
+                  <p>In September 2015, I worked with Ars Electronica Solutions on interactive installations for the Spy Museum in Berlin.</p>
+                  <p>The permanent exhibition uses multimedia and museum technology to tell stories of covert operations, espionage cases, and legendary spies across more than 3,000 square meters.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>This museum is defined as a setting for the active dissemination of knowledge and as a playful experimental laboratory where exploration, hands-on experience and discovery are intertwined in a way that makes learning fun. Visitors encounter a colorful assortment of objects, documents, photographs and film footage gleaned from private collections and public archives. Theyâ€™re accompanied by interviews with and testimony by historical eyewitness, top-echelon agents and experts in the field of espionage brought together in documentary films produced especially for the Museum.</p>
+                  <p>The museum combines historical objects, documents, photographs, film material, interviews, and expert testimony with interactive experiences designed to make exploration and discovery part of the visit.</p>
                 </div>
               </div>
             </div>

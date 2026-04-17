@@ -16,14 +16,14 @@ class SaltminePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">The Berchtesgaden Salt Mine</p>
-                  <p>The Berchtesgaden Salt Mineâ€™s Treasure Chamber is one of the featured attractions on the guided tour through this complexâ€”the so-called SaltTimeJourney. This huge underground space dug out of the rock recently got a total makeover by Ars Electronica Solutions.</p>
-                  <p>Four projection screens tell the story of salt in an abstract-crystalline visual vocabulary. Four sub-themesâ€”nature, humankind, history and technologyâ€”are treated in animated sequences designed by AES.</p>
+                  <p>The Treasure Chamber of the Berchtesgaden Salt Mine is one of the main attractions of the SaltTimeJourney guided tour. Ars Electronica Solutions redesigned this large underground space carved into the rock.</p>
+                  <p>Four projection screens tell the story of salt through an abstract crystalline visual language. The animation sequences explore four themes: nature, humankind, history, and technology.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>Just the right soundtrack underscores the impressive imagery. Another centerpiece of the installation is a pulsating salt lamp created by one of mineâ€™s associates.</p>
-                  <p>The interplay of these elementsâ€”light, imagery, sound and spaceâ€”immerses visitors in an all-encompassing sensory realm that further heightens the intense thrill of the SaltTimeJourney experience.</p>
-                  <p>The Concept Design was my contribution for this project in AES.</p>
+                  <p>A dedicated soundtrack supports the imagery, while a pulsating salt lamp created by one of the mine's associates acts as another focal point in the space.</p>
+                  <p>The interplay of light, image, sound, and space creates an immersive sensory environment that heightens the SaltTimeJourney experience.</p>
+                  <p>My contribution at Ars Electronica Solutions focused on the concept design.</p>
                 </div>
               </div>
             </div>

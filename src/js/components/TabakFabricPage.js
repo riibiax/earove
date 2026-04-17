@@ -60,14 +60,14 @@ class TabakFabrikPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Tabak Fabrik</p>
-                  <p>Tabak Fabrik (12min), is a generative visual piece that I created to record the memories I have of my experience working at Ars Electronica Solutions.</p>
-                  <p>The main concept of this introspective piece was to depict and paint places, people and events that I encountered over the last two years: the creation of an abstract narrative as a relationship to experiences that will remain.</p>
-                  <p>In the city of Linz, Austria, the Tabak Fabrik is an 19th century ex-tobacco factory that was transformed into a creative hub: a collective of innovative companies and, where Ars Electronica Solutions offices are located.</p>
+                  <p>Tabak Fabrik is a 12-minute generative visual piece created from memories of my time working at Ars Electronica Solutions.</p>
+                  <p>The work depicts places, people, and events I encountered over two years, transforming them into an abstract narrative about experiences that remain.</p>
+                  <p>Located in Linz, Austria, Tabak Fabrik is a 19th-century former tobacco factory transformed into a creative hub and home to Ars Electronica Solutions.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>Using Photo Scanning technology I recreated 3D models of buildings, spaces, statues and objects that constitute this creative universe in the Tabak Fabrik. Afterwards, I developed a framework able to visualize the data that I collected of the important moments of this time. Emails, web traffic, pictures and sounds were converted in binary codes which animate the 3D models.</p>
-                  <p>This data is not visible for privacy reasons: the generative animation below is a clean version.</p>
+                  <p>Using photogrammetry, I recreated buildings, spaces, statues, and objects from this creative environment as 3D models. I then developed a framework to animate them with data collected from meaningful moments during that period: emails, web traffic, images, and sounds converted into binary code.</p>
+                  <p>For privacy reasons, the data itself is not visible; the generative animation below is a clean version.</p>
                   <p>Technologies: Three.js, Wireshark, GLSL, AgiSoft Photoscan.</p>
                 </div>
               </div>

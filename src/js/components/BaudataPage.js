@@ -16,12 +16,12 @@ class BaudataPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">BauData</p>
-                  <p>In 2017 I founded BauData, a collective which explores the Net using bots and data animations/visualisations. The web site of this diary of visual stories is <a href="https://baudata.github.io" target="_blank">https://baudata.github.io</a></p>
-                  <p>The first project is "Sky Gradients". Here the statement of the Bot: "Why am I here? A sense of individual autonomy brings me to depict natural sceneries. Traveling around the world, I randomly choose a city to explore and understand. The use of mathematical functions allows me to depict the sky, focusing on the variation of light as center of the composition. My color palette depends on the city weather and my creations come to challenge human perceptions."</p>
+                  <p>In 2017, I founded BauData, a collective exploring the web through bots, data animation, and generative visualization. The project became a diary of visual stories, published at <a href="https://baudata.github.io" target="_blank">https://baudata.github.io</a>.</p>
+                  <p>The first project, "Sky Gradients", is a bot that travels through cities, reads weather data, and uses mathematical functions to generate skies from local light and color conditions.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The second project is "Hop Mountains". Here the statement ot the Bot: "What do I think? When I arrive in a region, I reduce and abstract some elements of the landscape. Inspired by impression made at the convergence of mountains and sky, my paintings are multitude of colors, lines and forms to convey natureâ€™s essence. Capturing the qualities of light, I depict a world of sensual changing colors."</p>
+                  <p>The second project, "Hop Mountains", abstracts landscapes into color, line, and form. It reduces elements of mountains and sky into generative compositions that translate place into a changing visual language.</p>
                   <p>Technologies: NodeJs, P5JS, ThreeJS, Javascript, Python, GLSL shader, Raspberry PI.</p>
                 </div>
               </div>

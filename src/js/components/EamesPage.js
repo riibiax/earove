@@ -16,13 +16,13 @@ class EamesPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Re-Think the Eames</p>
-                  <p>At the Salone del Mobile in Milan 2013, the students at the Haute Ecole d'Art et de Design of Geneva revisited the tradition of educational multimedia spectacles, building on the 1964 Think Theater by Charles & Ray Eames. We reinvented a contemporary installation, an immersive multi-screen environment, showcasing 700 unreleased images from the collection of the legendary couple.</p>
-                  <p>The installation is also composed by an intercative wall, where visitors can answer to a series of questions concerning their design practice or related to the exhibition. These answers are recorded and displayed in a parallel exhibition in Geneva.</p>
+                  <p>For Salone del Mobile in Milan 2013, students from the Haute Ecole d'Art et de Design in Geneva revisited the tradition of educational multimedia spectacles, taking inspiration from the 1964 Think Theater by Charles and Ray Eames.</p>
+                  <p>We created a contemporary immersive installation: a multi-screen environment presenting 700 unreleased images from the Eames collection, together with an interactive wall where visitors could answer questions about design practice and the exhibition.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>My involvement as part of the student design team included the Exhibition Concept Phase and the realisation of the interactive wall.</p>
-                  <p>Workshop curated by Alexandra Midal and lead by Nitzan Cohen & Dominic Robson.</p>
+                  <p>As part of the student design team, I contributed to the exhibition concept and the realization of the interactive wall. The collected answers were displayed in a parallel exhibition in Geneva.</p>
+                  <p>Workshop curated by Alexandra Midal and led by Nitzan Cohen and Dominic Robson.</p>
                   <p>Technologies: MaxMsp, Arduino, OpenCV, Adobe Premiere.</p>
                 </div>
               </div>

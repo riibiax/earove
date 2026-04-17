@@ -16,15 +16,13 @@ class SkaterPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">The skater</p>
-                  <p>Imagine that your iPhone could be a skater, go through different circuits and avoid obstacles..</p>
-                  <p>"The Skater" is an augmented reality game where the player interactes with a virtual world using real cards and handmade origamis. 
-                      In the eighties a young skater in Berlin tries to launch american skatersâ€™ culture. Can you help him to reach this goal?</p>
+                  <p>Imagine your iPhone as a skater, moving through circuits and avoiding obstacles.</p>
+                  <p>"The Skater" is an augmented reality game where the player interacts with a virtual world using real cards and handmade origami pieces. In 1980s Berlin, a young skater tries to spread American skate culture. Can you help him reach that goal?</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>In a graphical universe, that recalls zine culture, every level is created by printed cards and virtual obstacles could be passed finding the right physical origamis.
-                      But donâ€™t spend too much time to contemplate this paper city, the police is looking for you..</p>
-                  <p>Design & Development by Andrea Rovescalli, Praiya Chinagarn, Solkin Keizer</p>
+                  <p>In a visual universe inspired by zine culture, each level is built from printed cards, while virtual obstacles can be solved by finding the right physical origami. But do not spend too long admiring the paper city: the police are looking for you.</p>
+                  <p>Design and development by Andrea Rovescalli, Praiya Chinagarn, and Solkin Keizer.</p>
                   <p>Technologies: C++, Shaders, Openframeworks, Cinema4D.</p>
                 </div>
               </div>

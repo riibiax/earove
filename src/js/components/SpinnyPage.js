@@ -16,13 +16,13 @@ class SpinnyPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Spinny's Journey</p>
-                  <p>During the Covid confinement with some friends we developed a game with the intent of exploring the Nintendo Switch market and the entrepreneurial path to create a company in Switzerland (<a href="https://www.linkedin.com/company/71466273/" target="_blank">Thunder Sparrow</a>).</p>
-                  <p>Spinny's Journey is a challenging 2D action-puzzle game. You will help Spinny, a tiny alien explorer, find his way through mazes, dodge traps and repair his spaceship that was destroyed by a terrifying sparrow.</p>
+                  <p>During the Covid lockdown, I developed a game with friends to explore the Nintendo Switch market and the process of creating a company in Switzerland: <a href="https://www.linkedin.com/company/71466273/" target="_blank">Thunder Sparrow</a>.</p>
+                  <p>Spinny's Journey is a challenging 2D action-puzzle game. Players help Spinny, a tiny alien explorer, move through mazes, dodge traps, and repair his spaceship after it is destroyed by a terrifying sparrow.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The video game takes up the game play of Kuru Kuru Kururin, an old Game Boy video game.</p>
-                  <p>This project allowed me to follow all aspects of the production of a video game: project management, team management, supplier management, development of a communication and marketing strategy, user test management, video game development, development of specific shaders for Nintendo Switch, code optimization, integration of the Nintendo framework, creation of special effects (VFX).</p>
+                  <p>The gameplay is inspired by Kuru Kuru Kururin, a Game Boy Advance game built around rotation, timing, and narrow paths.</p>
+                  <p>This project allowed me to follow every aspect of game production: project and team management, supplier coordination, communication and marketing strategy, user testing, game development, Nintendo Switch shader development, code optimization, Nintendo framework integration, and VFX creation.</p>
                   <p>Technologies: C#, Shaders, Unity for 2D, Photoshop, Python.</p>
                 </div>
               </div>

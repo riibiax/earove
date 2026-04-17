@@ -16,13 +16,13 @@ class KfPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">KF Watches</p>
-                  <p>During my tenure at the Swiss company UDIMU SA, we developed an interactive configurator for the KF Watches brand. This tool enables clients to effortlessly explore the diverse range of KF Watches models in a user-friendly manner.</p>
-                  <p>Moreover, the configurator allows for extensive customization options, including the ability to adjust colors and materials of individual watch components via a touch screen menu.</p>
-                  <p>The primary objective of the project was to accurately render the intricate components of the watches to showcase the design intricacies of this esteemed brand.</p>
+                  <p>At UDIMU SA, I worked on an interactive configurator for KF Watches, designed to help clients explore the brand's models in a clear and tactile way.</p>
+                  <p>The configurator lets visitors customize individual watch components, including colors and materials, through a touch screen interface.</p>
+                  <p>The main challenge was to render each watch with enough precision to communicate the quality of the materials and the complexity of the design.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>Using Unity 3D and the HDRP render pipeline, I spearheaded the development process, focusing on optimizing 3D models, lighting, and shaders â€“ particularly for elements like diamonds and metal parts. Additionally, I designed and implemented the user interface and animations to enhance the presentation of the various watch models, ensuring an engaging and visually appealing experience.</p>
+                  <p>Using Unity 3D and the HDRP render pipeline, I developed the real-time presentation, optimized the 3D models, lighting, and shaders, and paid particular attention to diamonds and metal parts. I also designed and implemented the interface and animations used to present the different watch models.</p>
                   <p>Technologies: C#, Shaders, Unity3D, Blender.</p>
                 </div>
               </div>

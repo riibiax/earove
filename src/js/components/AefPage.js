@@ -16,13 +16,13 @@ class AefPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p class="titleContainer">Ars Electronica Festival 2016</p>
-                  <p>During Ars Electronica Festival 2016, I worked with Ars Electronica Solutions to realize some interactive installations. The purpose of our stand was to present the content by European Space Agency (ESA) and some organizations such as Reporters, Engineers, Architects and Doctors Without Borders.</p>
-                  <p>The first installation was a 4k projection wall that gave the chance to interact with a simulation of Earth, to view ESA Satellites 3D models, some high resolutions images of Earth as seen from space and ESA Points of Interest. The interaction with the 4k projection wall was possible using a touch screen terminal.</p>
+                  <p>For Ars Electronica Festival 2016, I worked with Ars Electronica Solutions on a set of interactive installations presenting content from the European Space Agency and organizations such as Reporters, Engineers, Architects, and Doctors Without Borders.</p>
+                  <p>The first installation was a 4K projection wall controlled by a touch screen terminal. Visitors could explore a simulation of Earth, ESA satellite models, high-resolution images of the planet, and points of interest from space research.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The second installation was a 4k Touch Screen to discover GeoData Information and activities of Reporters, Engineers, Architects and Doctors Without Borders.</p>
-                  <p>The data collected were Heat Maps, Points of Interests, Media Content and Texts and processed by the Geostage system developed by Ars Electronica Solutions.</p>
+                  <p>The second installation was a 4K touch screen focused on geodata and the field activities of the participating organizations.</p>
+                  <p>Heat maps, points of interest, media content, and text were processed through GeoStage, the geovisualization system developed by Ars Electronica Solutions.</p>
                   <p>&nbsp;</p>
                   <p>Technologies: C#, Unity3D, QGis, GlobalMapper.</p>
                 </div>

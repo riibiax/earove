@@ -16,14 +16,14 @@ class BmeiaPage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">BMEIA Touchwall</p>
-                  <p>In December 2015 Ars Electronica Solutions realized an interactive wall that provides visitors of the Federal Ministry for Europe, Integration and Foreign Affairs information about the Ministryâ€™s worldwide activities.</p>
-                  <p>Data Visualization is the main topic of this Installation: via a touch interface, visitors can easily understand and compare Austrian sensible data with those of the other countries in the world.</p>
-                  <p>Special features include gigapixel images as well as Ars Electronicaâ€™s popular tool GeoPulse.</p>
+                  <p>In December 2015, Ars Electronica Solutions created an interactive media wall for the Austrian Federal Ministry for Europe, Integration and Foreign Affairs.</p>
+                  <p>The installation used data visualization to help visitors explore and compare Austria's international activities with information from other countries.</p>
+                  <p>Special features included gigapixel imagery and GeoPulse, Ars Electronica's geospatial visualization tool.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The â€œactive modeâ€ allows up to three persons to interact with the BMEIA TouchWall at the same time, while a â€œpresentation modeâ€ makes it possible to display content on the entire screen.</p>
-                  <p>I have taken part in the implementation of the media wall, that is made out of three landscape screens and runs GeoPulse customized Software. Content displayed on the wall is gathered by a CMS.</p>
+                  <p>The active mode allows up to three people to interact with the BMEIA TouchWall at the same time, while presentation mode displays content across the full screen.</p>
+                  <p>I contributed to the implementation of the media wall, built from three landscape screens and powered by a customized GeoPulse application. The displayed content was managed through a CMS.</p>
                   <p>Technologies: C++, Juce Framework, OpenGL, TUIO, PostgreSQL.</p>
                 </div>
               </div>

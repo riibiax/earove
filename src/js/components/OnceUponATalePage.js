@@ -16,15 +16,15 @@ class OnceUponATalePage extends Component {
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
                   <p className="titleContainer">Once Upon A Tale</p>
-                  <p>"Once Upon a Tale" is a tactile book and interactive storytelling.</p>
-                  <p>Based on the best-known children's stories, the application gives us the opportunity to reinvent, to create our own stories.</p>
-                  <p>With the card game that comes with it, or simply by the touch interface, choose the characters and settings of your story among all those offered tales. And you generate a number of stories and illustrations infinity.</p>
+                  <p>"Once Upon a Tale" is a tactile book and interactive storytelling application.</p>
+                  <p>Based on well-known children's stories, the project invites readers to reinvent tales and create their own narrative combinations.</p>
+                  <p>Using the card game or the touch interface, players choose characters and settings from different stories, generating countless combinations of text and illustration.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>The stories will mix. You can always change characters or settings to your preference. "When Cinderella becomes the big bad wolf in the castle of Barbe Bleue."</p>
-                  <p>Development by Andrea Rovescalli & Praiya Chinagarn. Illustrations by Benjamin Ben Kemoun.</p>
-                  <p>Workshop lead by Etienne Mineur & Nicolas Nova.</p>
+                  <p>The stories can be mixed and changed at any moment: Cinderella can become the big bad wolf in Bluebeard's castle.</p>
+                  <p>Development by Andrea Rovescalli and Praiya Chinagarn. Illustrations by Benjamin Ben Kemoun.</p>
+                  <p>Workshop led by Etienne Mineur and Nicolas Nova.</p>
                 </div>
               </div>
             </div>

@@ -15,15 +15,15 @@ class MachinePage extends Component {
             <div className="col-md-12"> 
               <div className="row remove-paddings-margins">
                 <div className="col-md-6">
-                  <p className="titleContainer">Machine EnchantÃ©e</p>
-                  <p>"Machine EnchantÃ©e" is the winner of the UMIX Information Architecture Hackathon 2014 in Lyon, France, where participants were challenged to redesign physical and digital libraries within the span of 48 hours.</p>
-                  <p>My team developed an idea for children interaction inspired by the concept of serendipity. We wish to encourage kids between the age of 3-7 to discover new books and games in a playful and engaging way, while transforming the physical environment of the library into a landscape of discovery.</p>
-                  <p>Books and games are tagged with a friendly classification system generated together with a group of children based on their interests in topics and books. A simple game on a touch screen table invites kids to choose among symbols representing the different tags.</p>
+                  <p className="titleContainer">Machine Enchantee</p>
+                  <p>"Machine Enchantee" won the UMIX Information Architecture Hackathon 2014 in Lyon, where participants were challenged to redesign physical and digital libraries in 48 hours.</p>
+                  <p>Our team developed an interaction concept for children inspired by serendipity. The goal was to encourage children aged 3 to 7 to discover books and games in a playful way, while turning the library itself into a landscape of discovery.</p>
+                  <p>Books and games are tagged with a friendly classification system created together with children, based on their interests, topics, and favorite books. A touch screen table invites them to choose symbols representing the different tags.</p>
                 </div>
                 <div className="col-md-6">
                   <p>&nbsp;</p>
-                  <p>They then follow a wandering LED path which splits into different routes through the library, leading them to book selections based on their tag choices. Which one to follow?</p>
-                  <p>Books and games are not stored on shelves but in special boxes that light up at the end of each new path. Each box is filled with books based on the tagging system. The Machine EnchantÃ©e supports up to 4 users, with different wandering paths lighting up and leading children to a new and exciting world of books.</p>
+                  <p>They then follow a wandering LED path that splits into different routes through the library, leading them to book selections based on their choices.</p>
+                  <p>Books and games are stored in special boxes that light up at the end of each path. The Machine Enchantee supports up to four users at once, each following a different route toward a new selection of books.</p>
                   <p>&nbsp;</p>
                   <p>Other project members: Yannis Adelbost, Mathilde Bulete-Herbaut, Valeria Borsotti, Tommaso Elli, Fabian Ramirez, Inma Salcedo.</p>
                 </div>
