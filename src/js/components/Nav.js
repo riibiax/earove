@@ -42,6 +42,11 @@ const Nav = () => {
     };
   }, []);
 
+  const handleProjectsClick = (event) => {
+    setIsProjectsOpen((isOpen) => !isOpen);
+    event.currentTarget.blur();
+  };
+
   return (
     <nav id="menu-bar">
       <input type="checkbox" id="show-menu" value="button" />
@@ -65,7 +70,7 @@ const Nav = () => {
                     aria-expanded={isProjectsOpen}
                     aria-haspopup="true"
                     className="projectsMenuButton"
-                    onClick={() => setIsProjectsOpen((isOpen) => !isOpen)}
+                    onClick={handleProjectsClick}
                     type="button"
                   >
                     Projects
