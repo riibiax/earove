@@ -5,7 +5,7 @@ import projects from "../projectData";
 
 const Nav = () => {
   const location = useLocation();
-  const isIndexPage = location.pathname === '/';
+  const isIndexPage = location.pathname === '/' || location.pathname === '/index.html';
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const projectsMenuRef = useRef(null);
 
@@ -53,30 +53,36 @@ const Nav = () => {
         <li>
           <ul id="menu">
             <li className="projectsMenuItem" ref={projectsMenuRef}>
-              <button
-                aria-expanded={isProjectsOpen}
-                aria-haspopup="true"
-                className="projectsMenuButton"
-                onClick={() => setIsProjectsOpen((isOpen) => !isOpen)}
-                type="button"
-              >
-                Projects
-              </button>
-              {isProjectsOpen && (
-                <ul className="projectsDropdown">
-                  {projects.map(({ path, title, thumbnail }) => (
-                    <li key={path}>
-                      <Link className="projectsDropdownLink" to={path}>
-                        <span
-                          aria-hidden="true"
-                          className="projectsDropdownThumb"
-                          style={{ backgroundImage: `url('${thumbnail}')` }}
-                        />
-                        <span>{title}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              {isIndexPage ? (
+                <Link to="/index.html#projects">Projects</Link>
+              ) : (
+                <>
+                  <button
+                    aria-expanded={isProjectsOpen}
+                    aria-haspopup="true"
+                    className="projectsMenuButton"
+                    onClick={() => setIsProjectsOpen((isOpen) => !isOpen)}
+                    type="button"
+                  >
+                    Projects
+                  </button>
+                  {isProjectsOpen && (
+                    <ul className="projectsDropdown">
+                      {projects.map(({ path, title, thumbnail }) => (
+                        <li key={path}>
+                          <Link className="projectsDropdownLink" to={path}>
+                            <span
+                              aria-hidden="true"
+                              className="projectsDropdownThumb"
+                              style={{ backgroundImage: `url('${thumbnail}')` }}
+                            />
+                            <span>{title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
               )}
             </li>
             <li>
