@@ -5,9 +5,15 @@ import projects from "../projectData";
 
 const Nav = () => {
   const location = useLocation();
-  const isIndexPage = location.pathname === '/' || location.pathname === '/index.html';
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const projectsMenuRef = useRef(null);
+  const currentHashPath = window.location.hash.replace(/^#/, '').split('#')[0].toLowerCase();
+  const currentPath = location.pathname.toLowerCase();
+  const isProjectPage = projects.some(({ path }) => {
+    const projectPath = path.toLowerCase();
+    return currentPath === projectPath || currentHashPath === projectPath;
+  });
+  const isIndexPage = !isProjectPage;
 
   useEffect(() => {
     setIsProjectsOpen(false);
@@ -53,9 +59,7 @@ const Nav = () => {
         <li>
           <ul id="menu">
             <li className="projectsMenuItem" ref={projectsMenuRef}>
-              {isIndexPage ? (
-                <Link to="/index.html#projects">Projects</Link>
-              ) : (
+              {isProjectPage ? (
                 <>
                   <button
                     aria-expanded={isProjectsOpen}
@@ -83,6 +87,8 @@ const Nav = () => {
                     </ul>
                   )}
                 </>
+              ) : (
+                <Link to="/index.html#projects">Projects</Link>
               )}
             </li>
             <li>
