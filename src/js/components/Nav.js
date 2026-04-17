@@ -1,12 +1,17 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "../../css/menu.css";
+import projects from "../projectData";
 
 const Nav = () => {
   const location = useLocation();
   const isIndexPage = location.pathname === '/';
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const projectsMenuRef = useRef(null);
 
   useEffect(() => {
+    setIsProjectsOpen(false);
+
     if (location.hash) {
       const targetElement = document.querySelector(location.hash);
       if (targetElement) {
@@ -16,6 +21,20 @@ const Nav = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
+
+  useEffect(() => {
+    const closeProjectsMenu = (event) => {
+      if (projectsMenuRef.current && !projectsMenuRef.current.contains(event.target)) {
+        setIsProjectsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", closeProjectsMenu);
+
+    return () => {
+      document.removeEventListener("mousedown", closeProjectsMenu);
+    };
+  }, []);
 
   return (
     <nav id="menu-bar">
@@ -33,11 +52,31 @@ const Nav = () => {
         </li>
         <li>
           <ul id="menu">
-            <li>
-              {isIndexPage ? (
-                <a href="#projects">Projects</a>
-              ) : (
-                <Link to="/index.html#projects">Projects</Link>
+            <li className="projectsMenuItem" ref={projectsMenuRef}>
+              <button
+                aria-expanded={isProjectsOpen}
+                aria-haspopup="true"
+                className="projectsMenuButton"
+                onClick={() => setIsProjectsOpen((isOpen) => !isOpen)}
+                type="button"
+              >
+                Projects
+              </button>
+              {isProjectsOpen && (
+                <ul className="projectsDropdown">
+                  {projects.map(({ path, title, thumbnail }) => (
+                    <li key={path}>
+                      <Link className="projectsDropdownLink" to={path}>
+                        <span
+                          aria-hidden="true"
+                          className="projectsDropdownThumb"
+                          style={{ backgroundImage: `url('${thumbnail}')` }}
+                        />
+                        <span>{title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               )}
             </li>
             <li>
