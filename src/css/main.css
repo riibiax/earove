@@ -150,7 +150,7 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 }
 
 .colsContainer p:not(.titleContainer) {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   line-height: 1.45;
 }
 
