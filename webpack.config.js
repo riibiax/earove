@@ -12,9 +12,10 @@ module.exports = (env, argv) => {
   entry: "./src/js/App.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: isProduction ? "main.[contenthash].js" : "main.js",
+    chunkFilename: isProduction ? "[name].[contenthash].main.js" : "[name].main.js",
     publicPath,
-    clean: false,
+    clean: true,
   },
   devtool: "source-map",
   module: {
@@ -50,7 +51,8 @@ module.exports = (env, argv) => {
       "process.env.REACT_APP_BASENAME": JSON.stringify("/"),
     }),
     new MiniCssExtractPlugin({
-      filename: "main.css",
+      filename: isProduction ? "main.[contenthash].css" : "main.css",
+      chunkFilename: isProduction ? "[name].[contenthash].main.css" : "[name].main.css",
     }),
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) => `<!doctype html>
