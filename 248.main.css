@@ -568,6 +568,42 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   width: 100%;
 }
 
+#menu-bar .projectsDropdown li.projectsDropdownScrollHint,
+#menu-bar .projectsDropdown li.projectsDropdownScrollHint:last-child {
+  align-items: center;
+  background: white;
+  display: flex;
+  height: 1.05rem;
+  justify-content: center;
+  pointer-events: none;
+  position: sticky;
+  z-index: 3;
+}
+
+.projectsDropdownScrollHintTop {
+  top: 0;
+}
+
+.projectsDropdownScrollHintBottom {
+  bottom: 0;
+}
+
+.projectsDropdownScrollArrow {
+  border-left: 0.28rem solid transparent;
+  border-right: 0.28rem solid transparent;
+  display: block;
+  height: 0;
+  width: 0;
+}
+
+.projectsDropdownScrollHintTop .projectsDropdownScrollArrow {
+  border-bottom: 0.38rem solid black;
+}
+
+.projectsDropdownScrollHintBottom .projectsDropdownScrollArrow {
+  border-top: 0.38rem solid black;
+}
+
 .projectsDropdownImage {
   background-position: center center;
   background-size: cover;
