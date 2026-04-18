@@ -509,20 +509,25 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   color: black;
 }
 
-.projectsDropdown {
+.projectsDropdownFrame {
   border-top: 1px solid #fff;
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
-  display: block;
   left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 101;
+}
+
+.projectsDropdown {
+  display: block;
   margin: 0;
   max-height: min(82vh, 38rem);
   overflow-y: auto;
   padding: 0;
-  position: absolute;
+  position: relative;
   scrollbar-width: none;
-  top: 100%;
   width: 100%;
-  z-index: 101;
 }
 
 .projectsDropdown::-webkit-scrollbar {
@@ -548,15 +553,16 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   width: 100%;
 }
 
-#menu-bar .projectsDropdown li.projectsDropdownScrollHint,
-#menu-bar .projectsDropdown li.projectsDropdownScrollHint:last-child {
+.projectsDropdownScrollHint {
   align-items: center;
   background: white;
   display: flex;
   height: 1.05rem;
   justify-content: center;
+  left: 0;
   pointer-events: none;
-  position: sticky;
+  position: absolute;
+  right: 0;
   z-index: 3;
 }
 
