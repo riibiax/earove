@@ -84,6 +84,14 @@
   color: white;
 }
 
+.projectsMenuButton[aria-expanded='true'],
+.projectsMenuButton[aria-expanded='true']:hover,
+.projectsMenuButton[aria-expanded='true']:focus,
+.projectsMenuButton[aria-expanded='true']:active {
+  background-color: white;
+  color: black;
+}
+
 .projectsDropdown {
   border-top: 1px solid #fff;
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
