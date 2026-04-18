@@ -147,14 +147,26 @@
 .projectsDropdownScrollHint {
   align-items: center;
   background: white;
+  border: 0;
+  cursor: pointer;
   display: flex;
   height: 1.05rem;
   justify-content: center;
   left: 0;
-  pointer-events: none;
+  padding: 0;
   position: absolute;
   right: 0;
   z-index: 3;
+}
+
+.projectsDropdownScrollHint:hover,
+.projectsDropdownScrollHint:focus {
+  background: white;
+}
+
+.projectsDropdownScrollHint:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 2px;
 }
 
 .projectsDropdownScrollHintTop {

@@ -32,6 +32,18 @@ const Nav = () => {
     });
   };
 
+  const scrollProjectsDropdown = (direction) => {
+    const dropdown = projectsDropdownRef.current;
+    if (!dropdown) {
+      return;
+    }
+
+    dropdown.scrollBy({
+      top: direction * dropdown.clientHeight * 0.8,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     setIsProjectsOpen(false);
     setProjectScrollHints({ up: false, down: false });
@@ -110,9 +122,14 @@ const Nav = () => {
                   {isProjectsOpen && (
                     <div className="projectsDropdownFrame">
                       {projectScrollHints.up && (
-                        <span aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintTop">
+                        <button
+                          aria-label="Scroll projects up"
+                          className="projectsDropdownScrollHint projectsDropdownScrollHintTop"
+                          onClick={() => scrollProjectsDropdown(-1)}
+                          type="button"
+                        >
                           <span className="projectsDropdownScrollArrow" />
-                        </span>
+                        </button>
                       )}
                       <ul className="projectsDropdown" onScroll={updateProjectScrollHints} ref={projectsDropdownRef}>
                         {dropdownProjects.map(({ path, title, thumbnail }) => (
@@ -129,9 +146,14 @@ const Nav = () => {
                         ))}
                       </ul>
                       {projectScrollHints.down && (
-                        <span aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintBottom">
+                        <button
+                          aria-label="Scroll projects down"
+                          className="projectsDropdownScrollHint projectsDropdownScrollHintBottom"
+                          onClick={() => scrollProjectsDropdown(1)}
+                          type="button"
+                        >
                           <span className="projectsDropdownScrollArrow" />
-                        </span>
+                        </button>
                       )}
                     </div>
                   )}

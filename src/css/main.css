@@ -149,6 +149,11 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
   margin-bottom: 1rem;
 }
 
+.colsContainer p:not(.titleContainer) {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
 .projectDescriptionRow {
   align-items: stretch;
 }
