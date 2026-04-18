@@ -6,6 +6,8 @@ import projects from "../projectData";
 const Nav = () => {
   const location = useLocation();
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const [projectScrollHints, setProjectScrollHints] = useState({ up: false, down: false });
+  const projectsDropdownRef = useRef(null);
   const projectsMenuRef = useRef(null);
   const currentHashPath = window.location.hash.replace(/^#/, '').split('#')[0].toLowerCase();
   const currentPath = location.pathname.toLowerCase();
@@ -17,8 +19,22 @@ const Nav = () => {
   const isIndexPage = !isProjectPage;
   const dropdownProjects = projects.filter(({ path }) => path !== currentProject?.path);
 
+  const updateProjectScrollHints = () => {
+    const dropdown = projectsDropdownRef.current;
+    if (!dropdown) {
+      return;
+    }
+
+    const maxScroll = dropdown.scrollHeight - dropdown.clientHeight;
+    setProjectScrollHints({
+      up: dropdown.scrollTop > 1,
+      down: dropdown.scrollTop < maxScroll - 1,
+    });
+  };
+
   useEffect(() => {
     setIsProjectsOpen(false);
+    setProjectScrollHints({ up: false, down: false });
 
     if (location.hash) {
       const targetElement = document.querySelector(location.hash);
@@ -43,6 +59,20 @@ const Nav = () => {
       document.removeEventListener("mousedown", closeProjectsMenu);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isProjectsOpen) {
+      setProjectScrollHints({ up: false, down: false });
+      return undefined;
+    }
+
+    updateProjectScrollHints();
+    window.addEventListener("resize", updateProjectScrollHints);
+
+    return () => {
+      window.removeEventListener("resize", updateProjectScrollHints);
+    };
+  }, [isProjectsOpen, dropdownProjects.length]);
 
   const handleProjectsClick = (event) => {
     setIsProjectsOpen((isOpen) => !isOpen);
@@ -78,7 +108,12 @@ const Nav = () => {
                     Projects
                   </button>
                   {isProjectsOpen && (
-                    <ul className="projectsDropdown">
+                    <ul className="projectsDropdown" onScroll={updateProjectScrollHints} ref={projectsDropdownRef}>
+                      {projectScrollHints.up && (
+                        <li aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintTop">
+                          <span className="projectsDropdownScrollArrow" />
+                        </li>
+                      )}
                       {dropdownProjects.map(({ path, title, thumbnail }) => (
                         <li key={path}>
                           <Link aria-label={title} className="projectsDropdownLink" to={path}>
@@ -91,6 +126,11 @@ const Nav = () => {
                           </Link>
                         </li>
                       ))}
+                      {projectScrollHints.down && (
+                        <li aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintBottom">
+                          <span className="projectsDropdownScrollArrow" />
+                        </li>
+                      )}
                     </ul>
                   )}
                 </>
