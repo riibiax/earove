@@ -71,7 +71,7 @@ const Nav = () => {
                   <button
                     aria-expanded={isProjectsOpen}
                     aria-haspopup="true"
-                    className="projectsMenuButton"
+                    className={`projectsMenuButton${isProjectsOpen ? ' projectsMenuButtonOpen' : ''}`}
                     onClick={handleProjectsClick}
                     type="button"
                   >

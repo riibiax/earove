@@ -92,6 +92,14 @@
   color: black;
 }
 
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:hover,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:focus,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:active {
+  background-color: white;
+  color: black;
+}
+
 .projectsDropdown {
   border-top: 1px solid #fff;
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
