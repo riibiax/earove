@@ -9,11 +9,13 @@ const Nav = () => {
   const projectsMenuRef = useRef(null);
   const currentHashPath = window.location.hash.replace(/^#/, '').split('#')[0].toLowerCase();
   const currentPath = location.pathname.toLowerCase();
-  const isProjectPage = projects.some(({ path }) => {
+  const currentProject = projects.find(({ path }) => {
     const projectPath = path.toLowerCase();
     return currentPath === projectPath || currentHashPath === projectPath;
   });
+  const isProjectPage = Boolean(currentProject);
   const isIndexPage = !isProjectPage;
+  const dropdownProjects = projects.filter(({ path }) => path !== currentProject?.path);
 
   useEffect(() => {
     setIsProjectsOpen(false);
@@ -77,7 +79,7 @@ const Nav = () => {
                   </button>
                   {isProjectsOpen && (
                     <ul className="projectsDropdown">
-                      {projects.map(({ path, title, thumbnail }) => (
+                      {dropdownProjects.map(({ path, title, thumbnail }) => (
                         <li key={path}>
                           <Link aria-label={title} className="projectsDropdownLink" to={path}>
                             <span
