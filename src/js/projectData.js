@@ -12,7 +12,7 @@ const projects = [
   },
   {
     path: "/vaudoise",
-    title: "THE WAY",
+    title: "The Way",
     thumbnail: "img/vaudoise/vaudoisEscape.png",
   },
   {
@@ -35,32 +35,32 @@ const projects = [
   },
   {
     path: "/baudata",
-    title: "BAUDATA",
+    title: "Baudata",
     thumbnail: "img/baudata/baudata.jpg",
   },
   {
     path: "/aef",
-    title: "ARS ELECTRONICA FESTIVAL",
+    title: "Ars Electronica Festival",
     thumbnail: "img/aef/aef.jpg",
   },
   {
     path: "/tabakFabrik",
-    title: "TABAK FABRIK",
+    title: "Tabak Fabrik",
     thumbnail: "img/tabakfabrik/tabakfabrik.jpg",
   },
   {
     path: "/saltmine",
-    title: "SALT MINE",
+    title: "Salt Mine",
     thumbnail: "img/saltmine/saltmine.jpg",
   },
   {
     path: "/doka",
-    title: "DOKA - BAUMA",
+    title: "Doka - Bauma",
     thumbnail: "img/doka/doka.jpg",
   },
   {
     path: "/bmeia",
-    title: "BMEIA",
+    title: "Bmeia",
     thumbnail: "img/bmeia/bmeia.jpg",
   },
   {
@@ -75,7 +75,7 @@ const projects = [
   },
   {
     path: "/mons",
-    title: "BeeHive",
+    title: "Beehive",
     thumbnail: "img/mons/mons.jpg",
   },
   {
@@ -85,7 +85,7 @@ const projects = [
   },
   {
     path: "/machine",
-    title: "The Machine To Be Another",
+    title: "The Machine to Be Another",
     thumbnail: "img/machine/machine.gif",
     showTitleOnHome: false,
   },

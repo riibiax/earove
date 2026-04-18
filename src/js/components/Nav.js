@@ -108,30 +108,32 @@ const Nav = () => {
                     Projects
                   </button>
                   {isProjectsOpen && (
-                    <ul className="projectsDropdown" onScroll={updateProjectScrollHints} ref={projectsDropdownRef}>
+                    <div className="projectsDropdownFrame">
                       {projectScrollHints.up && (
-                        <li aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintTop">
+                        <span aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintTop">
                           <span className="projectsDropdownScrollArrow" />
-                        </li>
+                        </span>
                       )}
-                      {dropdownProjects.map(({ path, title, thumbnail }) => (
-                        <li key={path}>
-                          <Link aria-label={title} className="projectsDropdownLink" to={path}>
-                            <span
-                              aria-hidden="true"
-                              className="projectsDropdownImage"
-                              style={{ backgroundImage: `url('${thumbnail}')` }}
-                            />
-                            <span className="projectsDropdownTitle">{title}</span>
-                          </Link>
-                        </li>
-                      ))}
+                      <ul className="projectsDropdown" onScroll={updateProjectScrollHints} ref={projectsDropdownRef}>
+                        {dropdownProjects.map(({ path, title, thumbnail }) => (
+                          <li key={path}>
+                            <Link aria-label={title} className="projectsDropdownLink" to={path}>
+                              <span
+                                aria-hidden="true"
+                                className="projectsDropdownImage"
+                                style={{ backgroundImage: `url('${thumbnail}')` }}
+                              />
+                              <span className="projectsDropdownTitle">{title}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                       {projectScrollHints.down && (
-                        <li aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintBottom">
+                        <span aria-hidden="true" className="projectsDropdownScrollHint projectsDropdownScrollHintBottom">
                           <span className="projectsDropdownScrollArrow" />
-                        </li>
+                        </span>
                       )}
-                    </ul>
+                    </div>
                   )}
                 </>
               ) : (
