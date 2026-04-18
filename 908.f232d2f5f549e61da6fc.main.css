@@ -1,0 +1,735 @@
+*, *:before, *:after{
+  margin:0;
+  padding:0;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body, #root{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+body{
+  background: black !important;
+  color: white !important;
+  font-family: Helvetica, sans-serif !important;
+  font-weight: normal !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
+}
+body::-webkit-scrollbar { 
+    display: none; 
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+}
+
+a:visited,a:focus{
+  outline: 0;
+}
+
+.tableCustom { 
+  display: table; 
+  position: relative;
+  width: 100%; 
+  height: 100%; 
+}
+.rowCustom{ 
+  display: table-row; 
+  width: 100%; 
+  height: 100%; 
+}
+.cellCustom {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  clear: both;
+}
+section ul {
+  list-style: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+section li {
+  display: block;
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+}
+.img { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  opacity: 0.5; 
+  background-size: cover;
+  background-position: center center;
+  -ms-transform: rotateZ(0);
+  -o-transform: rotateZ(0);
+  -moz-transform: rotateZ(0);
+  -webkit-transform: rotateZ(0);
+  transform: rotateZ(0);
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27><filter id=%27grayscale%27><feColorMatrix type=%27matrix%27 values=%270.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0%27/></filter></svg>#grayscale");
+  filter: grayscale(100%);
+  filter: gray;
+}
+section li > a:hover .img, section li > a:focus .img, section li > a:active .img {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27><filter id=%27grayscale%27><feColorMatrix type=%27matrix%27 values=%271 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0%27/></filter></svg>#grayscale");
+  filter: grayscale(0%);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+section li h1 { 
+  color: white;
+  letter-spacing: 0.25em;
+  padding: 0 10%;
+  margin: 0;
+  opacity: 0;
+  -ms-transform: translate( 0, -1.25em );
+  -o-transition: 1s ease;
+  -o-transform: translate( 0, -1.25em );
+  -moz-transition: 1s ease;
+  -moz-transform: translate( 0, -1.25em );
+  -webkit-transition: 1s ease;
+  -webkit-transform: translate( 0, -1.25em );
+  transition: 1s ease;
+  transform: translate( 0, -1.25em );
+}
+section li a {
+  text-decoration: none;
+}
+section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
+  -ms-transform: translate( 0, 0 ); 
+  -o-transform: translate( 0, 0 ); 
+  -moz-transform: translate( 0, 0 ); 
+  -webkit-transform: translate( 0, 0 ); 
+  transform: translate( 0, 0 );
+  opacity: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.colsContainer {
+  padding-top: 4.5em; 
+}
+
+.titleContainer {
+  letter-spacing: 0.25em; 
+}
+
+.projectDescriptionRow {
+  align-items: stretch;
+}
+
+.projectDescriptionColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectDescriptionColumn > :last-child {
+  margin-bottom: 0;
+}
+
+.projectDescriptionTitleSpacer {
+  visibility: hidden;
+}
+
+.projectDescriptionFlow {
+  column-count: 2;
+  column-fill: balance;
+  column-gap: 30px;
+}
+
+.projectCarouselNav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.15rem 0 0.4rem;
+  position: relative;
+}
+
+.projectCarousel {
+  margin-top: 0;
+  padding-top: 2.25rem;
+}
+
+.projectCarouselNav .carousel-indicators {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  gap: 0.35rem;
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: static;
+  z-index: 1;
+}
+
+.projectCarouselNav .carousel-indicators button {
+  background-color: #fff;
+  border: 0;
+  flex: 0 1 auto;
+  height: 0.18rem;
+  margin: 0;
+  opacity: 0.5;
+  padding: 0;
+  pointer-events: auto;
+  width: 1.75rem;
+}
+
+.projectCarouselNav .carousel-indicators button.active {
+  opacity: 1;
+}
+
+.projectCarouselArrow {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 2.75rem;
+  font-size: 2rem;
+  height: 2.75rem;
+  justify-content: center;
+  line-height: 1;
+  opacity: 0.75;
+  padding: 0;
+  pointer-events: auto;
+  position: relative;
+  width: 2.75rem;
+  z-index: 2;
+}
+
+.projectCarouselArrow:hover,
+.projectCarouselArrow:focus {
+  opacity: 1;
+}
+
+.projectCarouselArrow:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 0.2rem;
+}
+
+.awards img {
+  width: 12.5em;
+}
+
+
+/* Media query for screens with a maximum width of 47.5em (small devices) */
+@media(max-width: 47.5em) {
+  #rove,
+  #canvasOverlay,
+  .sidebar {
+    display: none !important;
+  }
+  #menu-bar ul {
+    width: 100%;
+  }
+  #menu-bar li:last-child {
+    float: left;
+    width: 100%;
+  }
+  #menu {
+    position: static;
+    display: none;
+  }
+  #menu li,
+  li a,
+  .show-menu,
+  section li {
+    width: 100%;
+  }
+   #root{
+     width: 100%;
+     height: 100%;
+     min-height: 100%;
+   }
+  .show-menu {
+    display: block;
+  }
+  .movie {
+    width: 100%;
+  }
+  .movie iframe {
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .remove-paddings-margins {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .projectDescriptionTitleSpacer {
+    display: none;
+  }
+
+  .projectDescriptionFlow {
+    column-count: 1;
+  }
+
+  .colsContainer > .row > .col-12 > .row > .col-md-6 + .col-md-6 > p:first-child {
+    display: none;
+  }
+
+  .projectCarouselNav {
+    min-height: 2.5rem;
+    padding-top: 0.15rem;
+  }
+
+  .projectCarouselNav .carousel-indicators {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .projectCarouselNav .carousel-indicators button {
+    width: 1.15rem;
+  }
+}
+
+/* Media query for screens with a minimum width of 47.5em (larger devices) */
+@media(min-width: 47.5em) {
+  .movie {
+    min-height: 50rem;
+    width: 100%;
+  }
+  .movieVimeo{
+    min-height: 28rem !important;
+  }
+  .movie iframe {
+    min-height: 100%;
+    min-width: 100%;
+  }
+  .columnsContainer {
+    position: relative;
+  }
+  .leftColumn {
+    margin-right: 50%;
+    padding: 1.5em !important;
+  }
+  .rightColumn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 1.5em !important;
+  }
+  .titleParagraph {
+    padding-bottom: 0.75em !important;
+  }
+  h1 {
+    font-size: 2.0rem !important;
+  }
+
+  .colsContainer > .row > .col-12 > .row {
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 30px;
+    display: block;
+  }
+
+  .colsContainer > .row > .col-12 > .row > .col-md-6 {
+    display: contents;
+  }
+
+  .colsContainer > .row > .col-12 > .row .titleContainer {
+    column-span: all;
+    display: block;
+  }
+
+  .colsContainer > .row > .col-12 > .row > .col-md-6 + .col-md-6 > p:first-child {
+    display: none;
+  }
+
+  .colsContainer > .row > .col-md-12 > .row {
+    align-items: stretch;
+  }
+
+  .colsContainer > .row > .col-md-12 > .row > .col-md-6 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colsContainer > .row > .col-md-12 > .row > .col-md-6 > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+#linkedin {
+  width: 1.65em !important;
+  padding-bottom: 0.15em;
+}
+
+.projectCarousel ~ #contact {
+  margin-top: 2rem;
+}
+
+#contact img {
+  transition: transform 1.0s ease-in-out;
+  width: 1.875em;
+}
+
+#contact img:hover {
+  transform: scale(1.5);
+}
+
+/* menu.css */
+#menu-bar {
+  background-color: black !important;
+  left: 0;
+  min-height: 3rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+#menu-bar ul {
+  background-color: black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-bar > ul {
+  min-height: 3rem;
+  width: 100%;
+}
+
+#menu-bar > ul::after,
+#menu-bar #menu::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#menu-bar li {
+  float: left;
+}
+
+#menu-bar li a,
+.projectsMenuButton,
+.show-menu {
+  background: black;
+  border: 0;
+  display: block;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.875em 1.875em;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.25em;
+}
+
+#menu-bar li a:hover,
+#menu-bar li a:focus,
+#menu-bar li a:active,
+.projectsMenuButton:hover,
+.projectsMenuButton:focus,
+.projectsMenuButton:active,
+.show-menu:hover,
+.show-menu:focus,
+.show-menu:active {
+  background-color: white;
+  color: black;
+  -o-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.projectsMenuItem {
+  position: relative;
+}
+
+.projectsMenuButton {
+  cursor: pointer;
+}
+
+.projectsMenuButton[aria-expanded='false'],
+.projectsMenuButton[aria-expanded='false']:hover,
+.projectsMenuButton[aria-expanded='false']:focus,
+.projectsMenuButton[aria-expanded='false']:active {
+  background-color: black;
+  color: white;
+}
+
+.projectsMenuButton[aria-expanded='true'],
+.projectsMenuButton[aria-expanded='true']:hover,
+.projectsMenuButton[aria-expanded='true']:focus,
+.projectsMenuButton[aria-expanded='true']:active {
+  background-color: white;
+  color: black;
+}
+
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:hover,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:focus,
+#menu-bar .projectsMenuButton.projectsMenuButtonOpen:active {
+  background-color: white;
+  color: black;
+}
+
+.projectsDropdownFrame {
+  border-top: 1px solid #fff;
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.7);
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 101;
+}
+
+.projectsDropdown {
+  display: block;
+  margin: 0;
+  max-height: min(82vh, 38rem);
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.projectsDropdown::-webkit-scrollbar {
+  display: none;
+}
+
+#menu-bar .projectsDropdown li,
+#menu-bar .projectsDropdown li:last-child {
+  display: block;
+  float: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#menu-bar .projectsDropdownLink {
+  background: black;
+  display: block;
+  height: 5.25rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.projectsDropdownScrollHint {
+  align-items: center;
+  background: white;
+  display: flex;
+  height: 1.05rem;
+  justify-content: center;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
+
+.projectsDropdownScrollHintTop {
+  top: 0;
+}
+
+.projectsDropdownScrollHintBottom {
+  bottom: 0;
+}
+
+.projectsDropdownScrollArrow {
+  border-left: 0.28rem solid transparent;
+  border-right: 0.28rem solid transparent;
+  display: block;
+  height: 0;
+  width: 0;
+}
+
+.projectsDropdownScrollHintTop .projectsDropdownScrollArrow {
+  border-bottom: 0.38rem solid black;
+}
+
+.projectsDropdownScrollHintBottom .projectsDropdownScrollArrow {
+  border-top: 0.38rem solid black;
+}
+
+.projectsDropdownImage {
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  filter: grayscale(100%);
+  height: 100%;
+  opacity: 0.75;
+  position: relative;
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  width: 100%;
+}
+
+.projectsDropdownTitle {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  display: flex;
+  font-size: 0.78rem;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  letter-spacing: 0.18em;
+  opacity: 0;
+  padding: 0 0.55rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: opacity 0.4s ease;
+  visibility: hidden;
+  width: 100%;
+}
+
+.projectsDropdownLink:hover .projectsDropdownImage,
+.projectsDropdownLink:focus .projectsDropdownImage {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.projectsDropdownLink:hover .projectsDropdownTitle,
+.projectsDropdownLink:focus .projectsDropdownTitle {
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu-bar > ul > li:last-child {
+  float: right;
+}
+
+#menu-bar #menu > li:last-child {
+  float: left;
+}
+
+.show-menu {
+  letter-spacing: 0.5em;
+  -moz-animation: colorchange 2s infinite alternate ease-in;
+  -o-animation: colorchange 2s infinite alternate ease-in;
+  -webkit-animation: colorchange 2s infinite alternate ease-in;
+  animation: colorchange 2s infinite alternate ease-in;
+}
+
+@-webkit-keyframes colorchange {
+  from {
+    color: white;
+  }
+  to {
+    color: black;
+  }
+}
+
+@keyframes colorchange {
+  from {
+    color: white;
+  }
+  to {
+    color: black;
+  }
+}
+
+.show-menu {
+  background-color: black;
+  display: none;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input[type='checkbox']:checked ~ ul #menu {
+  display: block;
+}
+
+input[type='checkbox']:checked ~ .show-menu {
+  background-color: white;
+  color: black;
+}
+
+@media( max-width:47.5em ) {
+  #rove{
+    display: none !important;
+  }
+  #menu-bar ul{
+    width: 100%;
+  }
+  #menu-bar li:last-child {
+    float: left;
+    width: 100%;
+  }
+  #menu {
+    position: static;
+    display: none;
+  }
+  #menu li, li a {
+    width: 100%;
+  }
+  .projectsMenuButton {
+    width: 100%;
+  }
+  .projectsMenuItem {
+    position: static;
+  }
+  .projectsDropdown {
+    border-top: 0;
+    box-shadow: none;
+    max-height: 65vh;
+    position: static;
+    width: 100%;
+  }
+  #menu-bar .projectsDropdownLink {
+    height: 5.5rem;
+    width: 100%;
+  }
+  .projectsDropdownTitle {
+    font-size: 0.9rem;
+  }
+  .show-menu {
+    display:block;
+  }
+}
+
+
+/*# sourceMappingURL=908.f232d2f5f549e61da6fc.main.css.map*/
