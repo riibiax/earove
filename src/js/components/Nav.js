@@ -99,18 +99,10 @@ const Nav = () => {
               )}
             </li>
             <li>
-              {isIndexPage ? (
-                <a href="#about">About</a>
-              ) : (
-                <Link to="/index.html#about">About</Link>
-              )}
+              <Link to="/index.html#about">About</Link>
             </li>
             <li>
-              {isIndexPage ? (
-                <a href="#contact">Contact</a>
-              ) : (
-                <Link to="/index.html#contact">Contact</Link>
-              )}
+              <Link to="/index.html#contact">Contact</Link>
             </li>
           </ul>
         </li>
