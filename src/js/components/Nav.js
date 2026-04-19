@@ -7,6 +7,7 @@ const Nav = () => {
   const location = useLocation();
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [projectScrollHints, setProjectScrollHints] = useState({ up: false, down: false });
+  const showMenuRef = useRef(null);
   const projectsDropdownRef = useRef(null);
   const projectsMenuRef = useRef(null);
   const currentHashPath = window.location.hash.replace(/^#/, '').split('#')[0].toLowerCase();
@@ -42,6 +43,14 @@ const Nav = () => {
       top: direction * dropdown.clientHeight * 0.8,
       behavior: "smooth",
     });
+  };
+
+  const closeMobileMenu = () => {
+    if (showMenuRef.current) {
+      showMenuRef.current.checked = false;
+    }
+
+    setIsProjectsOpen(false);
   };
 
   useEffect(() => {
@@ -93,16 +102,16 @@ const Nav = () => {
 
   return (
     <nav id="menu-bar">
-      <input type="checkbox" id="show-menu" value="button" />
+      <input type="checkbox" id="show-menu" ref={showMenuRef} value="button" />
       <label htmlFor="show-menu" className="show-menu" aria-label="Toggle Menu">
         Rove
       </label>
       <ul>
         <li id="rove">
           {isIndexPage ? (
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={closeMobileMenu}>Home</Link>
             ) : (
-            <Link to="/index.html#projects">Home</Link>
+            <Link to="/index.html#projects" onClick={closeMobileMenu}>Home</Link>
           )}
         </li>
         <li>
@@ -134,7 +143,7 @@ const Nav = () => {
                       <ul className="projectsDropdown" onScroll={updateProjectScrollHints} ref={projectsDropdownRef}>
                         {dropdownProjects.map(({ path, title, thumbnail }) => (
                           <li key={path}>
-                            <Link aria-label={title} className="projectsDropdownLink" to={path}>
+                            <Link aria-label={title} className="projectsDropdownLink" onClick={closeMobileMenu} to={path}>
                               <span
                                 aria-hidden="true"
                                 className="projectsDropdownImage"
@@ -159,14 +168,14 @@ const Nav = () => {
                   )}
                 </>
               ) : (
-                <Link to="/index.html#projects">Projects</Link>
+                <Link to="/index.html#projects" onClick={closeMobileMenu}>Projects</Link>
               )}
             </li>
             <li>
-              <Link to="/index.html#about">About</Link>
+              <Link to="/index.html#about" onClick={closeMobileMenu}>About</Link>
             </li>
             <li>
-              <Link to="/index.html#contact">Contact</Link>
+              <Link to="/index.html#contact" onClick={closeMobileMenu}>Contact</Link>
             </li>
           </ul>
         </li>
