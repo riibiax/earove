@@ -315,6 +315,11 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
     margin-right: 0 !important;
   }
 
+  .colsContainer .row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .projectDescriptionTitleSpacer {
     display: none;
   }
