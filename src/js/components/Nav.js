@@ -54,15 +54,24 @@ const Nav = () => {
     setIsProjectsOpen(false);
   };
 
+  const scrollToHashTarget = (hash) => {
+    const targetElement = document.querySelector(hash);
+    if (!targetElement) {
+      return;
+    }
+
+    const menuHeight = document.getElementById("menu-bar")?.offsetHeight || 0;
+    const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - menuHeight;
+
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+  };
+
   useEffect(() => {
     setIsProjectsOpen(false);
     setProjectScrollHints({ up: false, down: false });
 
     if (location.hash) {
-      const targetElement = document.querySelector(location.hash);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.requestAnimationFrame(() => scrollToHashTarget(location.hash));
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
