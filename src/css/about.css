@@ -1,16 +1,12 @@
 ﻿#about{ 
-  margin-left: 0;
-  margin-right: 0;
   margin-top: 0em !important;
-  padding-left: 0;
-  padding-right: 0;
   height:auto;
 }
 #about .titleParagraph {
   font-weight: bold;
 }
 .columnsContainer { 
-  padding: .5em 0;
+  padding: .5em;
   line-height: 1.5em;
 }
 .columnsContainer a{ 
@@ -20,10 +16,4 @@
   letter-spacing: 0.25em; 
   padding-bottom: 1.5em; 
   padding-top: 1.5em;
-}
-
-#about .leftColumn,
-#about .rightColumn {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
