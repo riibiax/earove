@@ -205,18 +205,31 @@ section li > a:hover h1, section li > a:focus h1, section li > a:active h1 {
 }
 
 .projectCarouselNav .carousel-indicators button {
-  background-color: #fff;
+  background: transparent;
   border: 0;
   flex: 0 1 auto;
-  height: 0.18rem;
+  height: 1.25rem;
   margin: 0;
-  opacity: 0.5;
+  opacity: 1;
   padding: 0;
   pointer-events: auto;
+  position: relative;
   width: 1.75rem;
 }
 
-.projectCarouselNav .carousel-indicators button.active {
+.projectCarouselNav .carousel-indicators button::before {
+  background-color: #fff;
+  content: "";
+  height: 0.18rem;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.projectCarouselNav .carousel-indicators button.active::before {
   opacity: 1;
 }
 
