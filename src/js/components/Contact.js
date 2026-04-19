@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 import '../../css/contact.css';
 
-const Contact = () => {
+const Contact = ({ className = "" }) => {
   return (
-    <div id="contact" className="container py-4">
+    <div id="contact" className={`container py-4 ${className}`.trim()}>
       <div className="row justify-content-center">
         <div className="col-4 col-md-1 d-flex justify-content-center">
           <a href="mailto:andrearovescalli@gmail.com" target="_blank" rel="noopener noreferrer">

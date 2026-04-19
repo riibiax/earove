@@ -44,7 +44,7 @@ class HomePage extends Component {
         </section>
 
         <About /> 
-        <Contact /> 
+        <Contact className="homeContact" /> 
       </>
     );
   }
