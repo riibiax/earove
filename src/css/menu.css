@@ -332,4 +332,20 @@ input[type='checkbox']:checked ~ .show-menu {
   .show-menu {
     display:block;
   }
+  input[type='checkbox']:not(:checked) ~ .show-menu,
+  input[type='checkbox']:not(:checked) ~ .show-menu:hover,
+  input[type='checkbox']:not(:checked) ~ .show-menu:focus,
+  input[type='checkbox']:not(:checked) ~ .show-menu:active {
+    animation: none;
+    background-color: black;
+    color: white;
+  }
+  input[type='checkbox']:checked ~ .show-menu,
+  input[type='checkbox']:checked ~ .show-menu:hover,
+  input[type='checkbox']:checked ~ .show-menu:focus,
+  input[type='checkbox']:checked ~ .show-menu:active {
+    animation: none;
+    background-color: white;
+    color: black;
+  }
 }
