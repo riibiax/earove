@@ -44,7 +44,7 @@ class HomePage extends Component {
         </section>
 
         <About /> 
-        <Contact className="homeContact d-flex justify-content-center align-items-end" /> 
+        <Contact className="homeContact" /> 
       </>
     );
   }

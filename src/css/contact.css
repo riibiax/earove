@@ -18,11 +18,21 @@
 
 @media (max-width: 47.5em) {
   #contact.homeContact {
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
     min-height: 8rem;
     padding-bottom: 1.75rem !important;
   }
 
   #contact.homeContact .row {
+    flex-wrap: nowrap;
+    justify-content: center;
     width: 100%;
+  }
+
+  #contact.homeContact .col-4 {
+    flex: 0 0 auto;
+    width: 3.75rem;
   }
 }
