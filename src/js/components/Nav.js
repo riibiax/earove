@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "../../css/menu.css";
 import projects from "../projectData";
 
 const Nav = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [projectScrollHints, setProjectScrollHints] = useState({ up: false, down: false });
   const showMenuRef = useRef(null);
@@ -96,6 +97,13 @@ const Nav = () => {
   }, [isProjectsOpen, dropdownProjects.length]);
 
   const handleProjectsClick = (event) => {
+    if (window.matchMedia("(max-width: 47.5em)").matches) {
+      closeMobileMenu();
+      navigate("/index.html#projects");
+      event.currentTarget.blur();
+      return;
+    }
+
     setIsProjectsOpen((isOpen) => !isOpen);
     event.currentTarget.blur();
   };
