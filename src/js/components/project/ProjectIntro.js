@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Renders a project introduction either as balanced free-flow text or as two explicit columns.
+ */
 const ProjectIntro = ({ title, left, right, body }) => (
   <div className="colsContainer container-fluid remove-paddings-margins">
     <div className="row justify-content-center remove-paddings-margins">

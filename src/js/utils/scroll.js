@@ -1,5 +1,8 @@
 ﻿import $ from "jquery";
 
+/**
+ * Smooth-scrolls same-page menu anchors while leaving React hash routes untouched.
+ */
 export function initializeScroll() {
   $(document).ready(function () {
     $('#menu-bar a').on('click', function (event) {
@@ -9,15 +12,12 @@ export function initializeScroll() {
         return;
       }
 
-      // Prevent default anchor click behavior
       event.preventDefault();
-      // Get the target section based on the href attribute of the clicked anchor
       let target = $(href);
-      // Check if the target section exists
+
       if (target.length) {
-        // Calculate the offset to scroll to, considering the height of the fixed menu
         let offset = target.offset().top - $('#menu-bar').outerHeight();
-        // Animate scrolling to the target section
+
         $('html, body').stop().animate({
           scrollTop: offset
         }, 1000);

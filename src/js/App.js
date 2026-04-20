@@ -7,6 +7,9 @@ import { initializeScroll } from "./utils/scroll";
 const basename = process.env.REACT_APP_BASENAME || "/";
 const HomePage = lazy(() => import("./components/HomePage"));
 
+/**
+ * HashRouter route table for the homepage and every lazily loaded project page.
+ */
 const routes = [
   ["/", HomePage],
   ["/index.html", HomePage],
@@ -33,6 +36,9 @@ const routes = [
   ["/vaudoise", lazy(() => import("./components/VaudoisePage"))],
 ];
 
+/**
+ * Mounts the portfolio router and starts the legacy smooth-scroll handler.
+ */
 const App = () => {
   React.useEffect(() => {
     initializeScroll();

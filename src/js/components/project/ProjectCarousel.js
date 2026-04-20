@@ -14,15 +14,27 @@ const slideLabels = [
   "Tenth",
 ];
 
+/**
+ * Builds a readable image alt label from a slide index.
+ */
 const getSlideAlt = (index) => `${slideLabels[index] || `${index + 1}th`} slide`;
 
+/**
+ * Wraps React Bootstrap's carousel with the custom selector and arrow controls below the image.
+ */
 const ProjectCarousel = ({ images, className = "" }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  /**
+   * Moves to the previous image, looping from the first slide to the last.
+   */
   const goToPrevious = () => {
     setActiveIndex((index) => (index === 0 ? images.length - 1 : index - 1));
   };
 
+  /**
+   * Moves to the next image, looping from the last slide to the first.
+   */
   const goToNext = () => {
     setActiveIndex((index) => (index === images.length - 1 ? 0 : index + 1));
   };
@@ -60,6 +72,9 @@ const ProjectCarousel = ({ images, className = "" }) => {
                   type="button"
                 />
               ))}
+            </div>
+            <div className="projectCarouselCounter" aria-live="polite">
+              {activeIndex + 1} / {images.length}
             </div>
             <button className="projectCarouselArrow" type="button" onClick={goToNext} aria-label="Next slide">
               <span aria-hidden="true">&gt;</span>

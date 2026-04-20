@@ -1,8 +1,11 @@
 ﻿// ParticlesScene.js
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import '../../../css/ParticlesScene.css'; // Import the CSS file
+import '../../../css/ParticlesScene.css';
 
+/**
+ * Draws the animated particle-and-line background used behind the homepage grid.
+ */
 const ParticlesScene = () => {
   const mountRef = useRef(null);
 
@@ -26,11 +29,17 @@ const ParticlesScene = () => {
     const colors = new Float32Array(maxParticleCount * maxParticleCount * 3);
     const particlePositions = new Float32Array(maxParticleCount * 3);
 
+    /**
+     * Creates the fixed perspective camera for the full-window background.
+     */
     const initCamera = () => {
       camera = new THREE.PerspectiveCamera(50, rX / rY, 1, 4000);
       camera.position.z = 750;
     };
 
+    /**
+     * Builds the point cloud and line geometry that are updated every animation frame.
+     */
     const initScene = () => {
       scene = new THREE.Scene();
 
@@ -82,6 +91,9 @@ const ParticlesScene = () => {
 
     };
 
+    /**
+     * Attaches the transparent WebGL renderer to the React mount node.
+     */
     const initRenderer = () => {
       renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: false, antialias: true });
       renderer.setPixelRatio(window.devicePixelRatio);
@@ -92,6 +104,9 @@ const ParticlesScene = () => {
       mountRef.current.appendChild(renderer.domElement);
     };
 
+    /**
+     * Keeps the camera and renderer matched to the browser viewport.
+     */
     const onWindowResize = () => {
       const rX = window.innerWidth;
       const rY = window.innerHeight;
@@ -100,6 +115,9 @@ const ParticlesScene = () => {
       renderer.setSize(rX, rY);
     };
 
+    /**
+     * Advances particle positions and draws lines between nearby particles.
+     */
     const animate = () => {
       let vertexpos = 0;
       let colorpos = 0;
@@ -164,6 +182,9 @@ const ParticlesScene = () => {
       renderer.render(scene, camera);
     };
 
+    /**
+     * Starts the Three.js scene and registers resize behavior.
+     */
     const init = () => {
       initCamera();
       initScene();

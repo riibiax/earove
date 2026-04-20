@@ -1,6 +1,9 @@
 ﻿import React from 'react';
 import '../../css/contact.css';
 
+/**
+ * Renders the reusable contact icon row.
+ */
 const Contact = ({ className = "" }) => {
   return (
     <div id="contact" className={`container py-4 ${className}`.trim()}>

@@ -1,6 +1,9 @@
 ﻿import React from 'react';
 import "../../css/about.css";
 
+/**
+ * Renders the homepage biography, education, research, and CV links.
+ */
 const About = () => {
   return (
     <section id="about" className="columnsContainer">

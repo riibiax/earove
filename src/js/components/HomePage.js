@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 import ParticlesScene from './threejs/ParticlesScene';
 import projects from "../projectData";
 
+/**
+ * Renders the landing grid, background particle scene, about text, and contact section.
+ */
 class HomePage extends Component {
   render() {
     return (

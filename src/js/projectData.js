@@ -1,3 +1,6 @@
+/**
+ * Shared project metadata used by the homepage grid and the Projects dropdown.
+ */
 const projects = [
   {
     path: "/kf",

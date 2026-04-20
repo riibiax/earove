@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Embeds a responsive project video with optional iframe attributes.
+ */
 const ProjectVideo = ({ src, className = "", iframeProps = {} }) => (
   <div className={`container-fluid remove-paddings-margins ${className}`.trim()}>
     <div className="row justify-content-center remove-paddings-margins">
