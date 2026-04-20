@@ -99,7 +99,7 @@ const ParticlesScene = () => {
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(rX, rY);
       renderer.autoClearColor = false;
-      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.domElement.id = 'particlesSceneOverlay';
       mountRef.current.appendChild(renderer.domElement);
     };
