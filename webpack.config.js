@@ -9,53 +9,74 @@ module.exports = (env, argv) => {
   const publicPath = isProduction ? "/earove/" : "/";
 
   return {
-  entry: "./src/js/App.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: isProduction ? "main.[contenthash].js" : "main.js",
-    chunkFilename: isProduction ? "[name].[contenthash].main.js" : "[name].main.js",
-    publicPath,
-    clean: true,
-  },
-  devtool: "source-map",
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              ["@babel/preset-env", { targets: "defaults" }],
-              ["@babel/preset-react", { runtime: "automatic" }],
-            ],
+    entry: "./src/js/App.js",
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: isProduction ? "main.[contenthash].js" : "main.js",
+      chunkFilename: isProduction ? "[name].[contenthash].main.js" : "[name].main.js",
+      publicPath,
+      clean: true,
+    },
+    devtool: isProduction ? false : "eval-cheap-module-source-map",
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                ["@babel/preset-env", { targets: "defaults" }],
+                ["@babel/preset-react", { runtime: "automatic" }],
+              ],
+            },
+          },
+        },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+        {
+          test: /\.(png|jpe?g|gif|ico|pdf)$/i,
+          type: "asset/resource",
+        },
+      ],
+    },
+    resolve: {
+      extensions: [".js", ".jsx"],
+    },
+    optimization: {
+      chunkIds: "deterministic",
+      moduleIds: "deterministic",
+      runtimeChunk: "single",
+      splitChunks: {
+        chunks: "async",
+        cacheGroups: {
+          styles: {
+            name: "styles",
+            type: "css/mini-extract",
+            chunks: "all",
+            enforce: true,
+          },
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            chunks: "async",
           },
         },
       },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
-        test: /\.(png|jpe?g|gif|ico|pdf)$/i,
-        type: "asset/resource",
-      },
-    ],
-  },
-  resolve: {
-    extensions: [".js", ".jsx"],
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.REACT_APP_BASENAME": JSON.stringify("/"),
-    }),
-    new MiniCssExtractPlugin({
-      filename: isProduction ? "main.[contenthash].css" : "main.css",
-      chunkFilename: isProduction ? "[name].[contenthash].main.css" : "[name].main.css",
-    }),
-    new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) => `<!doctype html>
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        "process.env.REACT_APP_BASENAME": JSON.stringify("/"),
+      }),
+      new MiniCssExtractPlugin({
+        filename: isProduction ? "main.[contenthash].css" : "main.css",
+        chunkFilename: isProduction ? "[name].[contenthash].main.css" : "[name].main.css",
+      }),
+      new HtmlWebpackPlugin({
+        templateContent: ({ htmlWebpackPlugin }) => `<!doctype html>
 <html>
 <head>
   <title>Andrea Rovescalli</title>
@@ -78,26 +99,26 @@ module.exports = (env, argv) => {
   ${htmlWebpackPlugin.tags.bodyTags}
 </body>
 </html>`,
-      inject: false,
-      minify: isProduction,
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "img", to: "img", noErrorOnMissing: true },
-        { from: "docs", to: "docs", noErrorOnMissing: true },
-        { from: "d8210a18b13b602bc230.ico", to: "d8210a18b13b602bc230.ico", noErrorOnMissing: true },
-        { from: "playframe.html", to: "playframe.html", noErrorOnMissing: true },
-        { from: "sitemap.xml", to: "sitemap.xml", noErrorOnMissing: true },
-      ],
-    }),
-  ],
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
+        inject: false,
+        minify: isProduction,
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: "img", to: "img", noErrorOnMissing: true },
+          { from: "docs", to: "docs", noErrorOnMissing: true },
+          { from: "d8210a18b13b602bc230.ico", to: "d8210a18b13b602bc230.ico", noErrorOnMissing: true },
+          { from: "playframe.html", to: "playframe.html", noErrorOnMissing: true },
+          { from: "sitemap.xml", to: "sitemap.xml", noErrorOnMissing: true },
+        ],
+      }),
+    ],
+    devServer: {
+      static: {
+        directory: path.resolve(__dirname, "dist"),
+      },
+      historyApiFallback: true,
+      hot: true,
+      port: 8080,
     },
-    historyApiFallback: true,
-    hot: true,
-    port: 8080,
-  },
-};
+  };
 };
