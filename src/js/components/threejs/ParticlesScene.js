@@ -13,15 +13,16 @@ const ParticlesScene = () => {
     let camera, scene, renderer;
     let group, pointCloud, linesMesh;
     const particlesData = [];
-    const maxParticleCount = window.mobilecheck ? 10 : 150;
-    const particleCount = window.mobilecheck ? 5 : 75;
+    const isMobile = Boolean(window.mobilecheck);
+    const maxParticleCount = isMobile ? 8 : 150;
+    const particleCount = isMobile ? 4 : 75;
     const rX = window.innerWidth;
     const rY = window.innerHeight;
     const rHalfX = rX / 2;
     const rHalfY = rY / 2;
 
     const effectController = {
-      minDistance: 75,
+      minDistance: isMobile ? 120 : 75,
       maxConnections: 2,
     };
 

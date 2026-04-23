@@ -336,7 +336,10 @@ input[type='checkbox']:checked ~ .show-menu {
   input[type='checkbox']:not(:checked) ~ .show-menu:hover,
   input[type='checkbox']:not(:checked) ~ .show-menu:focus,
   input[type='checkbox']:not(:checked) ~ .show-menu:active {
-    animation: none;
+    -moz-animation: colorchange 2s infinite alternate ease-in;
+    -o-animation: colorchange 2s infinite alternate ease-in;
+    -webkit-animation: colorchange 2s infinite alternate ease-in;
+    animation: colorchange 2s infinite alternate ease-in;
     background-color: black;
     color: white;
   }
