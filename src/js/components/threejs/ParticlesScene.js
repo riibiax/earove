@@ -18,13 +18,13 @@ const ParticlesScene = () => {
 
       return isMobile
         ? {
-          maxParticleCount: 10,
-          particleCount: 5,
-          minDistance: 135,
+          maxParticleCount: 30,
+          particleCount: 15,
+          minDistance: 120,
           cameraFov: 62,
           cameraZ: 920,
-          pointSize: 1.4,
-          speed: 0.18,
+          pointSize: 1.5,
+          speed: 0.15,
           maxPixelRatio: 1.5,
         }
         : {
