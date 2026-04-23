@@ -13,13 +13,13 @@ const ParticlesScene = () => {
     let camera, scene, renderer;
     let group, pointCloud, linesMesh;
     const particlesData = [];
-    const isMobile = Boolean(window.mobilecheck);
+    const isMobile = window.matchMedia('(max-width: 47.5em)').matches;
     const maxParticleCount = isMobile ? 8 : 150;
     const particleCount = isMobile ? 4 : 75;
-    const rX = window.innerWidth;
-    const rY = window.innerHeight;
-    const rHalfX = rX / 2;
-    const rHalfY = rY / 2;
+    let rX = window.innerWidth;
+    let rY = window.innerHeight;
+    let rHalfX = rX / 2;
+    let rHalfY = rY / 2;
 
     const effectController = {
       minDistance: isMobile ? 120 : 75,
@@ -109,8 +109,10 @@ const ParticlesScene = () => {
      * Keeps the camera and renderer matched to the browser viewport.
      */
     const onWindowResize = () => {
-      const rX = window.innerWidth;
-      const rY = window.innerHeight;
+      rX = window.innerWidth;
+      rY = window.innerHeight;
+      rHalfX = rX / 2;
+      rHalfY = rY / 2;
       camera.aspect = rX / rY;
       camera.updateProjectionMatrix();
       renderer.setSize(rX, rY);
