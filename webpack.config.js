@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     entry: "./src/js/App.js",
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: isProduction ? "main.[contenthash].js" : "main.js",
+      filename: isProduction ? "main.[contenthash].js" : "[name].js",
       chunkFilename: isProduction ? "[name].[contenthash].main.js" : "[name].main.js",
       publicPath,
       clean: true,
