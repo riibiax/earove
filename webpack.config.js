@@ -7,6 +7,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   const publicPath = isProduction ? "/earove/" : "/";
+  const siteUrl = "https://riibiax.github.io/earove/";
+  const siteTitle = "Andrea Rovescalli";
+  const siteDescription = "Portfolio of Andrea Rovescalli, interaction designer and creative technologist working across digital experiences, installations, games, and spatial design.";
 
   return {
     entry: "./src/js/App.js",
@@ -77,19 +80,28 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         templateContent: ({ htmlWebpackPlugin }) => `<!doctype html>
-<html>
+<html lang="en">
 <head>
   <title>Andrea Rovescalli</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="Andrea Rovescalli Rove Haute Ecole Geneve cv Portfolio Head Milano Politecnico Design Interaction Art Designer Interactive Ars Electronica Solutions UDIMU Linz Lausanne aes aec ozwe video games unity creative coder">
+  <meta name="description" content="${siteDescription}">
   <meta name="robots" content="index, follow">
-  <meta property="og:url" content="http://www.earove.info">
-  <meta property="og:image" content="${publicPath}d8210a18b13b602bc230.ico">
-  <meta property="og:site_name" content="Andrea Rovescalli">
-  <meta property="og:title" content="Andrea Rovescalli">
+  <meta name="theme-color" content="#000000">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="${siteUrl}">
+  <meta property="og:url" content="${siteUrl}">
+  <meta property="og:image" content="${siteUrl}img/kf/kf.png">
+  <meta property="og:site_name" content="${siteTitle}">
+  <meta property="og:title" content="${siteTitle}">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Andrea Rovescalli Rove Haute Ecole Geneve cv Portfolio Head Milano Politecnico Design Interaction Art Designer Interactive Ars Electronica Solutions UDIMU Linz Lausanne aes aec ozwe video games unity creative coder">
+  <meta property="og:description" content="${siteDescription}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${siteTitle}">
+  <meta name="twitter:description" content="${siteDescription}">
+  <meta name="twitter:image" content="${siteUrl}img/kf/kf.png">
+  <meta name="apple-mobile-web-app-title" content="${siteTitle}">
   <link rel="shortcut icon" href="${publicPath}d8210a18b13b602bc230.ico" type="image/x-icon">
   <link rel="icon" type="image/x-icon" href="${publicPath}d8210a18b13b602bc230.ico">
   ${htmlWebpackPlugin.tags.headTags}
