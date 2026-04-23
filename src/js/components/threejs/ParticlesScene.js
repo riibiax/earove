@@ -13,16 +13,41 @@ const ParticlesScene = () => {
     let camera, scene, renderer;
     let group, pointCloud, linesMesh;
     const particlesData = [];
-    const isMobile = window.matchMedia('(max-width: 47.5em)').matches;
-    const maxParticleCount = isMobile ? 8 : 150;
-    const particleCount = isMobile ? 4 : 75;
+    const getSceneConfig = () => {
+      const isMobile = window.matchMedia('(max-width: 47.5em)').matches;
+
+      return isMobile
+        ? {
+          maxParticleCount: 10,
+          particleCount: 5,
+          minDistance: 135,
+          cameraFov: 62,
+          cameraZ: 920,
+          pointSize: 1.4,
+          speed: 0.18,
+          maxPixelRatio: 1.5,
+        }
+        : {
+          maxParticleCount: 150,
+          particleCount: 75,
+          minDistance: 75,
+          cameraFov: 50,
+          cameraZ: 750,
+          pointSize: 1,
+          speed: 0.3,
+          maxPixelRatio: 2,
+        };
+    };
+
+    let sceneConfig = getSceneConfig();
+    const { maxParticleCount, particleCount } = sceneConfig;
     let rX = window.innerWidth;
     let rY = window.innerHeight;
     let rHalfX = rX / 2;
     let rHalfY = rY / 2;
 
     const effectController = {
-      minDistance: isMobile ? 120 : 75,
+      minDistance: sceneConfig.minDistance,
       maxConnections: 2,
     };
 
@@ -34,8 +59,8 @@ const ParticlesScene = () => {
      * Creates the fixed perspective camera for the full-window background.
      */
     const initCamera = () => {
-      camera = new THREE.PerspectiveCamera(50, rX / rY, 1, 4000);
-      camera.position.z = 750;
+      camera = new THREE.PerspectiveCamera(sceneConfig.cameraFov, rX / rY, 1, 4000);
+      camera.position.z = sceneConfig.cameraZ;
     };
 
     /**
@@ -49,7 +74,7 @@ const ParticlesScene = () => {
 
       const pMaterial = new THREE.PointsMaterial({
         color: 0xffffff,
-        size: 1,
+        size: sceneConfig.pointSize,
         blending: THREE.AdditiveBlending,
         transparent: true,
         sizeAttenuation: false,
@@ -97,7 +122,7 @@ const ParticlesScene = () => {
      */
     const initRenderer = () => {
       renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: false, antialias: true });
-      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, sceneConfig.maxPixelRatio));
       renderer.setSize(rX, rY);
       renderer.autoClearColor = false;
       renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -113,8 +138,15 @@ const ParticlesScene = () => {
       rY = window.innerHeight;
       rHalfX = rX / 2;
       rHalfY = rY / 2;
+      sceneConfig = getSceneConfig();
+      effectController.minDistance = sceneConfig.minDistance;
+      camera.fov = sceneConfig.cameraFov;
+      camera.position.z = sceneConfig.cameraZ;
       camera.aspect = rX / rY;
       camera.updateProjectionMatrix();
+      pointCloud.material.size = sceneConfig.pointSize;
+      pointCloud.material.needsUpdate = true;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, sceneConfig.maxPixelRatio));
       renderer.setSize(rX, rY);
     };
 
@@ -131,8 +163,8 @@ const ParticlesScene = () => {
       for (let i = 0; i < particleCount; i++) {
         const particleData = particlesData[i];
 
-        particlePositions[i * 3] += particleData.velocity.x * 0.3;
-        particlePositions[i * 3 + 1] += particleData.velocity.y * 0.3;
+        particlePositions[i * 3] += particleData.velocity.x * sceneConfig.speed;
+        particlePositions[i * 3 + 1] += particleData.velocity.y * sceneConfig.speed;
 
         if (particlePositions[i * 3] < -rX / 2 || particlePositions[i * 3] > rX / 2) {
           particleData.velocity.x = -particleData.velocity.x;
