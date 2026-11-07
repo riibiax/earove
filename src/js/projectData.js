@@ -3,6 +3,11 @@
  */
 const projects = [
   {
+    path: "/evoka",
+    title: "Èvokâ II",
+    thumbnail: "img/evoka/evoka.jpg",
+  },
+  {
     path: "/kf",
     title: "KF Watches",
     thumbnail: "img/kf/kf.png",

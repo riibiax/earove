@@ -13,6 +13,7 @@ const HomePage = lazy(() => import("./components/HomePage"));
 const routes = [
   ["/", HomePage],
   ["/index.html", HomePage],
+  ["/evoka", lazy(() => import("./components/EvokaPage"))],
   ["/kf", lazy(() => import("./components/KfPage"))],
   ["/ecole42", lazy(() => import("./components/Ecole42Page"))],
   ["/aef", lazy(() => import("./components/AefPage"))],
