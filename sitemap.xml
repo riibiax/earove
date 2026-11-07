@@ -1,48 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://riibiax.github.io/earove/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/index.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/playframe.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/docs/the_domestication_of_kinetic_art.pdf</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/docs/rovescalli_cv.pdf</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/docs/rovescalli_cv_ita.pdf</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://riibiax.github.io/earove/docs/rovescalli_cv_fr.pdf</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.50</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://riibiax.github.io/earove/</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://riibiax.github.io/earove/docs/the_domestication_of_kinetic_art.pdf</loc><lastmod>2026-11-06</lastmod><priority>0.5</priority></url>
+  <url><loc>https://riibiax.github.io/earove/docs/andrea-rovescalli-skills-en.pdf</loc><lastmod>2026-11-06</lastmod><priority>0.6</priority></url>
+  <url><loc>https://riibiax.github.io/earove/docs/andrea-rovescalli-skills-fr.pdf</loc><lastmod>2026-11-06</lastmod><priority>0.5</priority></url>
+  <url><loc>https://riibiax.github.io/earove/docs/andrea-rovescalli-skills-it.pdf</loc><lastmod>2026-11-06</lastmod><priority>0.5</priority></url>
 </urlset>
