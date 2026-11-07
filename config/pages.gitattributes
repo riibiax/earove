@@ -1,0 +1,3 @@
+# Published Pages files must be real content, never Git LFS pointers.
+# Source assets use LFS on master; this override applies only to the built site.
+* -filter

@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   const publicPath = isProduction ? "/earove/" : "/";
   const siteUrl = "https://riibiax.github.io/earove/";
   const siteTitle = "Andrea Rovescalli";
-  const siteDescription = "Portfolio of Andrea Rovescalli, interaction designer and creative technologist working across digital experiences, installations, games, and spatial design.";
+  const siteDescription = "Portfolio of Andrea Rovescalli, senior software engineer based in Lausanne, working across artificial intelligence, interactive experiences, real-time 3D, XR and games.";
 
   return {
     entry: "./src/js/App.js",
@@ -43,6 +43,11 @@ module.exports = (env, argv) => {
         {
           test: /\.(png|jpe?g|gif|ico|pdf)$/i,
           type: "asset/resource",
+        },
+        {
+          test: /\.(woff2?|ttf)$/i,
+          type: "asset/resource",
+          generator: { filename: "fonts/[name].[contenthash][ext]" },
         },
       ],
     },
@@ -118,8 +123,14 @@ module.exports = (env, argv) => {
         patterns: [
           { from: "img", to: "img", noErrorOnMissing: true },
           { from: "docs", to: "docs", noErrorOnMissing: true },
+          // Keep older public CV URLs valid using the current approved editions.
+          { from: "docs/andrea-rovescalli-skills-en.pdf", to: "docs/rovescalli_cv.pdf" },
+          { from: "docs/andrea-rovescalli-skills-fr.pdf", to: "docs/rovescalli_cv_fr.pdf" },
+          { from: "docs/andrea-rovescalli-skills-it.pdf", to: "docs/rovescalli_cv_ita.pdf" },
+          { from: "src/fonts/*-OFL.txt", to: "fonts/[name][ext]" },
           { from: "d8210a18b13b602bc230.ico", to: "d8210a18b13b602bc230.ico", noErrorOnMissing: true },
-          { from: "playframe.html", to: "playframe.html", noErrorOnMissing: true },
+          { from: ".nojekyll", to: ".nojekyll", toType: "file" },
+          { from: "config/pages.gitattributes", to: ".gitattributes", toType: "file" },
           { from: "sitemap.xml", to: "sitemap.xml", noErrorOnMissing: true },
         ],
       }),

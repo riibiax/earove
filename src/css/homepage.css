@@ -1,3 +1,168 @@
-﻿#projects{
-  margin-top: 3.25em;
+@import "./fonts.css";
+
+/* Homepage and shared contact-footer tokens. Rules stay scoped so the project
+   layout can use its own spacing while retaining the same typefaces and palette. */
+body.editorial-home-active { background: #fff !important; color: #202020 !important; font-family: "Portfolio Sans", Helvetica, sans-serif !important; }
+.editorial-home {
+  --home-ink: #202020;
+  --home-muted: #626262;
+  --home-line: #e5e5e5;
+  --home-accent: #ff832b;
+  --home-accent-text: var(--home-accent); /* Keep the original bright FIELD orange. */
+  --home-gutter: clamp(24px, 4.5vw, 72px);
+  /* Separate the gap before a section from the padding inside it. */
+  --home-section-gap: 48px;
+  --home-section-padding: 40px;
+  --home-heading-gap: 24px;
+  --home-label-size: 12px;
+  --home-small-size: 14px;
+  --home-entry-size: clamp(16px, 1.45vw, 18px);
+  background: #fff; color: var(--home-ink);
+  font: 400 18px/1.5 "Portfolio Sans", Helvetica, sans-serif;
+}
+.editorial-home *, .editorial-home *::before, .editorial-home *::after { box-sizing: border-box; }
+.editorial-home .home-shell { width: 100%; max-width: 1584px; padding-inline: var(--home-gutter); margin-inline: auto; }
+.editorial-home section { position: relative; width: auto; height: auto; clear: none; scroll-margin-top: 32px; }
+.editorial-home h1, .editorial-home h2, .editorial-home h3, .editorial-home p { margin: 0; }
+.editorial-home a { color: inherit; text-decoration: none; }
+.editorial-home a:focus-visible, .editorial-home button:focus-visible { outline: 2px solid var(--home-ink); outline-offset: 6px; }
+.editorial-home .home-skip-link { position: absolute; left: var(--home-gutter); top: 12px; transform: translateY(-200%); z-index: 10; background: #fff; padding: 12px; }
+.editorial-home .home-skip-link:focus { transform: none; }
+
+/* Header and introductory composition. */
+.editorial-home .home-header { display: flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 112px; }
+.editorial-home .home-wordmark { font-size: 18px; font-weight: 500; letter-spacing: -.035em; }
+.editorial-home .home-navigation { display: flex; gap: clamp(24px, 3vw, 48px); font-size: 15px; color: var(--home-muted); }
+.editorial-home .home-navigation a { padding-block: 12px; transition: color 180ms ease; }
+.editorial-home .home-navigation a:hover { color: var(--home-ink); }
+.editorial-home .home-hero { display: grid; grid-template-columns: 1.8fr 1fr; align-items: end; gap: 48px; padding-block: 72px var(--home-section-gap); }
+.editorial-home .home-hero h1 { font-size: clamp(48px, 6.5vw, 100px) !important; font-weight: 400; line-height: 1.01; letter-spacing: -.065em; }
+.editorial-home .home-hero h1 span { color: var(--home-accent); }
+.editorial-home .home-introduction { max-width: 310px; justify-self: end; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.55; padding-bottom: 5px; }
+.editorial-home .home-location { color: var(--home-muted); margin-top: 28px; font-size: 14px; }
+
+/* Project pairs replace the old floats. Change ratio and stagger here. */
+.editorial-home #projects { margin-top: 0; }
+.editorial-home .home-section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--home-line); padding-block: var(--home-section-padding) var(--home-heading-gap); }
+.editorial-home .home-section-heading .home-editorial-heading { margin-bottom: 0; }
+.editorial-home .home-section-heading p {
+  font: 400 var(--home-label-size)/1.5 "Portfolio Mono", monospace;
+  color: var(--home-muted);
+}
+.editorial-home .home-project-pairs { display: grid; gap: 64px; }
+.editorial-home .home-project-pair { display: grid; grid-template-columns: 1.2fr 1fr; align-items: start; gap: 40px; }
+.editorial-home .home-project-pair:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
+.editorial-home .home-project-pair > .home-project:nth-child(2) { margin-top: 88px; }
+.editorial-home .home-project-link { display: block; }
+.editorial-home .home-project-media { overflow: hidden; background: #f2f2f2; aspect-ratio: 1.4; }
+.editorial-home .home-project-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(.2,.7,.3,1); }
+.editorial-home .home-project-link:hover img { transform: scale(1.035); }
+.editorial-home .home-project-caption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin-top: 20px; }
+.editorial-home .home-project-caption h3 { font-size: 21px; font-weight: 400; line-height: 1.3; letter-spacing: -.035em; color: var(--home-accent-text); }
+.editorial-home .home-project-category { display: flex; align-items: center; gap: 12px; font: 400 var(--home-label-size)/1.5 "Portfolio Mono", monospace; color: var(--home-muted); }
+.editorial-home .home-project-arrow { font: 400 18px/1 "Portfolio Sans", sans-serif; color: var(--home-ink); transition: transform 180ms ease; }
+.editorial-home .home-project-link:hover .home-project-arrow { transform: translate(2px, -2px); }
+.editorial-home .home-project-description { margin-top: 8px; font-size: var(--home-small-size); line-height: 1.5; color: var(--home-muted); }
+.editorial-home .home-work-end { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: var(--home-section-gap); padding-block: 28px; border-block: 1px solid var(--home-line); }
+.editorial-home .home-work-end p { color: var(--home-muted); font-size: 14px; }
+.editorial-home .home-archive-toggle { display: inline-flex; align-items: center; gap: 24px; background: none; color: var(--home-accent-text); border: 0; padding: 8px 0; font: inherit; font-size: 16px; cursor: pointer; }
+.editorial-home .home-archive-toggle span { font-size: 22px; }
+.editorial-home .home-archive { padding-top: 32px; }
+.editorial-home .home-archive h3 { font-size: 20px; font-weight: 400; margin-bottom: 20px; }
+.editorial-home .home-archive-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; list-style: none; margin: 0; padding: 0; height: auto; }
+.editorial-home .home-archive-list li { float: none; position: static; width: auto; height: auto; cursor: auto; }
+.editorial-home .home-archive-list a { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 15px; border-bottom: 1px solid var(--home-line); font-size: 14px; }
+.editorial-home .home-archive-list a:hover { color: var(--home-muted); }
+
+/* Section titles share a scale. The hero and contact callout use display type. */
+.editorial-home .home-editorial-heading {
+  color: var(--home-accent-text);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.15;
+  margin-bottom: var(--home-heading-gap);
+}
+
+/* Profile, education, research and CV flow vertically. */
+.editorial-home .home-about { margin-block: var(--home-section-gap); }
+.editorial-home .home-about-profile { padding: var(--home-section-padding) clamp(28px, 4vw, 64px); background: radial-gradient(ellipse at 100% 0%, #ff832b17, transparent 65%), linear-gradient(120deg, #fffaf5, #fff); }
+.editorial-home .home-about-copy { max-width: 1040px; font-size: clamp(21px, 2.4vw, 32px); letter-spacing: -.025em; line-height: 1.5; }
+.editorial-home .home-about-copy p + p { margin-top: 24px; }
+.editorial-home .home-highlight { color: var(--home-accent-text); }
+.editorial-home .home-about-section { border-top: 1px solid var(--home-line); padding-top: var(--home-section-padding); margin-top: var(--home-section-gap); }
+.editorial-home .home-education-list { display: block; list-style: none; padding: 0; margin: 0; }
+.editorial-home .home-education-list li { display: grid; grid-template-columns: 92px max-content minmax(0, 1fr); align-items: baseline; gap: 20px; float: none; position: static; width: auto; height: auto; cursor: auto; padding: 0; margin: 0 0 20px; }
+.editorial-home .home-education-list li:last-child { margin-bottom: 0; }
+.editorial-home .home-education-years { font: 400 var(--home-label-size)/1.5 "Portfolio Mono", monospace; color: var(--home-accent-text); }
+.editorial-home .home-education-list h4 { font-size: var(--home-entry-size); font-weight: 400; line-height: 1.5; letter-spacing: -.025em; margin: 0; }
+.editorial-home .home-education-list p, .editorial-home .home-research p { color: var(--home-muted); font-size: var(--home-small-size); line-height: 1.5; }
+.editorial-home .home-research-entry { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 28px; }
+.editorial-home .home-research a { display: inline-flex; align-items: baseline; gap: 24px; font-size: var(--home-entry-size); line-height: 1.5; }
+.editorial-home .home-research a span { color: var(--home-accent-text); }
+.editorial-home .home-research-institution-short { display: none; }
+.editorial-home .home-cv-links { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.editorial-home .home-cv-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+  color: var(--home-ink);
+  font-size: var(--home-entry-size);
+}
+.editorial-home .home-cv-links a:is(:hover, :focus-visible),
+.editorial-home .home-research a:is(:hover, :focus-visible) { color: var(--home-accent-text); }
+
+/* A white editorial footer with orange accents, matching the project gallery. */
+.editorial-home .home-footer { padding-bottom: 36px; scroll-margin-top: 32px; background: #fff; }
+.editorial-home .home-footer-top { border-top: 1px solid var(--home-line); padding-block: 56px; text-align: center; }
+.editorial-home#home-top .home-footer-top { padding-block: var(--home-section-padding) var(--home-section-gap); }
+.editorial-home .home-footer h2 { font-size: clamp(38px, 5vw, 72px); font-weight: 400; line-height: 1.15; letter-spacing: -.055em; color: var(--home-ink); margin-bottom: var(--home-heading-gap); }
+/* Icon-only links retain accessible names and generous keyboard/touch targets. */
+.editorial-home .home-contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.editorial-home .home-contact-links a { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; color: var(--home-ink); transition: color 180ms ease, transform 180ms ease; }
+.editorial-home .home-contact-icon { display: block; width: 32px; height: 32px; background: currentColor; mask: var(--contact-icon) center / contain no-repeat; -webkit-mask: var(--contact-icon) center / contain no-repeat; }
+.editorial-home .home-contact-links a:hover { transform: translateY(-3px); }
+.editorial-home .home-contact-links a:hover { color: var(--home-accent); }
+.editorial-home .home-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px 32px; border-top: 1px solid var(--home-line); padding-top: 28px; font-size: 12px; color: var(--home-muted); }
+
+@media (max-width: 1000px) {
+  .editorial-home { --home-section-gap: 40px; --home-section-padding: 32px; }
+  .editorial-home .home-hero { grid-template-columns: 1fr; gap: 32px; padding-top: 48px; }
+  .editorial-home .home-introduction { justify-self: start; max-width: 440px; }
+  .editorial-home .home-project-pair { gap: 24px; }
+  .editorial-home .home-project-caption { align-items: start; flex-direction: column; }
+  .editorial-home .home-project-pair > .home-project:nth-child(2) { margin-top: 64px; }
+  .editorial-home .home-archive-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Education stays on one line on desktop and flows naturally on narrow screens. */
+@media (max-width: 800px) {
+  .editorial-home .home-education-list li { grid-template-columns: 1fr; gap: 4px; margin-bottom: 24px; }
+}
+@media (max-width: 640px) {
+  .editorial-home { --home-section-gap: 32px; --home-section-padding: 28px; }
+  .editorial-home .home-header { min-height: 92px; flex-wrap: wrap; gap: 8px 20px; padding-block: 20px; }
+  .editorial-home .home-wordmark { font-size: 16px; }
+  .editorial-home .home-navigation { font-size: 13px; gap: 22px; }
+  .editorial-home .home-hero { padding-top: 40px; }
+  .editorial-home .home-hero h1 { font-size: clamp(39px, 8.9vw, 58px) !important; letter-spacing: -.06em; }
+  .editorial-home .home-location { margin-top: 20px; }
+  .editorial-home .home-project-pairs { gap: 40px; }
+  .editorial-home .home-project-pair, .editorial-home .home-project-pair:nth-child(even) { grid-template-columns: 1fr; gap: 40px; }
+  .editorial-home .home-project-pair > .home-project:nth-child(2) { margin-top: 0; }
+  .editorial-home .home-project-media { aspect-ratio: 1.3; }
+  .editorial-home .home-project-caption { margin-top: 16px; flex-direction: row; }
+  .editorial-home .home-project-caption h3 { font-size: 20px; }
+  .editorial-home .home-archive-list { grid-template-columns: 1fr; }
+  .editorial-home .home-footer-top { padding-block: 36px; }
+  .editorial-home .home-about-profile { padding-inline: 24px; }
+  .editorial-home .home-about-copy { font-size: 20px; line-height: 1.5; }
+  /* Education still shows the full school name on phones. */
+  .editorial-home .home-research-institution { display: none; }
+  .editorial-home .home-research-institution-short { display: inline; }
+  .editorial-home .home-footer-bottom { align-items: start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.editorial-home-active { scroll-behavior: auto !important; }
+  .editorial-home *, .editorial-home *::before, .editorial-home *::after { scroll-behavior: auto; transition: none !important; }
 }

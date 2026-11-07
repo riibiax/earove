@@ -2,7 +2,7 @@
 import { Suspense, lazy } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import { initializeScroll } from "./utils/scroll";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const basename = process.env.REACT_APP_BASENAME || "/";
 const HomePage = lazy(() => import("./components/HomePage"));
@@ -37,13 +37,10 @@ const routes = [
 ];
 
 /**
- * Mounts the portfolio router and starts the legacy smooth-scroll handler.
+ * Keep shared resets available on direct project visits as well as the homepage.
+ * HashRouter preserves the existing GitHub Pages URLs without server rewrites.
  */
 const App = () => {
-  React.useEffect(() => {
-    initializeScroll();
-  }, []);
-
   return (
     <Router basename={basename}>
       <Suspense fallback={null}>

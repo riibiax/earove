@@ -1,0 +1,61 @@
+import createGallery from "./createGallery";
+
+// Reorder images here; every local path is validated before publication.
+const gallery = createGallery("Doka at BAUMA", [
+  "img/doka/pic01.jpg",
+  "img/doka/pic02.jpg",
+  "img/doka/pic03.jpg",
+  "img/doka/pic04.jpg",
+  "img/doka/pic05.jpg",
+  "img/doka/pic06.jpg",
+  "img/doka/pic07.jpg"
+]);
+
+/** Project copy and credits, kept separate from the shared page layout. */
+const dokaCaseStudy = {
+  "path": "/doka",
+  "title": "Doka at BAUMA",
+  "category": "Interactive data walls",
+  "introduction": "A global network of construction projects, explored through touch.",
+  "highlights": [
+    "explored through touch",
+    "interactive Reference Walls",
+    "GeoStage",
+    "georeferenced data"
+  ],
+  "credits": [
+    {
+      "label": "Client",
+      "value": "Doka Group"
+    },
+    {
+      "label": "Developed at",
+      "value": "Ars Electronica Solutions"
+    },
+    {
+      "label": "My role",
+      "value": "GeoStage software development"
+    }
+  ],
+  "context": "For Doka Group’s booth at BAUMA, the international construction and mining machinery fair, Ars Electronica Solutions created two interactive Reference Walls to present the company’s worldwide network through georeferenced data.",
+  "approach": "Each wall combined 12 monitors with animated effects to attract visitors. A globe formed the main interface: visitors could rotate it, zoom in and select locations to explore videos, photographs, text and statistics. I contributed to the GeoStage software behind the installation.",
+  "impact": "The walls became entrance points to Doka’s exhibition, making its international references explorable and supporting conversations between visitors and the sales team.",
+  "contribution": "Development of GeoStage software as part of the Ars Electronica engineering team.",
+  "technologies": [
+    "C#",
+    "Unity 3D",
+    "TUIO",
+    "QGIS",
+    "Global Mapper"
+  ],
+  "hero": {
+    "src": "img/doka/pic01.jpg",
+    "alt": "Doka at BAUMA, project overview",
+    "width": 1920,
+    "height": 1217,
+    "caption": "Doka Group · Interactive Reference Walls at BAUMA"
+  },
+  gallery,
+};
+
+export default dokaCaseStudy;

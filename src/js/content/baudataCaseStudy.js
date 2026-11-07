@@ -1,0 +1,73 @@
+import createGallery from "./createGallery";
+
+// Reorder images here; every local path is validated before publication.
+const gallery = createGallery("BauData", [
+  "img/baudata/pic01.jpg",
+  "img/baudata/pic02.jpg",
+  "img/baudata/pic03.jpg",
+  "img/baudata/pic04.jpg",
+  "img/baudata/pic05.jpg",
+  "img/baudata/pic06.jpg",
+  "img/baudata/pic07.jpg",
+  "img/baudata/pic08.jpg",
+  "img/baudata/pic09.jpg",
+  "img/baudata/pic10.jpg"
+]);
+
+/** Project copy and credits, kept separate from the shared page layout. */
+const baudataCaseStudy = {
+  "path": "/baudata",
+  "title": "BauData",
+  "category": "Generative visualisation",
+  "introduction": "Bots, weather and landscapes as a diary of generative visual stories.",
+  "highlights": [
+    "generative visual stories",
+    "weather data",
+    "Sky Gradients",
+    "Hop Mountains",
+    "generative compositions"
+  ],
+  "credits": [
+    {
+      "label": "Project",
+      "value": "BauData collective"
+    },
+    {
+      "label": "Started",
+      "value": "2017"
+    },
+    {
+      "label": "My role",
+      "value": "Founder & creative development"
+    }
+  ],
+  "context": "In 2017, I founded BauData, a collective exploring the web through bots, data animation and generative visualisation. It became a diary of visual stories published on the collective’s website.",
+  "approach": "Sky Gradients is a bot that travels through cities, reads weather data and uses mathematical functions to generate skies from local light and colour conditions. Hop Mountains abstracts landscapes into colour, line and form, translating mountains and sky into changing generative compositions.",
+  "impact": "The projects turn environmental information into an ongoing visual exploration of place, using data as material for animated skies and abstract landscapes.",
+  "contribution": "Founding the collective and developing bots, data-driven animations and generative visualisation projects.",
+  "technologies": [
+    "Node.js",
+    "p5.js",
+    "Three.js",
+    "JavaScript",
+    "Python",
+    "GLSL",
+    "Raspberry Pi"
+  ],
+  "links": [
+    {
+      "label": "Visit BauData",
+      "href": "https://baudata.github.io"
+    }
+  ],
+  "hero": {
+    "src": "img/baudata/pic01.jpg",
+    "alt": "BauData, project overview",
+    "width": 2554,
+    "height": 1340,
+    "caption": "BauData · Data animation and generative landscapes"
+  },
+  gallery,
+};
+
+export default baudataCaseStudy;

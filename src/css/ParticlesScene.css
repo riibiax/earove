@@ -1,10 +1,11 @@
-﻿/* ParticlesScene.css */
-#particlesSceneOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.editorial-home .home-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-  z-index: -1; /* Ensure it is behind other content */
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 80%, transparent);
 }
+.editorial-home .home-particles canvas { display: block; width: 100%; height: 100%; }
+.editorial-home .home-hero > h1,
+.editorial-home .home-hero > .home-introduction { position: relative; z-index: 1; }

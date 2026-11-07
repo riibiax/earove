@@ -1,5 +1,5 @@
 /**
- * Shared project metadata used by the homepage grid and the Projects dropdown.
+ * Shared project metadata used by the homepage and case-study navigation.
  */
 const projects = [
   {
@@ -88,7 +88,7 @@ const projects = [
   },
   {
     path: "/machine",
-    title: "The Machine to Be Another",
+    title: "Machine Enchantée",
     thumbnail: "img/machine/machine.gif",
     showTitleOnHome: false,
   },

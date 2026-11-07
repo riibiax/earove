@@ -7,8 +7,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "check:release": "node scripts/check-release.cjs",
+    "check:lfs": "node scripts/check-lfs.cjs",
+    "predeploy": "npm run build && npm run check:release",
+    "deploy": "gh-pages -d dist --dotfiles --nojekyll"
   },
   "keywords": [],
   "author": "earove",
