@@ -3,7 +3,7 @@ import projects from "../../projectData";
 /** Edit this ordered selection to curate the homepage. Shared routes and
  * thumbnails stay in projectData, so project pages and navigation keep working. */
 const selection = [
-  { path: "/evoka", category: "Interactive installations", description: "A conversation between personal memories and Fribourg’s archives" },
+  { path: "/evoka", category: "Interactive installations", description: "An installation that connects visitors' memories with Fribourg's archives" },
   { path: "/kf", title: "KF Watches", category: "Real-time 3D", description: "Interactive watch configurator" },
   { path: "/spinny", title: "Spinny’s Journey", category: "Game development", description: "An independent game for Nintendo Switch and PC" },
   { path: "/ansharonline", title: "Anshar Online", category: "Virtual reality", description: "A multiplayer journey through space" },
