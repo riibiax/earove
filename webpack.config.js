@@ -122,6 +122,8 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           { from: "img", to: "img", noErrorOnMissing: true },
+          // The legacy loader reads some .js model files as JSON. Copy the web edition verbatim.
+          { from: "src/visualizations/tabak-fabrik", to: "visualizations/tabak-fabrik", info: { minimized: true } },
           { from: "docs", to: "docs", noErrorOnMissing: true },
           // Keep older public CV URLs valid using the current approved editions.
           { from: "docs/andrea-rovescalli-skills-en.pdf", to: "docs/rovescalli_cv.pdf" },

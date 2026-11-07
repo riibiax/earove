@@ -52,8 +52,8 @@ for (const file of files.filter(f => f.endsWith(".css"))) {
 }
 function visit(node) {
   if (!node || typeof node !== "object") return;
-  if (node.type === "StringLiteral" && /^(img|docs)\//.test(node.value)) { requireAsset(node.value); checked++; }
-  if (node.type === "TemplateLiteral" && /^(img|docs)\//.test(node.quasis[0].value.cooked)) {
+  if (node.type === "StringLiteral" && /^(img|docs|visualizations)\//.test(node.value)) { requireAsset(node.value); checked++; }
+  if (node.type === "TemplateLiteral" && /^(img|docs|visualizations)\//.test(node.quasis[0].value.cooked)) {
     assert.equal(node.expressions.length, 0, "List local asset paths explicitly so every file can be checked before publishing.");
     requireAsset(node.quasis[0].value.cooked);
     checked++;
@@ -64,7 +64,7 @@ function visit(node) {
     else if (value && typeof value === "object") visit(value);
   }
 }
-for (const source of walk(path.join(root, "src")).filter(file => file.endsWith(".js"))) {
+for (const source of walk(path.join(root, "src", "js")).filter(file => file.endsWith(".js"))) {
   visit(parseSync(fs.readFileSync(source, "utf8"), { configFile: false, babelrc: false, sourceType: "module", parserOpts: { plugins: ["jsx"] } }));
 }
 for (const [alias, source] of [["rovescalli_cv.pdf", "andrea-rovescalli-skills-en.pdf"], ["rovescalli_cv_fr.pdf", "andrea-rovescalli-skills-fr.pdf"], ["rovescalli_cv_ita.pdf", "andrea-rovescalli-skills-it.pdf"]]) {

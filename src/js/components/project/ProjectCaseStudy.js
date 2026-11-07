@@ -22,8 +22,8 @@ function StorySection({ title, children, highlights }) {
 }
 
 /** Shared layout for every project. Content, credits and media stay in their
- * own modules; optional films, recognition and links only appear when supplied. */
-export default function ProjectCaseStudy({ project }) {
+ * own modules. Project-specific media can be passed as children. */
+export default function ProjectCaseStudy({ project, children }) {
   useLayoutEffect(() => {
     document.body.classList.add("case-study-active");
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -60,6 +60,7 @@ export default function ProjectCaseStudy({ project }) {
           <StorySection title="Approach" highlights={project.highlights}>{project.approach}</StorySection>
         </div>
         {project.videos?.map((video) => <ProjectFilm key={video.src} video={video} />)}
+        {children}
         {project.gallery?.length > 0 && <ProjectGallery key={project.path} images={project.gallery} title={project.title} />}
         <StorySection title="Impact" highlights={project.highlights}>{project.impact}</StorySection>
         {project.recognition?.length > 0 && <ProjectRecognition awards={project.recognition} />}

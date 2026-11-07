@@ -177,7 +177,7 @@ The build copies the retained `img/` and `docs/` directories, font licenses, fav
 
 Older CV URLs (`rovescalli_cv.pdf`, `rovescalli_cv_fr.pdf`, `rovescalli_cv_ita.pdf`) are generated as aliases of the current skills CVs. This preserves existing external links without retaining obsolete CV content.
 
-The old Tabak Fabrik launcher pointed to demo files absent from both the source repository and the published site. Its broken player and unused controls have been removed; the project description and complete image gallery remain.
+The Tabak Fabrik case study loads the [original web edition](https://github.com/riibiax/TabakFabrik) on demand. Its scene, shaders, models, and textures are copied from `src/visualizations/tabak-fabrik/` into the static build. The iframe loads pinned legacy Three.js and Tween.js dependencies separately from the portfolio. Stop unloads the iframe so the next Play starts a new run.
 
 ### Git LFS and GitHub Pages
 
