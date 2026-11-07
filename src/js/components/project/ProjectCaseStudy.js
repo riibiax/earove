@@ -9,8 +9,15 @@ import ProjectRecognition from "./ProjectRecognition";
 import "../../../css/homepage.css";
 import "../../../css/caseStudy.css";
 
-// Follow the homepage order: selected work first, then the project archive.
+// Archive entries can follow a related case study without becoming featured.
 const projectOrder = [...featuredProjects, ...archiveProjects];
+for (const project of archiveProjects) {
+  if (!project.navigationAfter) continue;
+  const anchor = projectOrder.find(({ path }) => path === project.navigationAfter);
+  if (!anchor || anchor === project) continue;
+  projectOrder.splice(projectOrder.indexOf(project), 1);
+  projectOrder.splice(projectOrder.indexOf(anchor) + 1, 0, project);
+}
 
 function StorySection({ title, children, highlights }) {
   return (
@@ -42,7 +49,7 @@ export default function ProjectCaseStudy({ project, children }) {
       </header>
       <main className="case-shell">
         <section className="case-intro" aria-labelledby="case-title">
-          <p className="case-label">SELECTED WORK / {project.category.toUpperCase()}</p>
+          <p className="case-label">{project.section || "SELECTED WORK"} / {project.category.toUpperCase()}</p>
           <div className="case-title-line">
             <h1 id="case-title">{project.title}<span className="case-accent">.</span></h1>
             <p className="case-deck"><CaseStudyText text={project.introduction} highlights={project.highlights} /></p>
