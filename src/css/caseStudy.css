@@ -2,7 +2,11 @@
 body.case-study-active { background: #fff !important; color: #202020 !important; font-family: "Portfolio Sans", Helvetica, sans-serif !important; }
 .case-study { --case-ink: #202020; --case-muted: #626262; --case-line: #e5e5e5; --case-accent: #ff832b; --case-space: clamp(48px, 6vw, 80px); font: 400 18px/1.5 "Portfolio Sans", Helvetica, sans-serif; background: #fff; color: var(--case-ink); }
 .case-study *, .case-study *::before, .case-study *::after { box-sizing: border-box; }
-.case-study .case-shell { max-width: 1584px; padding-inline: clamp(24px, 4.5vw, 72px); margin-inline: auto; }
+.case-study .case-shell {
+  max-width: var(--portfolio-shell-width);
+  padding-inline: var(--portfolio-gutter);
+  margin-inline: auto;
+}
 .case-study section { width: auto; height: auto; clear: none; }
 .case-study h1, .case-study h2, .case-study p, .case-study figure, .case-study dl, .case-study dd { margin: 0; }
 .case-study a { color: inherit; text-decoration: none; }
