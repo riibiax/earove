@@ -1,3 +1,5 @@
+const exhibitionPhotoCredit = "© EPFL+ECAL Lab / Daniela & Tonatiuh";
+
 const antCaseStudy = {
   path: "/ant",
   title: "Advancing Neurofeedback in Tinnitus",
@@ -18,10 +20,10 @@ const antCaseStudy = {
     caption: "The ANT project on display.",
   },
   context: "Tinnitus is the perception of sound without an external source. ANT brought together design, neuroscience and psychology to study how neurofeedback training could be adapted for people with tinnitus.",
-  approach: "During training, real-time visual feedback reflects changes in measured brain activity. The team explored how different visual cues affect how people understand and engage with the training.",
+  approach: "During training, real-time visual feedback reflects changes in measured brain activity. For example, changes in alpha activity can make a pattern expand or alter its speed. The team explored how these visual cues affect understanding and engagement.",
   impact: "The research informed a neurofeedback protocol that entered clinical testing at University Hospital Zurich in January 2026.",
-  contribution: "I led software development, created the feedback visuals and was the primary developer of the Python library behind them.",
-  technologies: ["Python", "Real-time visualisation"],
+  contribution: "I led software development, created the feedback visuals and was the primary developer of the Python library behind them. It uses py5 to render animations from live EEG and can replay recorded signals to test the same visual presets.",
+  technologies: ["Python", "py5", "Real-time visualisation"],
   videos: [
     {
       type: "file",
@@ -32,8 +34,16 @@ const antCaseStudy = {
     },
   ],
   gallery: [
-    { src: "img/ant/pic03.jpg", alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel." },
-    { src: "img/ant/exhibition-visitors.jpg", alt: "Two visitors explore the ANT display and EEG cap beneath purple exhibition banners." },
+    {
+      src: "img/ant/pic03.jpg",
+      alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel.",
+      caption: `The feedback display and EEG cap. ${exhibitionPhotoCredit}`,
+    },
+    {
+      src: "img/ant/exhibition-visitors.jpg",
+      alt: "Two visitors explore the ANT display and EEG cap beneath purple exhibition banners.",
+      caption: `Visitors explore the ANT installation. ${exhibitionPhotoCredit}`,
+    },
     { src: "img/ant/pic01.jpg", alt: "Side view of the ANT display with its screen and research panel." },
     { src: "img/ant/pic02.jpg", alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap." },
   ],
