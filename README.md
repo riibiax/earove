@@ -48,7 +48,7 @@ There are currently no unit-test or lint scripts. Use the release checks, produc
 ## Technology
 
 - React 19 and React DOM
-- React Router 7 with `HashRouter`
+- React Router 7 with clean page URLs and build-time rendered HTML
 - Bootstrap 5 for shared browser resets and base styles
 - Three.js for interactive work and a subtle particle field confined to the homepage hero; motion pauses off screen and respects reduced-motion preferences
 - Webpack 5, Babel and MiniCssExtractPlugin for bundling
@@ -67,15 +67,15 @@ earove/
 │   ├── css/                    Shared and component styles
 │   ├── fonts/                  Bundled DM Sans / DM Mono fonts and licenses
 │   └── js/
-│       ├── App.js              React entry point and route table
+│       ├── App.js              Browser entry point
+│       ├── pageRoutes.js       Homepage and case-study routes
 │       ├── projectData.js      Ordered project list for the homepage and navigation
 │       ├── content/            Project case-study text, credits and media lists
 │       ├── components/         Homepage, navigation, contact and project pages
 │       │   ├── home/           Editorial homepage components and content
 │       │   ├── project/        Reusable project-page components
 │       │   └── threejs/        Decorative homepage hero particle scene
-├── scripts/                    Release and Git LFS validation
-├── sitemap.xml                 Static sitemap copied into the build
+├── scripts/                    Static page rendering, release and Git LFS validation
 ├── package.json                Scripts and dependencies
 ├── package-lock.json           Locked dependency tree
 ├── webpack.config.js           Development and production configuration
@@ -84,15 +84,15 @@ earove/
 
 ### Routing and navigation
 
-[App.js](src/js/App.js) mounts the application, loads shared Bootstrap base styles and lazy-loads the homepage and project pages. Routes use the URL hash, for example:
+[App.js](src/js/App.js) loads the interactive React components for the requested page. Each URL has its own HTML document, for example:
 
 ```text
-https://riibiax.github.io/earove/#/kf
+https://riibiax.github.io/earove/ant/
 ```
 
-Both `/` and `/index.html` are registered as homepage routes. The hash router lets project pages be opened directly on static hosting without server-side route rewrites.
+GitHub Pages serves each project from its own directory. Legacy links such as `/#/ant` redirect in the browser to the corresponding clean URL.
 
-The homepage curates its featured selection through `home/homeContent.js`, reusing the routes and thumbnails in [projectData.js](src/js/projectData.js). Every project has Previous, Next and All projects links. Their order follows the homepage's six featured projects, then the archive, wrapping at each end. The route table remains in `App.js`; existing project URLs are preserved.
+The homepage curates its featured selection through `home/homeContent.js`, reusing the routes and thumbnails in [projectData.js](src/js/projectData.js). Every project has Previous, Next and All projects links. Navigation follows the featured projects and then the archive, with explicit overrides for related projects.
 
 ### Page components
 
@@ -164,16 +164,16 @@ CVs generated elsewhere in the parent workspace are not automatically added to t
 1. Add images under `img/<project>/` and create or edit its content module in `src/js/content/`.
 2. Follow an existing case-study object: `path`, `title`, `category`, `introduction`, `credits`, `hero`, `context`, `approach`, `impact`, `contribution`, `technologies` and `gallery`. The page component only imports the object and renders `<ProjectCaseStudy project={content} />`.
 3. Add or update the entry in `src/js/projectData.js`. Entries contain `path`, `title`, `thumbnail` and optional `showTitleOnHome`; their order controls the homepage archive. Featured order is set separately in `home/homeContent.js`. `showTitleOnHome: false` hides only the title overlay on the homepage.
-4. Register the page’s lazy import and route in `src/js/App.js`. Adding metadata alone does not create a route.
+4. Register the page's lazy import and route in `src/js/pageRoutes.js`. Add a search and social description in `config/project-descriptions.json` when the case-study introduction needs more context.
 5. Check the thumbnail, project text, carousel, video and navigation in the browser.
 
-Keep public asset paths relative, such as `img/kf/kf.png` or `docs/rovescalli_cv.pdf`. Leading-slash paths such as `/img/...` point to the domain root and bypass the production `/earove/` prefix. Imported images and PDFs can also be handled by Webpack’s asset rules.
+Keep public asset paths relative in content, such as `img/kf/kf.png` or `docs/rovescalli_cv.pdf`. In components, pass local paths to `assetUrl()` so they resolve from the site root on nested pages.
 
 ### Site metadata and static files
 
-The HTML document is generated inside [webpack.config.js](webpack.config.js), including the page title, description, canonical URL, favicon and social-preview metadata. There is no separate source `index.html` template.
+The build uses `scripts/render-pages.cjs` to render the existing React pages and `scripts/page-template.cjs` to add titles, descriptions, canonical URLs, Open Graph and X cards, structured data and the favicon. Webpack generates `dist/sitemap.xml` from the same routes and canonical document links. Restart the development server after editing page metadata to regenerate the HTML.
 
-The build copies the retained `img/` and `docs/` directories, font licenses, favicon, `sitemap.xml`, `.nojekyll` and a deployment-specific `.gitattributes`. Files placed in the copied media directories become public when deployed. Keep private originals, old CVs, reports and temporary files outside those folders.
+The build copies the retained `img/` and `docs/` directories, font licenses, favicon, `.nojekyll` and a deployment-specific `.gitattributes`. Files placed in the copied media directories become public when deployed. Keep private originals, old CVs, reports and temporary files outside those folders.
 
 Older CV URLs (`rovescalli_cv.pdf`, `rovescalli_cv_fr.pdf`, `rovescalli_cv_ita.pdf`) are generated as aliases of the current skills CVs. This preserves existing external links without retaining obsolete CV content.
 
@@ -205,13 +205,13 @@ The `predeploy` hook runs the production build and `check:release` automatically
 
 The repository contains no GitHub Actions workflow for deployment. Confirm the repository’s **Settings → Pages** configuration uses the intended publishing source; that remote setting is not defined by the local build files.
 
-If the hosting path changes, update `homepage` in `package.json`, the production `publicPath` and site URLs in `webpack.config.js`, and the URLs in `sitemap.xml` together.
+If the hosting path changes, update `homepage` in `package.json`. The production asset path, canonical URLs and sitemap use that value.
 
 ## Checks before publishing
 
 - Run `npm run build` and review any errors or warnings.
 - Check the selected gallery, project archive and section links on desktop and mobile.
-- Open a project directly through its hash URL, refresh it and check project switching.
+- Open and refresh a clean project URL, then check project navigation and a legacy `/#/project` link.
 - Check carousel arrows, indicators, videos and external links.
 - Run `npm run check:lfs` after staging the intended source assets, and `npm run check:release` after building.
 - Open every CV download and the research PDF, including the older CV URL aliases.

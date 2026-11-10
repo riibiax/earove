@@ -1,15 +1,21 @@
 const path = require("path");
+const { execFileSync } = require("node:child_process");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { homepage } = require("./package.json");
+const { renderDocument, renderSitemap } = require("./scripts/page-template.cjs");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
-  const publicPath = isProduction ? "/earove/" : "/";
-  const siteUrl = "https://riibiax.github.io/earove/";
-  const siteTitle = "Andrea Rovescalli";
-  const siteDescription = "Portfolio of Andrea Rovescalli, senior software engineer based in Lausanne, working across artificial intelligence, interactive experiences, real-time 3D, XR and games.";
+  const publicPath = isProduction ? new URL(homepage).pathname : "/";
+  const { name, pages, documentUrls } = JSON.parse(execFileSync(process.execPath, ["scripts/render-pages.cjs"], {
+    cwd: __dirname,
+    env: { ...process.env, PORTFOLIO_BASE_PATH: publicPath },
+    encoding: "utf8",
+    maxBuffer: 8 * 1024 * 1024,
+  }));
 
   return {
     entry: "./src/js/App.js",
@@ -77,47 +83,24 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new webpack.DefinePlugin({
-        "process.env.REACT_APP_BASENAME": JSON.stringify("/"),
+        "process.env.PORTFOLIO_BASE_PATH": JSON.stringify(publicPath),
       }),
       new MiniCssExtractPlugin({
         filename: isProduction ? "main.[contenthash].css" : "main.css",
         chunkFilename: isProduction ? "[name].[contenthash].main.css" : "[name].main.css",
       }),
-      new HtmlWebpackPlugin({
-        templateContent: ({ htmlWebpackPlugin }) => `<!doctype html>
-<html lang="en">
-<head>
-  <title>Andrea Rovescalli</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="${siteDescription}">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#000000">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="canonical" href="${siteUrl}">
-  <meta property="og:url" content="${siteUrl}">
-  <meta property="og:image" content="${siteUrl}img/kf/kf.png">
-  <meta property="og:site_name" content="${siteTitle}">
-  <meta property="og:title" content="${siteTitle}">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="${siteDescription}">
-  <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${siteTitle}">
-  <meta name="twitter:description" content="${siteDescription}">
-  <meta name="twitter:image" content="${siteUrl}img/kf/kf.png">
-  <meta name="apple-mobile-web-app-title" content="${siteTitle}">
-  <link rel="shortcut icon" href="${publicPath}d8210a18b13b602bc230.ico" type="image/x-icon">
-  <link rel="icon" type="image/x-icon" href="${publicPath}d8210a18b13b602bc230.ico">
-  ${htmlWebpackPlugin.tags.headTags}
-</head>
-<body>
-  <div id="root"></div>
-  ${htmlWebpackPlugin.tags.bodyTags}
-</body>
-</html>`,
+      ...pages.map((page) => new HtmlWebpackPlugin({
+        filename: `${page.path.slice(1)}index.html`,
+        templateContent: ({ htmlWebpackPlugin }) => renderDocument(page, name, publicPath, htmlWebpackPlugin.tags),
         inject: false,
         minify: isProduction,
+      })),
+      new HtmlWebpackPlugin({
+        filename: "sitemap.xml",
+        templateContent: () => renderSitemap([...pages.map(({ url }) => url), ...documentUrls]),
+        chunks: [],
+        inject: false,
+        minify: false,
       }),
       new CopyWebpackPlugin({
         patterns: [
@@ -131,9 +114,9 @@ module.exports = (env, argv) => {
           { from: "docs/andrea-rovescalli-skills-it.pdf", to: "docs/rovescalli_cv_ita.pdf" },
           { from: "src/fonts/*-OFL.txt", to: "fonts/[name][ext]" },
           { from: "d8210a18b13b602bc230.ico", to: "d8210a18b13b602bc230.ico", noErrorOnMissing: true },
+          { from: "d8210a18b13b602bc230.ico", to: "favicon.gif" },
           { from: ".nojekyll", to: ".nojekyll", toType: "file" },
           { from: "config/pages.gitattributes", to: ".gitattributes", toType: "file" },
-          { from: "sitemap.xml", to: "sitemap.xml", noErrorOnMissing: true },
         ],
       }),
     ],

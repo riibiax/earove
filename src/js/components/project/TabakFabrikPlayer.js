@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { assetUrl } from "../../sitePaths";
 import "../../../css/tabakFabrikPlayer.css";
 
 const stateLabels = {
@@ -8,7 +9,7 @@ const stateLabels = {
   error: "The visualization couldn’t load. Try Play again or explore the gallery below.",
 };
 
-const playerPath = "visualizations/tabak-fabrik/TabakFabrikWebsite.html";
+const playerPath = assetUrl("visualizations/tabak-fabrik/TabakFabrikWebsite.html");
 
 export default function TabakFabrikPlayer() {
   const [status, setStatus] = useState("stopped");
@@ -55,7 +56,7 @@ export default function TabakFabrikPlayer() {
           {!showLauncher && <iframe className="tabak-player-frame" ref={frame} src={playerPath} title="Tabak Fabrik animation" />}
           {showLauncher && (
             <button type="button" className="tabak-player-launch" onClick={play} aria-label="Play animation">
-              <img src="img/controls/play.png" width="132" height="108" alt="" />
+              <img src={assetUrl("img/controls/play.png")} width="132" height="108" alt="" />
             </button>
           )}
         </div>

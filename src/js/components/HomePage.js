@@ -25,7 +25,7 @@ export default function HomePage() {
 
   return (
     <div className="editorial-home" id="home-top">
-      <a className="home-skip-link" href="#/#projects" onClick={(event) => {
+      <a className="home-skip-link" href="#projects" onClick={(event) => {
         event.preventDefault();
         const target = document.getElementById("projects");
         target.focus({ preventScroll: true });

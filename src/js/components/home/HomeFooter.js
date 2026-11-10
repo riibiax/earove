@@ -1,17 +1,15 @@
 import React from "react";
 import { homeContent } from "./homeContent";
-import githubIcon from "../../../../img/github.png";
-import linkedinIcon from "../../../../img/linkedin.png";
-import emailIcon from "../../../../img/email.png";
+import { assetUrl } from "../../sitePaths";
 
 // Reuse the original portfolio assets as masks so their color follows the theme.
-const contactIcons = { GitHub: githubIcon, LinkedIn: linkedinIcon, Email: emailIcon };
+const contactIcons = { GitHub: "img/github.png", LinkedIn: "img/linkedin.png", Email: "img/email.png" };
 
 function ContactIcon({ label }) {
   return (
     <span
       className="home-contact-icon"
-      style={{ "--contact-icon": `url(${contactIcons[label]})` }}
+      style={{ "--contact-icon": `url(${assetUrl(contactIcons[label])})` }}
       aria-hidden="true"
     />
   );
@@ -43,7 +41,7 @@ export default function HomeFooter() {
       </div>
       <div className="home-footer-bottom">
         <span>{homeContent.name} · Lausanne, Switzerland</span>
-        <a href="#/" onClick={scrollToTop}>Back to top ↑</a>
+        <a href="#top" onClick={scrollToTop}>Back to top ↑</a>
       </div>
     </footer>
   );

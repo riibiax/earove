@@ -15,6 +15,8 @@ const kfCaseStudy = {
   hero: {
     src: "img/kf/pic02.png",
     alt: "Real-time render of a KF watch with a rose-gold case and leather strap",
+    width: 1920,
+    height: 1080,
     caption: "Unity HDRP · Real-time rendering",
   },
   context: "Created at UDIMU SA, the configurator needed to let clients explore KF Watches’ models through a touch interface, while conveying the quality of the materials and the complexity of each design.",

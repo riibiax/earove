@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { homeContent } from "./homeContent";
 
 const sections = [{ id: "projects", label: "Work" }, { id: "about", label: "About" }, { id: "contact", label: "Contact" }];
@@ -11,11 +10,13 @@ export default function HomeNavigation() {
   };
   return (
     <header className="home-header home-shell">
-      <Link className="home-wordmark" to="/" onClick={() => scrollTo("home-top")}>{homeContent.name}</Link>
+      <a className="home-wordmark" href="#home-top" onClick={(event) => {
+        event.preventDefault();
+        scrollTo("home-top");
+      }}>{homeContent.name}</a>
       <nav className="home-navigation" aria-label="Main navigation">
         {sections.map(({ id, label }) => (
-          <a key={id} href={`#/#${id}`} onClick={(event) => {
-            // Avoid confusing same-page anchors with React Router's route hash.
+          <a key={id} href={`#${id}`} onClick={(event) => {
             event.preventDefault();
             scrollTo(id);
           }}>{label}</a>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { projectPath } from "../../sitePaths";
 import ProjectCard from "./ProjectCard";
 import { archiveProjects, featuredProjects } from "./homeContent";
 
@@ -27,7 +28,7 @@ export default function SelectedWork() {
       </div>
       <div className="home-archive" id="home-project-archive" hidden={!archiveOpen}>
         <h3>More projects</h3>
-        <ul className="home-archive-list">{archiveProjects.map(({ path, title }) => <li key={path}><Link to={path}>{title}<span aria-hidden="true">↗</span></Link></li>)}</ul>
+        <ul className="home-archive-list">{archiveProjects.map(({ path, title }) => <li key={path}><Link to={projectPath(path)} reloadDocument>{title}<span aria-hidden="true">↗</span></Link></li>)}</ul>
       </div>
     </section>
   );

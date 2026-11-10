@@ -1,61 +1,30 @@
-﻿import React from "react";
-import { Suspense, lazy } from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
+import { findPage, homeRoute } from "./pageRoutes";
+import { basePath } from "./sitePaths";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const basename = process.env.REACT_APP_BASENAME || "/";
-const HomePage = lazy(() => import("./components/HomePage"));
+async function start() {
+  const { pathname, hash, search, origin } = window.location;
+  const page = findPage(pathname.slice(basePath.length - 1));
 
-/**
- * HashRouter route table for the homepage and every lazily loaded project page.
- */
-const routes = [
-  ["/", HomePage],
-  ["/index.html", HomePage],
-  ["/evoka", lazy(() => import("./components/EvokaPage"))],
-  ["/ant", lazy(() => import("./components/AntPage"))],
-  ["/kf", lazy(() => import("./components/KfPage"))],
-  ["/ecole42", lazy(() => import("./components/Ecole42Page"))],
-  ["/aef", lazy(() => import("./components/AefPage"))],
-  ["/ansharonline", lazy(() => import("./components/AnsharonlinePage"))],
-  ["/baudata", lazy(() => import("./components/BaudataPage"))],
-  ["/bmeia", lazy(() => import("./components/BmeiaPage"))],
-  ["/deathlap", lazy(() => import("./components/DeathLapPage"))],
-  ["/doka", lazy(() => import("./components/DokaPage"))],
-  ["/eames", lazy(() => import("./components/EamesPage"))],
-  ["/fireplace", lazy(() => import("./components/FireplacePage"))],
-  ["/lightscape", lazy(() => import("./components/LightscapePage"))],
-  ["/machine", lazy(() => import("./components/MachinePage"))],
-  ["/metec", lazy(() => import("./components/MetecPage"))],
-  ["/mons", lazy(() => import("./components/MonsPage"))],
-  ["/onceUponATale", lazy(() => import("./components/OnceUponATalePage"))],
-  ["/saltmine", lazy(() => import("./components/SaltminePage"))],
-  ["/skater", lazy(() => import("./components/SkaterPage"))],
-  ["/spinny", lazy(() => import("./components/SpinnyPage"))],
-  ["/spymuseum", lazy(() => import("./components/SpymuseumPage"))],
-  ["/tabakFabrik", lazy(() => import("./components/TabakFabricPage"))],
-  ["/vaudoise", lazy(() => import("./components/VaudoisePage"))],
-];
+  // Old hash links still open the same project or homepage section.
+  if (page === homeRoute && hash.startsWith("#/")) {
+    const oldUrl = new URL(`${origin}${hash.slice(1)}`);
+    const destination = findPage(oldUrl.pathname);
+    if (destination) {
+      window.location.replace(`${basePath}${destination.path.slice(1)}${oldUrl.search || search}${oldUrl.hash}`);
+      return;
+    }
+  }
 
-/**
- * Keep shared resets available on direct project visits as well as the homepage.
- * HashRouter preserves the existing GitHub Pages URLs without server rewrites.
- */
-const App = () => {
-  return (
-    <Router basename={basename}>
-      <Suspense fallback={null}>
-        <Routes>
-          {routes.map(([path, Page]) => (
-            <Route key={path} path={path} element={<Page />} />
-          ))}
-        </Routes>
-      </Suspense>
-    </Router>
+  if (!page) return;
+  const { default: Page } = await page.load();
+  createRoot(document.getElementById("root")).render(
+    <BrowserRouter basename={basePath}>
+      <Page />
+    </BrowserRouter>,
   );
-};
+}
 
-createRoot(document.getElementById("root")).render(<App />);
-
-export default App;
+start();

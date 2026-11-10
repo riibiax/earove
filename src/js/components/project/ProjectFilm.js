@@ -1,4 +1,5 @@
 import React from "react";
+import { assetUrl } from "../../sitePaths";
 
 /** Standalone video, never mixed into the image gallery.
  * Embed: { type: "embed", src: "https://www.youtube-nocookie.com/embed/ID", title, caption }
@@ -9,8 +10,8 @@ export default function ProjectFilm({ video }) {
     <figure className="case-film">
       <div className="case-film-player">
         {video.type === "file" ? (
-          <video controls playsInline preload="none" poster={video.poster} aria-label={video.title}>
-            <source src={video.src} />
+          <video controls playsInline preload="none" poster={assetUrl(video.poster)} aria-label={video.title}>
+            <source src={assetUrl(video.src)} />
           </video>
         ) : (
           <iframe src={video.src} title={video.title} loading="lazy"

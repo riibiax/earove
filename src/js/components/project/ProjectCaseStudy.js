@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
+import { assetUrl, projectPath } from "../../sitePaths";
 import { archiveProjects, featuredProjects, homeContent } from "../home/homeContent";
 import HomeFooter from "../home/HomeFooter";
 import ProjectGallery from "./ProjectGallery";
@@ -44,8 +45,8 @@ export default function ProjectCaseStudy({ project, children }) {
   return (
     <div className="case-study">
       <header className="case-header case-shell">
-        <Link className="case-wordmark" to="/">{homeContent.name}</Link>
-        <Link className="case-all-projects" to="/#projects">All projects <span aria-hidden="true">↗</span></Link>
+        <Link className="case-wordmark" to="/" reloadDocument>{homeContent.name}</Link>
+        <Link className="case-all-projects" to="/#projects" reloadDocument>All projects <span aria-hidden="true">↗</span></Link>
       </header>
       <main className="case-shell">
         <section className="case-intro" aria-labelledby="case-title">
@@ -59,7 +60,7 @@ export default function ProjectCaseStudy({ project, children }) {
           </dl>
         </section>
         <figure className="case-hero">
-          <img src={project.hero.src} alt={project.hero.alt} width={project.hero.width || 1920} height={project.hero.height || 1057} fetchPriority="high" decoding="async" />
+          <img src={assetUrl(project.hero.src)} alt={project.hero.alt} width={project.hero.width || 1920} height={project.hero.height || 1057} fetchPriority="high" decoding="async" />
           <figcaption className="case-caption">{project.hero.caption}</figcaption>
         </figure>
         <div className="case-story">
@@ -85,9 +86,9 @@ export default function ProjectCaseStudy({ project, children }) {
           </div>
         </section>
         <nav className="case-project-navigation" aria-label="Project navigation">
-          <Link to={previous.path} rel="prev"><span className="case-label">← PREVIOUS PROJECT</span><span>{previous.title}</span></Link>
-          <Link className="case-project-index" to="/#projects">All projects</Link>
-          <Link className="case-project-next" to={next.path} rel="next"><span className="case-label">NEXT PROJECT →</span><span>{next.title}</span></Link>
+          <Link to={projectPath(previous.path)} rel="prev" reloadDocument><span className="case-label">← PREVIOUS PROJECT</span><span>{previous.title}</span></Link>
+          <Link className="case-project-index" to="/#projects" reloadDocument>All projects</Link>
+          <Link className="case-project-next" to={projectPath(next.path)} rel="next" reloadDocument><span className="case-label">NEXT PROJECT →</span><span>{next.title}</span></Link>
         </nav>
       </main>
       <div className="editorial-home"><HomeFooter /></div>

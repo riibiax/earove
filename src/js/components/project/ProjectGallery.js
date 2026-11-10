@@ -1,4 +1,5 @@
 import React, { useEffect, useId, useRef, useState } from "react";
+import { assetUrl } from "../../sitePaths";
 
 /** Each selection gets its own loading state, including cached images and retry.
  * A failed request shows an explanation instead of an empty black frame. */
@@ -12,7 +13,7 @@ function GalleryImage({ image, onReady, onFailure, announce = true }) {
 
   return (
     <>
-      <img key={attempt} src={image.src} alt={image.alt} width="1920" height="1057"
+      <img key={attempt} src={assetUrl(image.src)} alt={image.alt} width="1920" height="1057"
         decoding="async" hidden={status === "error"}
         onLoad={() => { setStatus("ready"); onReady?.(); }}
         onError={() => { setStatus("error"); onFailure?.(); }} />
@@ -35,10 +36,10 @@ const AUTO_ADVANCE_MS = 5000;
 export default function ProjectGallery({ images, title }) {
   const [index, setIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
-  const [playing, setPlaying] = useState(() => !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const [playing, setPlaying] = useState(() => typeof window !== "undefined" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   const [hovered, setHovered] = useState(false);
   const [inView, setInView] = useState(false);
-  const [pageVisible, setPageVisible] = useState(() => !document.hidden);
+  const [pageVisible, setPageVisible] = useState(() => typeof document !== "undefined" && !document.hidden);
   const [loadedSource, setLoadedSource] = useState(null);
   const stageRef = useRef(null);
   const dialogRef = useRef(null);
@@ -154,7 +155,7 @@ export default function ProjectGallery({ images, title }) {
         {images.map((entry, imageIndex) => (
           <button type="button" key={entry.src} aria-label={`Show image ${imageIndex + 1} of ${images.length}`}
             aria-pressed={imageIndex === index} onClick={() => { setPlaying(false); setIndex(imageIndex); }}>
-            <img src={entry.src} alt="" loading="lazy" width="1920" height="1057" />
+            <img src={assetUrl(entry.src)} alt="" loading="lazy" width="1920" height="1057" />
           </button>
         ))}
       </div>

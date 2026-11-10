@@ -5,7 +5,8 @@ const { parseSync } = require("@babel/core");
 
 const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
-const publicPath = new URL(require(path.join(root, "package.json")).homepage).pathname;
+const siteUrl = new URL(require(path.join(root, "package.json")).homepage);
+const publicPath = siteUrl.pathname;
 const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(item => item.isDirectory() ? walk(path.join(dir, item.name)) : [path.join(dir, item.name)]);
 const files = walk(dist);
 let total = 0;
@@ -33,13 +34,71 @@ function requireAsset(relative) {
   return current;
 }
 let checked = 0;
-const html = fs.readFileSync(path.join(dist, "index.html"), "utf8");
-for (const match of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) {
-  assert.ok(match[1].startsWith(publicPath), `Asset bypasses the Pages base path: ${match[1]}`);
-  requireAsset(match[1].slice(publicPath.length));
-  checked++;
+const sitemap = fs.readFileSync(path.join(dist, "sitemap.xml"), "utf8");
+const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+assert.equal(new Set(urls).size, urls.length, "Duplicate sitemap URLs.");
+assert.ok(urls.includes(siteUrl.href), "The sitemap must include the homepage.");
+const titles = new Set();
+const descriptions = new Set();
+const pageUrls = urls.filter((url) => url.endsWith("/"));
+const visitedPages = new Set();
+for (const url of urls) {
+  assert.ok(url.startsWith(siteUrl.href) && !/[?#]/.test(url), `Invalid sitemap URL: ${url}`);
+  const relative = url.slice(siteUrl.href.length);
+  if (!url.endsWith("/")) {
+    requireAsset(relative);
+    checked++;
+    continue;
+  }
+
+  const file = requireAsset(`${relative}index.html`);
+  visitedPages.add(file);
+  const html = fs.readFileSync(file, "utf8");
+  const uniqueValue = (pattern) => {
+    const matches = [...html.matchAll(pattern)];
+    assert.equal(matches.length, 1, `${url}: expected exactly one match for ${pattern}`);
+    assert.ok(matches[0][1].trim(), `${url}: empty value for ${pattern}`);
+    return matches[0][1];
+  };
+  const title = uniqueValue(/<title>([^<]+)<\/title>/g);
+  const description = uniqueValue(/<meta name="description" content="([^"]+)"/g);
+  assert.ok(!titles.has(title) && !descriptions.has(description), `Duplicated page metadata: ${url}`);
+  titles.add(title);
+  descriptions.add(description);
+  assert.equal(uniqueValue(/<link rel="canonical" href="([^"]+)"/g), url);
+  assert.equal(uniqueValue(/<meta property="og:url" content="([^"]+)"/g), url);
+  assert.equal(uniqueValue(/<meta property="og:title" content="([^"]+)"/g), title);
+  assert.equal(uniqueValue(/<meta property="og:description" content="([^"]+)"/g), description);
+  const image = uniqueValue(/<meta property="og:image" content="([^"]+)"/g);
+  assert.ok(image.startsWith(siteUrl.href), `Invalid social image URL: ${image}`);
+  const imageFile = requireAsset(image.slice(siteUrl.href.length));
+  assert.ok(fs.statSync(imageFile).size < 5_000_000, `Social image exceeds 5 MB: ${image}`);
+  assert.equal(uniqueValue(/<meta name="twitter:image" content="([^"]+)"/g), image);
+  assert.equal(uniqueValue(/<meta name="twitter:card" content="([^"]+)"/g), "summary_large_image");
+  assert.equal(uniqueValue(/<meta name="twitter:title" content="([^"]+)"/g), title);
+  assert.equal(uniqueValue(/<meta name="twitter:description" content="([^"]+)"/g), description);
+  assert.equal(uniqueValue(/<meta name="twitter:image:alt" content="([^"]+)"/g),
+    uniqueValue(/<meta property="og:image:alt" content="([^"]+)"/g));
+  JSON.parse(uniqueValue(/<script type="application\/ld\+json">([^<]+)<\/script>/g));
+  assert.match(html, /<main\b/);
+  assert.match(html, /<h1\b/);
+  assert.ok(html.includes(`src="${publicPath}main.`), `Missing application scripts: ${url}`);
+  for (const [, reference] of html.matchAll(/\s(?:src|href|poster)="(\/[^\"]+)"/g)) {
+    assert.ok(reference.startsWith(publicPath), `URL bypasses the Pages base path: ${reference}`);
+    assert.ok(!reference.startsWith(`${publicPath}#/`), `Legacy hash link in built HTML: ${reference}`);
+    const target = reference.slice(publicPath.length).split(/[?#]/)[0];
+    requireAsset(!target || target.endsWith("/") ? `${target}index.html` : target);
+    checked++;
+  }
+  if (url === siteUrl.href) {
+    for (const projectUrl of pageUrls.filter((candidate) => candidate !== url)) {
+      assert.ok(html.includes(`href="${new URL(projectUrl).pathname}"`), `Missing crawlable homepage link: ${projectUrl}`);
+    }
+  }
 }
-assert.ok(html.includes(`src="${publicPath}main.`), `Production scripts must use the ${publicPath} base path.`);
+for (const file of files.filter((file) => path.basename(file) === "index.html")) {
+  assert.ok(visitedPages.has(file), `HTML page missing from sitemap: ${path.relative(dist, file)}`);
+}
 for (const file of files.filter(f => f.endsWith(".css"))) {
   for (const match of fs.readFileSync(file, "utf8").matchAll(/url\(\s*["']?([^)'"\s]+)["']?\s*\)/g)) {
     const url = match[1];
@@ -70,4 +129,4 @@ for (const source of walk(path.join(root, "src", "js")).filter(file => file.ends
 for (const [alias, source] of [["rovescalli_cv.pdf", "andrea-rovescalli-skills-en.pdf"], ["rovescalli_cv_fr.pdf", "andrea-rovescalli-skills-fr.pdf"], ["rovescalli_cv_ita.pdf", "andrea-rovescalli-skills-it.pdf"]]) {
   assert.ok(fs.readFileSync(requireAsset(`docs/${alias}`)).equals(fs.readFileSync(requireAsset(`docs/${source}`))), `Legacy CV URL is outdated: ${alias}`);
 }
-console.log(`Release verified: ${files.length} files, ${(total / 1048576).toFixed(2)} MiB, ${checked} asset references, no LFS pointers in published files.`);
+console.log(`Release verified: ${pageUrls.length} indexable HTML pages, ${files.length} files, ${(total / 1048576).toFixed(2)} MiB, ${checked} local references, no LFS pointers.`);

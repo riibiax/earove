@@ -1,5 +1,6 @@
 import React from "react";
 import { aboutContent } from "./homeContent";
+import { assetUrl } from "../../sitePaths";
 
 /** One vertical reading flow: profile, education, research and CV downloads. */
 export default function HomeAbout() {
@@ -31,7 +32,7 @@ export default function HomeAbout() {
       <div className="home-about-section home-research">
         <h3 className="home-editorial-heading">Research</h3>
         <div className="home-research-entry">
-          <a href={research.href} target="_blank" rel="noopener noreferrer">
+          <a href={assetUrl(research.href)} target="_blank" rel="noopener noreferrer">
             {research.title}<span aria-hidden="true">↗</span>
           </a>
           <p>
@@ -44,7 +45,7 @@ export default function HomeAbout() {
         <h3 id="home-cv-heading" className="home-editorial-heading">CV</h3>
         <div className="home-cv-links">
           {aboutContent.cvFiles.map(({ language, lang, href }) => (
-            <a key={lang} href={href} hrefLang={lang} target="_blank" rel="noopener noreferrer" aria-label={`CV, ${language}, PDF`}>{language}<span aria-hidden="true">↗</span></a>
+            <a key={lang} href={assetUrl(href)} hrefLang={lang} target="_blank" rel="noopener noreferrer" aria-label={`CV, ${language}, PDF`}>{language}<span aria-hidden="true">↗</span></a>
           ))}
         </div>
       </div>
