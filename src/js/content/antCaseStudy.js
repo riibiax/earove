@@ -14,7 +14,7 @@ const antCaseStudy = {
     src: "img/ant/ant.jpg",
     alt: "The ANT exhibition display in a hall with bands of coloured light across the wall.",
     width: 1920,
-    height: 1440,
+    height: 1200,
     caption: "The ANT project on display.",
   },
   context: "Tinnitus is the perception of sound without an external source. ANT brought together design, neuroscience and psychology to study how neurofeedback training could be adapted for people with tinnitus.",
@@ -32,14 +32,9 @@ const antCaseStudy = {
     },
   ],
   gallery: [
+    { src: "img/ant/pic03.jpg", alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel." },
     { src: "img/ant/pic01.jpg", alt: "Side view of the ANT display with its screen and research panel." },
-    { src: "img/ant/pic02.jpg", alt: "The ANT display and its accompanying pedestals viewed from across the hall." },
-    { src: "img/ant/pic03.jpg", alt: "Front view of the ANT display with a red headset on a nearby pedestal." },
-  ],
-  links: [
-    { label: "EPFL+ECAL Lab project", href: "https://epfl-ecal-lab.ch/research-projects/advancing-neurofeedback-in-tinnitus/" },
-    { label: "Clinical study", href: "https://epfl-ecal-lab.ch/2026/01/advancing-neurofeedback-in-tinnitus-clinical-study/" },
-    { label: "Full RTS broadcast", href: "https://www.rts.ch/play/tv/36-9-sante/video/les-traitements-qui-soulagent-et-le-neurofeedback?urn=urn:rts:video:2329560a-fc02-3a95-8721-fea33bf73daf" },
+    { src: "img/ant/pic02.jpg", alt: "A red EEG cap on a pedestal beside the ANT feedback display." },
   ],
 };
 
