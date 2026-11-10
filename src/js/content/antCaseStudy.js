@@ -33,6 +33,7 @@ const antCaseStudy = {
   ],
   gallery: [
     { src: "img/ant/pic03.jpg", alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel." },
+    { src: "img/ant/exhibition-visitors.jpg", alt: "Two visitors explore the ANT display and EEG cap beneath purple exhibition banners." },
     { src: "img/ant/pic01.jpg", alt: "Side view of the ANT display with its screen and research panel." },
     { src: "img/ant/pic02.jpg", alt: "A red EEG cap on a pedestal beside the ANT feedback display." },
   ],
