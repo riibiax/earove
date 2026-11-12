@@ -104,7 +104,11 @@ module.exports = (env, argv) => {
       }),
       new CopyWebpackPlugin({
         patterns: [
-          { from: "img", to: "img", noErrorOnMissing: true },
+          {
+            from: "img", to: "img", noErrorOnMissing: true,
+            // Camera Raw editing data belongs with the source photos.
+            globOptions: { ignore: ["**/*.acr", "**/*.xmp"] },
+          },
           // The legacy loader reads some .js model files as JSON. Copy the web edition verbatim.
           { from: "src/visualizations/tabak-fabrik", to: "visualizations/tabak-fabrik", info: { minimized: true } },
           { from: "docs", to: "docs", noErrorOnMissing: true },

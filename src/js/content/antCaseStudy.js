@@ -15,8 +15,8 @@ const antCaseStudy = {
   hero: {
     src: "img/ant/ant.jpg",
     alt: "A wide view of the ANT installation with warm bands of light reflected across the wall and floor.",
-    width: 1920,
-    height: 1440,
+    width: 3377,
+    height: 1899,
     caption: "The ANT project on display.",
   },
   context: "Tinnitus is the perception of sound without an external source. ANT brought together design, neuroscience and psychology to study how neurofeedback training could be adapted for people with tinnitus.",
@@ -36,16 +36,20 @@ const antCaseStudy = {
   gallery: [
     {
       src: "img/ant/pic03.jpg",
+      width: 3600,
+      height: 4800,
       alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel.",
       caption: `The feedback display and EEG cap. ${exhibitionPhotoCredit}`,
     },
     {
       src: "img/ant/exhibition-visitors.jpg",
+      width: 2538,
+      height: 3384,
       alt: "Two visitors explore the ANT display and EEG cap beneath purple exhibition banners.",
       caption: `Visitors explore the ANT installation. ${exhibitionPhotoCredit}`,
     },
-    { src: "img/ant/pic01.jpg", alt: "Side view of the ANT display with its screen and research panel." },
-    { src: "img/ant/pic02.jpg", alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap." },
+    { src: "img/ant/pic01.jpg", width: 2700, height: 3600, alt: "Side view of the ANT display with its screen and research panel." },
+    { src: "img/ant/pic02.jpg", width: 3520, height: 2399, alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap." },
   ],
 };
 

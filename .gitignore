@@ -4,3 +4,7 @@ node_modules/
 dist/
 .DS_Store
 npm-debug.log*
+
+# Local Camera Raw editing data stored alongside photo exports.
+img/**/*.acr
+img/**/*.xmp

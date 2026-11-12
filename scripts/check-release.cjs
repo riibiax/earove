@@ -11,6 +11,7 @@ const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(item =>
 const files = walk(dist);
 let total = 0;
 for (const file of files) {
+  assert.ok(!/\.(acr|xmp)$/i.test(file), `Photo editing sidecar would be published: ${path.relative(dist, file)}`);
   total += fs.statSync(file).size;
   const header = Buffer.alloc(100);
   const fd = fs.openSync(file, "r");

@@ -13,7 +13,7 @@ function GalleryImage({ image, onReady, onFailure, announce = true }) {
 
   return (
     <>
-      <img key={attempt} src={assetUrl(image.src)} alt={image.alt} width="1920" height="1057"
+      <img key={attempt} src={assetUrl(image.src)} alt={image.alt} width={image.width || 1920} height={image.height || 1057}
         decoding="async" hidden={status === "error"}
         onLoad={() => { setStatus("ready"); onReady?.(); }}
         onError={() => { setStatus("error"); onFailure?.(); }} />
@@ -155,7 +155,7 @@ export default function ProjectGallery({ images, title }) {
         {images.map((entry, imageIndex) => (
           <button type="button" key={entry.src} aria-label={`Show image ${imageIndex + 1} of ${images.length}`}
             aria-pressed={imageIndex === index} onClick={() => { setPlaying(false); setIndex(imageIndex); }}>
-            <img src={assetUrl(entry.src)} alt="" loading="lazy" width="1920" height="1057" />
+            <img src={assetUrl(entry.src)} alt="" loading="lazy" width={entry.width || 1920} height={entry.height || 1057} />
           </button>
         ))}
       </div>
