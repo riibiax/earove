@@ -121,7 +121,7 @@ Reusable project components live in [src/js/components/project](src/js/component
 | `ProjectRecognition` | Award badges on a dark field, with readable award captions. |
 | `CaseStudyText` | Orange emphasis for exact phrases, without HTML in content. |
 
-All **21 projects** use the same editorial layout. Each page component is a small wrapper around `ProjectCaseStudy`; its project-specific text, credits and media live in a separate module under [src/js/content](src/js/content). For example, [SpinnyPage.js](src/js/components/SpinnyPage.js) imports [spinnyCaseStudy.js](src/js/content/spinnyCaseStudy.js). No layout markup needs to be copied when editing a project.
+All **24 projects** use the same editorial layout. Each page component is a small wrapper around `ProjectCaseStudy`; its project-specific text, credits and media live in a separate module under [src/js/content](src/js/content). For example, [SpinnyPage.js](src/js/components/SpinnyPage.js) imports [spinnyCaseStudy.js](src/js/content/spinnyCaseStudy.js). No layout markup needs to be copied when editing a project.
 
 Project content and optional sections work as follows:
 
@@ -131,7 +131,7 @@ Project content and optional sections work as follows:
 - `ProjectRecognition`: supply `recognition: [{ src, alt }]` for award artwork and its caption. Anshar Online and Death Lap retain their original award badges.
 - Optional `notes: [{ label, text }]` preserve collaborators and production credits; `links: [{ label, href }]` add external project links below the contribution. Technologies are hidden when no list is documented.
 
-`createGallery(title, paths)` builds gallery entries from an explicit image list. Reorder those paths in the project content module to change the slideshow order. The hero is independently editable; its `width` and `height` reserve the correct space before loading. Images keep their proportions, and gallery frames use contain fitting. The current galleries contain 160 unique images across the 21 pages; one repeated Skater slide was removed. All six existing video embeds remain.
+`createGallery(title, paths)` builds gallery entries from an explicit image list. Reorder those paths in the project content module to change the slideshow order. The hero is independently editable; its `width` and `height` reserve the correct space before loading. Images keep their proportions, and gallery frames use contain fitting. Gallery entries stay with their project content; each slide can carry its own caption and image credit.
 
 `caseStudy.css` scopes the shared page styles; the body theme is removed on navigation. It stacks the title and credits below 900px and the story sections below 640px. `fonts.css` is shared with the homepage. Native dialog behavior requires a current browser. The retired layout components and styles were backed up outside the repository at `../output/project-layout-migration-20261106/` and removed from the active source tree.
 
@@ -144,6 +144,7 @@ Custom CSS lives in [src/css](src/css); shared Bootstrap styles are imported onc
 | File | Main responsibility |
 | --- | --- |
 | `homepage.css` | Editorial homepage tokens, typography, grid, archive and responsive layout. |
+| `wordmark.css` | Shared six-second header name pulse; disabled for reduced-motion preferences. |
 | `caseStudy.css` / `fonts.css` | Editorial case-study layout, image gallery/dialog and shared local fonts. |
 | `ParticlesScene.css` | Retained particle scene styles. |
 
@@ -163,7 +164,7 @@ CVs generated elsewhere in the parent workspace are not automatically added to t
 
 1. Add images under `img/<project>/` and create or edit its content module in `src/js/content/`.
 2. Follow an existing case-study object: `path`, `title`, `category`, `introduction`, `credits`, `hero`, `context`, `approach`, `impact`, `contribution`, `technologies` and `gallery`. The page component only imports the object and renders `<ProjectCaseStudy project={content} />`.
-3. Add or update the entry in `src/js/projectData.js`. Entries contain `path`, `title`, `thumbnail` and optional `showTitleOnHome`; their order controls the homepage archive. Featured order is set separately in `home/homeContent.js`. `showTitleOnHome: false` hides only the title overlay on the homepage.
+3. Add or update the entry in `src/js/projectData.js`. Entries contain `path`, `title`, `thumbnail` and optional `showTitleOnHome` and `navigationAfter`; their order controls the homepage archive. `navigationAfter` places an archive entry after a related project in previous/next navigation. Featured order is set separately in `home/homeContent.js`. `showTitleOnHome: false` hides only the title overlay on the homepage.
 4. Register the page's lazy import and route in `src/js/pageRoutes.js`. Add a search and social description in `config/project-descriptions.json` when the case-study introduction needs more context.
 5. Check the thumbnail, project text, carousel, video and navigation in the browser.
 

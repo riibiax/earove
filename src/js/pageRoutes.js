@@ -5,6 +5,7 @@ export const homeRoute = { path: "/", load: () => import("./components/HomePage"
 const projectRoutes = [
   ["/evoka", () => import("./components/EvokaPage")],
   ["/ant", () => import("./components/AntPage")],
+  ["/switch-miso", () => import("./components/SwitchMisoPage")],
   ["/kf", () => import("./components/KfPage")],
   ["/ecole42", () => import("./components/Ecole42Page")],
   ["/aef", () => import("./components/AefPage")],

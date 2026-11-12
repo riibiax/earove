@@ -1,4 +1,5 @@
 @import "./fonts.css";
+@import "./wordmark.css";
 
 /* Let media and navigation use wider displays while keeping text widths separate. */
 :where(.editorial-home, .case-study) {

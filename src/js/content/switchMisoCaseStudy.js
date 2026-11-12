@@ -1,0 +1,59 @@
+// Keep attribution on both the cover and each independently viewed gallery slide.
+const imageCredit = "Image courtesy of EPFL+ECAL Center.";
+
+// Content only: ProjectCaseStudy supplies the shared layout and gallery controls.
+// Source links and individual team credits are intentionally omitted from the page.
+const switchMisoCaseStudy = {
+  path: "/switch-miso",
+  title: "SWITCH Miso",
+  section: "PROJECT ARCHIVE",
+  category: "Conversational AI",
+  introduction: "Five days of conversation about what we eat and why it matters.",
+  highlights: ["Five days of conversation", "short daily conversations", "engineering team", "mobile-first web app"],
+  credits: [
+    { label: "Format", value: "Research prototype, 2026" },
+    { label: "Institution", value: "EPFL+ECAL Lab" },
+    { label: "My role", value: "Engineering team" },
+  ],
+  hero: {
+    src: "img/miso/conversation.jpg",
+    alt: "Two phone mockups show Miso’s chat interface and a card for a newly unlocked tool.",
+    width: 1920,
+    height: 1459,
+    caption: `A daily conversation with Miso and a tool to take away. ${imageCredit}`,
+  },
+  context: "What did you eat yesterday, and what shaped that choice? Miso starts with questions like these to make healthy, sustainable eating easier to think about in the context of everyday life. We developed the prototype at EPFL+ECAL Lab as part of the Horizon Europe SWITCH project to explore how conversational AI could help people build food literacy and make more informed choices.",
+  approach: "Miso leads a series of short daily conversations over five days. Each session introduces a topic and invites people to connect it to meals they already eat or dishes they might try. Along the way, participants unlock practical guides, such as a seasonal produce calendar or a guide to reading food labels. The app keeps those guides in an animated toolbox and lets people revisit earlier conversations by day.",
+  impact: "In a five-day field study with 14 participants, people valued the prompts about their own habits, the guided conversations and the short take-home tools. Participants reported learning more about food and described changes they intended to try. The team’s findings were presented at NordiCHI 2026 in Vaasa, Finland.",
+  contribution: "I was part of the engineering team that developed Miso at EPFL+ECAL Lab. We built the mobile-first web app with React, connected the OpenAI-powered chat through Socket.IO, and used MongoDB to save conversations and study progress between visits. I also co-authored the research paper on Miso’s design and evaluation.",
+  technologies: ["React", "Vite", "Zustand", "Framer Motion", "Node.js", "Express", "Socket.IO", "MongoDB", "OpenAI API"],
+  gallery: [
+    {
+      src: "img/miso/welcome.jpg",
+      alt: "A hand holds a phone showing Miso’s welcome screen against a lilac background.",
+      caption: `Miso introduces itself at the start of the five-day experience. ${imageCredit}`,
+    },
+    {
+      src: "img/miso/app-screens.jpg",
+      alt: "Three side-by-side mobile screens show sign-in, a Miso chat and the toolbox.",
+      caption: `The sign-in, conversation and toolbox screens. ${imageCredit}`,
+    },
+    {
+      src: "img/miso/daily-history.jpg",
+      alt: "Floating conversation cards summarise daily topics, including healthy eating and the environmental footprint of food.",
+      caption: `Participants could return to earlier conversations by day. ${imageCredit}`,
+    },
+    {
+      src: "img/miso/toolbox.jpg",
+      alt: "The Miso toolbox screen features lavender illustrations and a collection of guides.",
+      caption: `The toolbox gathers the guides unlocked during the conversations. ${imageCredit}`,
+    },
+    {
+      src: "img/miso/home-screen.jpg",
+      alt: "A close-up of a phone home screen shows Miso’s lavender sparkle icon.",
+      caption: `Miso’s icon on a phone home screen. ${imageCredit}`,
+    },
+  ],
+};
+
+export default switchMisoCaseStudy;

@@ -1,0 +1,13 @@
+/* Shared by the homepage and case-study headers. Keep motion opt-in so a
+   reduced-motion preference leaves the name at its normal readable colour. */
+@keyframes wordmark-pulse {
+  0%, 100% { color: #000; }
+  50% { color: #fff; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-home .home-wordmark,
+  .case-study .case-wordmark {
+    animation: wordmark-pulse 6s ease-in-out infinite;
+  }
+}

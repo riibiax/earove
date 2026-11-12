@@ -14,6 +14,12 @@ const projects = [
     navigationAfter: "/evoka",
   },
   {
+    path: "/switch-miso",
+    title: "SWITCH Miso",
+    thumbnail: "img/miso/conversation.jpg",
+    navigationAfter: "/ant",
+  },
+  {
     path: "/kf",
     title: "KF Watches",
     thumbnail: "img/kf/kf.png",
