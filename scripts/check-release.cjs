@@ -91,6 +91,15 @@ for (const url of urls) {
     requireAsset(!target || target.endsWith("/") ? `${target}index.html` : target);
     checked++;
   }
+  for (const [, candidates] of html.matchAll(/\s(?:srcset|imagesrcset)="([^"]+)"/gi)) {
+    for (const candidate of candidates.split(",")) {
+      const [reference, width] = candidate.trim().split(/\s+/);
+      assert.ok(reference.startsWith(publicPath), `Responsive image bypasses the Pages base path: ${reference}`);
+      assert.match(width, /^[1-9]\d*w$/, `Invalid responsive image width: ${candidate}`);
+      requireAsset(reference.slice(publicPath.length));
+      checked++;
+    }
+  }
   if (url === siteUrl.href) {
     for (const projectUrl of pageUrls.filter((candidate) => candidate !== url)) {
       assert.ok(html.includes(`href="${new URL(projectUrl).pathname}"`), `Missing crawlable homepage link: ${projectUrl}`);

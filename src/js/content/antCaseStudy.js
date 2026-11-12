@@ -1,4 +1,5 @@
 const exhibitionPhotoCredit = "© EPFL+ECAL Lab / Daniela & Tonatiuh";
+const portraitSizes = "(max-width: 640px) 40vw, (max-width: 1600px) 38vw, 800px";
 
 const antCaseStudy = {
   path: "/ant",
@@ -15,8 +16,13 @@ const antCaseStudy = {
   hero: {
     src: "img/ant/ant.jpg",
     alt: "A wide view of the ANT installation with warm bands of light reflected across the wall and floor.",
-    width: 3377,
-    height: 1899,
+    width: 2400,
+    height: 1350,
+    sources: [
+      { src: "img/ant/responsive/ant-800.jpg", width: 800 },
+      { src: "img/ant/responsive/ant-1600.jpg", width: 1600 },
+      { src: "img/ant/ant.jpg", width: 2400 },
+    ],
     caption: "The ANT project on display.",
   },
   context: "Tinnitus is the perception of sound without an external source. ANT brought together design, neuroscience and psychology to study how neurofeedback training could be adapted for people with tinnitus.",
@@ -36,20 +42,53 @@ const antCaseStudy = {
   gallery: [
     {
       src: "img/ant/pic03.jpg",
-      width: 3600,
-      height: 4800,
+      width: 1800,
+      height: 2400,
+      thumbnail: "img/ant/responsive/pic03-800.jpg",
+      sizes: portraitSizes,
+      sources: [
+        { src: "img/ant/responsive/pic03-800.jpg", width: 600 },
+        { src: "img/ant/responsive/pic03-1600.jpg", width: 1200 },
+        { src: "img/ant/pic03.jpg", width: 1800 },
+      ],
       alt: "A purple feedback pattern on the ANT display beside the EEG cap and project panel.",
       caption: `The feedback display and EEG cap. ${exhibitionPhotoCredit}`,
     },
     {
       src: "img/ant/exhibition-visitors.jpg",
-      width: 2538,
-      height: 3384,
+      width: 1800,
+      height: 2400,
+      thumbnail: "img/ant/responsive/exhibition-visitors-800.jpg",
+      sizes: portraitSizes,
+      sources: [
+        { src: "img/ant/responsive/exhibition-visitors-800.jpg", width: 600 },
+        { src: "img/ant/responsive/exhibition-visitors-1600.jpg", width: 1200 },
+        { src: "img/ant/exhibition-visitors.jpg", width: 1800 },
+      ],
       alt: "Two visitors explore the ANT display and EEG cap beneath purple exhibition banners.",
       caption: `Visitors explore the ANT installation. ${exhibitionPhotoCredit}`,
     },
-    { src: "img/ant/pic01.jpg", width: 2700, height: 3600, alt: "Side view of the ANT display with its screen and research panel." },
-    { src: "img/ant/pic02.jpg", width: 3520, height: 2399, alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap." },
+    {
+      src: "img/ant/pic01.jpg", width: 1800, height: 2400,
+      alt: "Side view of the ANT display with its screen and research panel.",
+      thumbnail: "img/ant/responsive/pic01-800.jpg",
+      sizes: portraitSizes,
+      sources: [
+        { src: "img/ant/responsive/pic01-800.jpg", width: 600 },
+        { src: "img/ant/responsive/pic01-1600.jpg", width: 1200 },
+        { src: "img/ant/pic01.jpg", width: 1800 },
+      ],
+    },
+    {
+      src: "img/ant/pic02.jpg", width: 2400, height: 1636,
+      alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap.",
+      thumbnail: "img/ant/responsive/pic02-800.jpg",
+      sources: [
+        { src: "img/ant/responsive/pic02-800.jpg", width: 800 },
+        { src: "img/ant/responsive/pic02-1600.jpg", width: 1600 },
+        { src: "img/ant/pic02.jpg", width: 2400 },
+      ],
+    },
   ],
 };
 

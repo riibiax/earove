@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
-import { assetUrl, projectPath } from "../../sitePaths";
+import { assetUrl, imageSrcSet, projectPath } from "../../sitePaths";
 import { archiveProjects, featuredProjects, homeContent } from "../home/homeContent";
 import HomeFooter from "../home/HomeFooter";
 import ProjectGallery from "./ProjectGallery";
@@ -60,7 +60,8 @@ export default function ProjectCaseStudy({ project, children }) {
           </dl>
         </section>
         <figure className="case-hero">
-          <img src={assetUrl(project.hero.src)} alt={project.hero.alt} width={project.hero.width || 1920} height={project.hero.height || 1057} fetchPriority="high" decoding="async" />
+          <img src={assetUrl(project.hero.src)} srcSet={imageSrcSet(project.hero.sources)} sizes={project.hero.sources ? "(max-width: 640px) calc(100vw - 48px), 92vw" : undefined}
+            alt={project.hero.alt} width={project.hero.width || 1920} height={project.hero.height || 1057} fetchPriority="high" decoding="async" />
           <figcaption className="case-caption">{project.hero.caption}</figcaption>
         </figure>
         <div className="case-story">

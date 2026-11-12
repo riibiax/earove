@@ -1,9 +1,9 @@
 import React, { useEffect, useId, useRef, useState } from "react";
-import { assetUrl } from "../../sitePaths";
+import { assetUrl, imageSrcSet } from "../../sitePaths";
 
 /** Each selection gets its own loading state, including cached images and retry.
  * A failed request shows an explanation instead of an empty black frame. */
-function GalleryImage({ image, onReady, onFailure, announce = true }) {
+function GalleryImage({ image, onReady, onFailure, announce = true, enlarged = false }) {
   const [status, setStatus] = useState("loading");
   const [attempt, setAttempt] = useState(0);
   const retry = () => {
@@ -13,7 +13,9 @@ function GalleryImage({ image, onReady, onFailure, announce = true }) {
 
   return (
     <>
-      <img key={attempt} src={assetUrl(image.src)} alt={image.alt} width={image.width || 1920} height={image.height || 1057}
+      <img key={attempt} src={assetUrl(image.src)} srcSet={imageSrcSet(image.sources)}
+        sizes={image.sources ? (enlarged ? "(max-width: 640px) calc(100vw - 56px), 1320px" : image.sizes || "(max-width: 640px) calc(100vw - 48px), 92vw") : undefined}
+        alt={image.alt} width={image.width || 1920} height={image.height || 1057}
         decoding="async" hidden={status === "error"}
         onLoad={() => { setStatus("ready"); onReady?.(); }}
         onError={() => { setStatus("error"); onFailure?.(); }} />
@@ -155,7 +157,7 @@ export default function ProjectGallery({ images, title }) {
         {images.map((entry, imageIndex) => (
           <button type="button" key={entry.src} aria-label={`Show image ${imageIndex + 1} of ${images.length}`}
             aria-pressed={imageIndex === index} onClick={() => { setPlaying(false); setIndex(imageIndex); }}>
-            <img src={assetUrl(entry.src)} alt="" loading="lazy" width={entry.width || 1920} height={entry.height || 1057} />
+            <img src={assetUrl(entry.thumbnail || entry.src)} alt="" loading="lazy" width={entry.width || 1920} height={entry.height || 1057} />
           </button>
         ))}
       </div>
@@ -164,7 +166,7 @@ export default function ProjectGallery({ images, title }) {
           <div className="case-gallery-modal-content">
             {controls(true)}
             <div className="case-gallery-expanded-stage" onTouchStart={startSwipe} onTouchEnd={finishSwipe} onTouchCancel={cancelSwipe}>
-              <GalleryImage key={image.src} image={image} />
+              <GalleryImage key={image.src} image={image} enlarged />
             </div>
             <p className="case-caption">{image.caption || image.alt}</p>
           </div>

@@ -7,3 +7,7 @@ export function projectPath(path) {
 export function assetUrl(path) {
   return path && `${basePath}${path}`;
 }
+
+export function imageSrcSet(sources) {
+  return sources?.map(({ src, width }) => `${assetUrl(src)} ${width}w`).join(", ");
+}
