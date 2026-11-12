@@ -20,6 +20,20 @@
 @font-face { font-family: "Portfolio Sans"; src: url(/earove/fonts/dm-sans-500.6561bd55adf192079747.ttf) format("truetype"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Portfolio Mono"; src: url(/earove/fonts/dm-mono-400.0fbad89e4b9cf64b84ee.ttf) format("truetype"); font-weight: 400; font-display: swap; }
 
+/* Shared by the homepage and case-study headers. Keep motion opt-in so a
+   reduced-motion preference leaves the name at its normal readable colour. */
+@keyframes wordmark-pulse {
+  0%, 100% { color: #000; }
+  50% { color: #fff; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-home .home-wordmark,
+  .case-study .case-wordmark {
+    animation: wordmark-pulse 6s ease-in-out infinite;
+  }
+}
+
 /* Let media and navigation use wider displays while keeping text widths separate. */
 :where(.editorial-home, .case-study) {
   --portfolio-shell-width: clamp(1584px, 92vw, 3360px);
