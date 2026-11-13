@@ -45,15 +45,17 @@ const ansharOnlineCaseStudy = {
       "value": "Graphics programming, cinematics & game development"
     }
   ],
-  "context": "In 2017, I returned to Switzerland and joined OZWE Games to develop VR games. Anshar Online is a multiplayer space shooter with more than 50 missions, contracts and assaults, combining cooperative battles with races and eight-player deathmatches.",
-  "approach": "I first designed and implemented cinematics, then continued as a graphics programmer focused on shaders and performance. I also worked on game and level design and created the game trailer. Players progress through loot drops, resources, ship upgrades and class changes.",
+  "context": "Developed by OZWE Games, Anshar Online is a VR space shooter set around an investigation into the death of the player's partner, Rush Steel. The adventure spans more than 50 missions, from contracts and assaults to space races, with solo play and cooperative missions for up to five players.",
+  "approach": "Players fly through asteroid fields, alien worlds and vast spacecraft, steering with head movements and fighting with missiles and lasers. Cross-platform multiplayer brings Oculus Rift, Oculus Go and Samsung Gear VR players into the same universe, including eight-player deathmatches. Loot and experience let players develop their ships across Fighter, Tank and Engineer classes.",
   "impact": "The project connected cinematic direction, real-time graphics and gameplay within a commercial VR title. Its recognition included a bronze Best VR Game award at VRDays Europe 2018 and a gold Best Mobile Game award at the Indigo Award 2019, alongside the nominations shown below.",
-  "contribution": "Cinematic design and implementation, graphics programming, shader development, performance optimisation, game development, level design and production of the game trailer.",
+  "contribution": "I joined OZWE Games in 2017 and began by designing and implementing the game's cinematics. My role then expanded into graphics programming, where I developed shaders and optimised rendering performance for VR. I also contributed to gameplay and level design and created the game trailer, connecting the in-game experience with its presentation to players.",
   "technologies": [
+    "C++",
     "C#",
-    "Shaders",
-    "Unity 3D",
-    "Blender"
+    "Unity",
+    "ShaderLab",
+    "Oculus SDK",
+    "RenderDoc"
   ],
   "videos": [
     {

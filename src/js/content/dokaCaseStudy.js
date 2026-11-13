@@ -40,7 +40,7 @@ const dokaCaseStudy = {
   "context": "For Doka Group’s booth at BAUMA, the international construction and mining machinery fair, Ars Electronica Solutions created two interactive Reference Walls to present the company’s worldwide network through georeferenced data.",
   "approach": "Each wall combined 12 monitors with animated effects to attract visitors. A globe formed the main interface: visitors could rotate it, zoom in and select locations to explore videos, photographs, text and statistics. I contributed to the GeoStage software behind the installation.",
   "impact": "The walls became entrance points to Doka’s exhibition, making its international references explorable and supporting conversations between visitors and the sales team.",
-  "contribution": "Development of GeoStage software as part of the Ars Electronica engineering team.",
+  "contribution": "I contributed to the GeoStage software as part of the Ars Electronica engineering team. The software connected the touch-controlled globe with the photographs, videos and project information presented across the Reference Walls.",
   "technologies": [
     "C#",
     "Unity 3D",

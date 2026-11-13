@@ -41,7 +41,7 @@ const tabakFabrikCaseStudy = {
   "context": "Tabak Fabrik is a 12-minute visual piece created from memories of my two years working at Ars Electronica Solutions. The former tobacco factory in Linz became a creative hub and a setting for the places, people and events explored in the work.",
   "approach": "Using photogrammetry, I recreated buildings, spaces, statues and objects as 3D models. I then developed an animation framework driven by data from meaningful moments: emails, web traffic, images and sounds converted into binary code.",
   "impact": "The result is an abstract narrative about experiences that remain, turning traces of everyday life into moving visual forms. For privacy reasons, the underlying data is not shown; the gallery presents stills from the visual work.",
-  "contribution": "Artistic concept, photogrammetry, 3D reconstruction, data processing, shader work and development of the animation framework.",
+  "contribution": "I developed the artwork from the initial concept through to its visual realisation. I used photogrammetry to reconstruct places and objects as 3D models, processed the source data and wrote the shaders and animation framework that turned those traces into a generative narrative.",
   "technologies": [
     "Three.js",
     "Wireshark",

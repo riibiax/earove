@@ -35,8 +35,9 @@ const fireplaceCaseStudy = {
   "context": "Fireplace is an interactive lumino-kinetic device designed to explore the psychological effects of light and the relationship between technology, perception and cognitive response.",
   "approach": "The project combines a mobile app that records physical activity with a domestic device that plays visual light programmes. Flicker, colour combinations, frequency, intensity and pattern form an experimental visual language based on patterns associated with brain waves.",
   "impact": "The device provides a setting for experimenting with light and perception, connecting a record of physical activity with changing visual patterns in the home.",
-  "contribution": "Work on an interactive light-device project combining software, physical computing and visual experimentation.",
+  "contribution": "I worked on Fireplace by bringing together software, physical computing and experiments with light. My contribution explored how a domestic object could translate recorded activity into changing visual patterns.",
   "technologies": [
+    "C++",
     "openFrameworks",
     "Arduino"
   ],
@@ -48,6 +49,7 @@ const fireplaceCaseStudy = {
     "caption": "Fireplace · An experimental domestic light device"
   },
   gallery,
+  recognition: [{ alt: "Nominated for the Award of Excellence, Hans Wilsdorf Fondation, 2014." }],
 };
 
 export default fireplaceCaseStudy;

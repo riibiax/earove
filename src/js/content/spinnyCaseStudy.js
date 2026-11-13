@@ -44,13 +44,17 @@ const spinnyCaseStudy = {
   "context": "During the Covid lockdown, I developed a game with friends to explore the Nintendo Switch market and the process of creating a company in Switzerland: Thunder Sparrow. Spinny’s Journey follows a tiny alien whose spaceship is destroyed by a terrifying sparrow.",
   "approach": "Inspired by Kuru Kuru Kururin on Game Boy Advance, the gameplay centres on rotation, timing and narrow paths. Players guide Spinny through mazes, avoid traps and repair his spaceship. I worked across game production, from team and supplier coordination to user testing, communication and marketing.",
   "impact": "The project brought together an independent game for Nintendo Switch and PC and hands-on experience of building a studio in Switzerland, connecting creative decisions with the technical and organisational demands of production.",
-  "contribution": "Project and team management, supplier coordination, communication and marketing strategy, user testing, game development, Nintendo Switch shader development, code optimisation, Nintendo framework integration and VFX creation.",
+  "contribution": "I developed gameplay systems, user interfaces and shaders in Unity, optimising their performance for Nintendo Switch and PC. I also trained intelligent agents in Unity environments using deep reinforcement learning and imitation learning. Alongside development, I helped create and manage Thunder Sparrow, developed the business plan and coordinated work with external partners.",
   "technologies": [
     "C#",
-    "Shaders",
-    "Unity 2D",
-    "Photoshop",
-    "Python"
+    "Python",
+    "Unity",
+    "Unity ML-Agents",
+    "ShaderLab",
+    "Nintendo SDK",
+    "Steam SDK",
+    "RenderDoc",
+    "Substance Painter"
   ],
   "videos": [
     {
@@ -67,10 +71,10 @@ const spinnyCaseStudy = {
     }
   ],
   "hero": {
-    "src": "img/spinny/pic01.png",
-    "alt": "Spinny’s Journey, project overview",
-    "width": 1280,
-    "height": 720,
+    "src": "img/spinny/hero.jpg",
+    "alt": "Spinny's Journey, official Nintendo promotional artwork",
+    "width": 2400,
+    "height": 1350,
     "caption": "Spinny’s Journey · Independent game development"
   },
   gallery,

@@ -42,7 +42,7 @@ const vaudoiseCaseStudy = {
   "context": "When I joined UDIMU SA in 2021, my first project was an interactive totem for Vaudoise Assurances. The Way introduces retirement through an imaginative escape game: what if you could fast-forward to age 65 in just 45 minutes?",
   "approach": "I developed the mini-games and UI system, together with localisation tools, an Excel import pipeline for Unity diagrams and an assistance system to guide users through the experience.",
   "impact": "The totem combines play, visual information and guided interaction to give visitors an accessible way to engage with the topic of retirement.",
-  "contribution": "Mini-game development, interface systems, localisation tools, the Excel-to-Unity diagram pipeline and the user assistance system.",
+  "contribution": "I developed the mini-games and interface systems that guide visitors through The Way. To support the content and its presentation, I built localisation tools and a pipeline for importing Excel data into Unity diagrams. I also created the assistance system that helps users progress through the experience.",
   "technologies": [
     "C#",
     "Shaders",

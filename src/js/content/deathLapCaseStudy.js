@@ -40,7 +40,7 @@ const deathLapCaseStudy = {
   "context": "At the end of 2018, OZWE Games began collaborating with Oculus Studios on Death Lap. In this VR combat racing game, players are captured by the showman Nitro Saint Payne and thrown into a deadly TV show, racing and battling other drivers to win their freedom.",
   "approach": "I was responsible for the main Unity 3D shaders, particularly PBR metallic materials and visual effects, while keeping VR rendering performance in focus. My work also extended across gameplay, networking, artificial intelligence, level design and production support.",
   "impact": "The game brings driving, shooting, drifts, stunts, traps and special abilities into one VR experience. Its visual work combines material rendering and effects with the performance demands of fast-moving combat racing. Death Lap received a gold Halo Award in 2019.",
-  "contribution": "Shader development, coding, network infrastructure, artificial intelligence, level design, SFX, UI, localisation, VFX, optimisation, debugging and management.",
+  "contribution": "I developed the game's main shaders and visual effects, with particular attention to metallic materials and rendering performance in VR. Beyond graphics, I worked on gameplay code, network infrastructure, artificial intelligence and level design. I also contributed to sound effects, user interfaces and localisation, and supported the team through optimisation, debugging and production management.",
   "technologies": [
     "C#",
     "Shaders",
@@ -56,8 +56,8 @@ const deathLapCaseStudy = {
     }
   ],
   "hero": {
-    "src": "img/deathlap/pic01.png",
-    "alt": "Death Lap, project overview",
+    "src": "img/deathlap/pic02.png",
+    "alt": "Death Lap, VR combat racing gameplay",
     "width": 2560,
     "height": 1440,
     "caption": "Death Lap · VR combat racing"

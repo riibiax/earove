@@ -25,6 +25,14 @@ body.case-study-active { background: #fff !important; color: #202020 !important;
 .case-study dt { font: 400 12px/1.5 "Portfolio Mono", monospace; text-transform: uppercase; letter-spacing: .04em; color: var(--case-muted); margin-bottom: 8px; }
 .case-study dd { font-size: 16px; line-height: 1.5; }
 .case-study .case-hero > img { display: block; width: 100%; height: auto; background: #000; }
+/* FIELD-inspired opacity reveal; preserve a visible no-JavaScript fallback. */
+.portfolio-js .case-study .case-hero-image { opacity: 0; }
+.portfolio-js .case-study .case-hero-image.is-ready { opacity: 1; animation: case-hero-reveal .8s ease-out both; }
+@keyframes case-hero-reveal { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-js .case-study .case-hero-image, .portfolio-js .case-study .case-hero-image.is-ready { opacity: 1; animation: none; }
+}
+.case-study .case-exhibitions { margin: 0; padding-left: 1.1em; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.65; }
 .case-study .case-caption { font-size: 14px; line-height: 1.5; color: var(--case-muted); margin-top: 12px; }
 .case-study .case-story { margin-top: var(--case-space); }
 .case-study .case-story-row, .case-study .case-contribution { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; border-top: 1px solid var(--case-line); padding-block: 32px 40px; }
@@ -45,6 +53,13 @@ body.case-study-active { background: #fff !important; color: #202020 !important;
 .case-study .case-film, .case-study .case-gallery { margin-block: 16px var(--case-space); }
 .case-study .case-film-player { position: relative; aspect-ratio: 16 / 9; background: #000; }
 .case-study .case-film-player iframe, .case-study .case-film-player video { display: block; width: 100%; height: 100%; border: 0; }
+.case-study .case-film-poster { display: block; width: 100%; height: 100%; object-fit: cover; }
+.case-study .case-film-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; border-bottom: 1px solid var(--case-line); padding-block: 8px; font-size: 14px; }
+.case-study .case-film-toolbar button { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 12px; border: 0; background: transparent; }
+.case-study .case-film-toolbar button:disabled { opacity: .45; cursor: default; }
+.case-study .case-film-toolbar button:hover:enabled, .case-study .case-film-toolbar a:hover { color: var(--case-accent); }
+.case-study .case-film-toolbar a { margin-left: auto; padding-block: 12px; }
+.case-study .case-film-status { color: var(--case-muted); }
 .case-study .case-gallery-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
 .case-study .case-gallery-heading h2 { color: var(--case-accent); font-size: clamp(26px, 3vw, 38px); font-weight: 400; letter-spacing: -.04em; line-height: 1.2; }
 .case-study .case-gallery-stage { position: relative; aspect-ratio: 1920 / 1057; background: #000; touch-action: pan-y pinch-zoom; }

@@ -1,12 +1,13 @@
 import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
-import { assetUrl, imageSrcSet, projectPath } from "../../sitePaths";
+import { projectPath } from "../../sitePaths";
 import { archiveProjects, featuredProjects, homeContent } from "../home/homeContent";
 import HomeFooter from "../home/HomeFooter";
 import ProjectGallery from "./ProjectGallery";
 import ProjectFilm from "./ProjectFilm";
 import CaseStudyText from "./CaseStudyText";
 import ProjectRecognition from "./ProjectRecognition";
+import ProjectHero from "./ProjectHero";
 import "../../../css/homepage.css";
 import "../../../css/caseStudy.css";
 
@@ -41,6 +42,8 @@ export default function ProjectCaseStudy({ project, children }) {
   const position = projectOrder.findIndex(({ path }) => path === project.path);
   const previous = projectOrder[(position - 1 + projectOrder.length) % projectOrder.length];
   const next = projectOrder[(position + 1) % projectOrder.length];
+  // A cover is shown once, even when an older gallery still lists that file.
+  const gallery = project.gallery?.filter((image) => image.src !== project.hero.src);
 
   return (
     <div className="case-study">
@@ -59,20 +62,22 @@ export default function ProjectCaseStudy({ project, children }) {
             {project.credits.map(({ label, value }) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
         </section>
-        <figure className="case-hero">
-          <img src={assetUrl(project.hero.src)} srcSet={imageSrcSet(project.hero.sources)} sizes={project.hero.sources ? "(max-width: 640px) calc(100vw - 48px), 92vw" : undefined}
-            alt={project.hero.alt} width={project.hero.width || 1920} height={project.hero.height || 1057} fetchPriority="high" decoding="async" />
-          <figcaption className="case-caption">{project.hero.caption}</figcaption>
-        </figure>
+        <ProjectHero key={project.hero.src} image={project.hero} />
         <div className="case-story">
           <StorySection title="Context" highlights={project.highlights}>{project.context}</StorySection>
           <StorySection title="Approach" highlights={project.highlights}>{project.approach}</StorySection>
         </div>
         {project.videos?.map((video) => <ProjectFilm key={video.src} video={video} />)}
         {children}
-        {project.gallery?.length > 0 && <ProjectGallery key={project.path} images={project.gallery} title={project.title} />}
+        {gallery?.length > 0 && <ProjectGallery key={project.path} images={gallery} title={project.title} />}
         <StorySection title="Impact" highlights={project.highlights}>{project.impact}</StorySection>
         {project.recognition?.length > 0 && <ProjectRecognition awards={project.recognition} />}
+        {project.exhibitions?.length > 0 && (
+          <section className="case-story-row" aria-labelledby="case-exhibitions-heading">
+            <h2 id="case-exhibitions-heading">Exhibitions</h2>
+            <ul className="case-exhibitions">{project.exhibitions.map((exhibition) => <li key={exhibition}>{exhibition}</li>)}</ul>
+          </section>
+        )}
         <section className="case-contribution" aria-labelledby="case-contribution-heading">
           <h2 id="case-contribution-heading">My contribution</h2>
           <div>

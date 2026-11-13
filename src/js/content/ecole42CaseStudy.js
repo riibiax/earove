@@ -38,7 +38,7 @@ const ecole42CaseStudy = {
   "context": "At UDIMU SA, I worked on interactive installations for 42 Lausanne, the computer science school based on peer-to-peer learning. The space needed to communicate the school’s mission and learning culture to students, visitors and staff.",
   "approach": "My role combined design and development, with interactive experiences built in Unity 3D and React. For the inauguration, we also created an augmented reality treasure hunt for iOS and Android using Unity’s AR Foundation framework.",
   "impact": "The installations offered a playful introduction to the school and its learning culture, while the inauguration treasure hunt extended the experience onto visitors’ phones.",
-  "contribution": "Interaction design and software development across the installations, including the mobile AR game.",
+  "contribution": "I worked across interaction design and software development for the school's installations, using Unity and React to turn the ideas into interactive experiences. I also contributed to the mobile augmented reality treasure hunt for the inauguration, built with Unity's AR Foundation.",
   "technologies": [
     "C#",
     "Shaders",

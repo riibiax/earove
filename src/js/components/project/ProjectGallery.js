@@ -1,9 +1,11 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { assetUrl, imageSrcSet } from "../../sitePaths";
+import { responsiveImage } from "../../responsiveImage";
 
 /** Each selection gets its own loading state, including cached images and retry.
  * A failed request shows an explanation instead of an empty black frame. */
 function GalleryImage({ image, onReady, onFailure, announce = true, enlarged = false }) {
+  const media = responsiveImage(image);
   const [status, setStatus] = useState("loading");
   const [attempt, setAttempt] = useState(0);
   const retry = () => {
@@ -13,10 +15,10 @@ function GalleryImage({ image, onReady, onFailure, announce = true, enlarged = f
 
   return (
     <>
-      <img key={attempt} src={assetUrl(image.src)} srcSet={imageSrcSet(image.sources)}
-        sizes={image.sources ? (enlarged ? "(max-width: 640px) calc(100vw - 56px), 1320px" : image.sizes || "(max-width: 640px) calc(100vw - 48px), 92vw") : undefined}
-        alt={image.alt} width={image.width || 1920} height={image.height || 1057}
-        decoding="async" hidden={status === "error"}
+      <img key={attempt} src={assetUrl(media.src)} srcSet={imageSrcSet(media.sources)}
+        sizes={media.sources ? (enlarged ? "(max-width: 640px) calc(100vw - 56px), 1320px" : image.sizes || "(max-width: 640px) calc(100vw - 48px), 92vw") : undefined}
+        alt={image.alt} width={media.width || 1920} height={media.height || 1057}
+        loading={enlarged ? "eager" : "lazy"} decoding="async" hidden={status === "error"}
         onLoad={() => { setStatus("ready"); onReady?.(); }}
         onError={() => { setStatus("error"); onFailure?.(); }} />
       {status !== "ready" && (
@@ -157,7 +159,7 @@ export default function ProjectGallery({ images, title }) {
         {images.map((entry, imageIndex) => (
           <button type="button" key={entry.src} aria-label={`Show image ${imageIndex + 1} of ${images.length}`}
             aria-pressed={imageIndex === index} onClick={() => { setPlaying(false); setIndex(imageIndex); }}>
-            <img src={assetUrl(entry.thumbnail || entry.src)} alt="" loading="lazy" width={entry.width || 1920} height={entry.height || 1057} />
+            <img src={assetUrl(responsiveImage(entry).thumbnail || entry.thumbnail || entry.src)} alt="" loading="lazy" decoding="async" width={entry.width || 1920} height={entry.height || 1057} />
           </button>
         ))}
       </div>

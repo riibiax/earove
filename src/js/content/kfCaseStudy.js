@@ -32,7 +32,7 @@ const kfCaseStudy = {
     { src: "img/kf/pic09.png", alt: "KF Watches configurator, watch configuration view 8" },
   ],
   impact: "The resulting configurator brings watch variations into one interactive experience, allowing users to customise individual components and explore colours and materials directly on screen.",
-  contribution: "Real-time rendering, 3D model optimisation, lighting, shaders, interface development and animation.",
+  contribution: "I developed the real-time rendering and touch interface in Unity HDRP, working on 3D model optimisation, lighting and shaders to convey the watches' materials and detail. I also created cinematic animations that present the watches as users select a model or configure its components.",
   technologies: ["C#", "Unity HDRP", "Shaders", "Blender"],
 };
 

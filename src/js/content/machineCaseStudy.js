@@ -42,7 +42,7 @@ const machineCaseStudy = {
   "context": "At the UMIX Information Architecture Hackathon 2014 in Lyon, teams had 48 hours to rethink physical and digital libraries. Our concept used serendipity to help children aged three to seven discover books and games through play.",
   "approach": "A friendly classification system, developed together with children, uses their interests, topics and favourite books. Children select symbols on a touch-screen table, then follow branching LED paths through the library towards special boxes that light up with book and game selections. Up to four users can follow different routes at once.",
   "impact": "Machine Enchantée won the hackathon. The concept turns choosing a book into a physical journey, connecting a digital selection with discovery throughout the library.",
-  "contribution": "Team development of the interaction concept for a playful, child-centred library experience.",
+  "contribution": "I worked with the team to develop the interaction concept, exploring how children could move from choosing an interest on a screen to discovering books and games around the library. Our shared focus was on making that journey playful and inviting for young visitors.",
   "technologies": [],
   "notes": [
     {
@@ -58,6 +58,7 @@ const machineCaseStudy = {
     "caption": "Machine Enchantée · Exploring libraries through play"
   },
   gallery,
+  recognition: [{ alt: "Prix of the Best Idea, UmiX, Lyon, 2014." }],
 };
 
 export default machineCaseStudy;

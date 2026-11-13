@@ -40,7 +40,7 @@ const metecCaseStudy = {
   "context": "For METEC in June 2015, Ars Electronica Solutions created an immersive environment for Primetals Technologies. The exhibition supported the launch of the company’s new name and corporate design at a leading event for metallurgical technology.",
   "approach": "An open exhibition space combined interactive walls, terminals and tables with a central installation of 24 screens, 12 of which could rotate. Inspired by metallurgical processes, the exhibits presented complex information in an intuitive, playful way. I developed the interactive 4K screen walls used to visualise factory data.",
   "impact": "The environment brought technical content and the new corporate identity into one exhibition experience, using data visualisation and interaction to make factory information accessible to visitors.",
-  "contribution": "Development of the interactive 4K screen walls for visualising factory data from Primetals Technologies.",
+  "contribution": "I developed the interactive 4K screen walls used to visualise factory data from Primetals Technologies. My work formed part of the wider exhibition environment created by Ars Electronica Solutions for METEC.",
   "technologies": [
     "C++",
     "JUCE",

@@ -4,6 +4,9 @@ import { findPage, homeRoute } from "./pageRoutes";
 import { basePath } from "./sitePaths";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Progressive enhancement: static pages remain readable without JavaScript.
+document.documentElement.classList.add("portfolio-js");
+
 async function start() {
   const { pathname, hash, search, origin } = window.location;
   const page = findPage(pathname.slice(basePath.length - 1));

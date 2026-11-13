@@ -58,7 +58,7 @@ export const aboutContent = {
   education: [
     { years: "2012–2014", degree: "Master’s in Media and Interaction Design", school: headGeneva },
     { years: "2008–2009", degree: "Erasmus programme", school: "École polytechnique fédérale de Lausanne (EPFL)" },
-    { years: "2007–2008", degree: "Master’s in Computer Engineering", school: "University of Siena" },
+    { years: "2007-2008", degree: "Master's in Computer Engineering", school: "Università degli Studi di Siena" },
     { years: "2002–2007", degree: "Bachelor’s in Computer Engineering", school: "Politecnico di Milano" },
   ],
   research: {

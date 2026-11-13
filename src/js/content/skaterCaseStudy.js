@@ -42,7 +42,7 @@ const skaterCaseStudy = {
   "context": "Imagine your iPhone as a skater moving through circuits and avoiding obstacles. Set in 1980s Berlin, The Skater follows a young character trying to spread American skate culture while staying ahead of the police.",
   "approach": "In a visual world inspired by zine culture, printed cards build each level and physical origami pieces help solve virtual obstacles. The player moves between a handmade paper city and its augmented reality counterpart.",
   "impact": "The game connects a mobile virtual world with physical cards and origami, making the objects around the screen part of the play experience.",
-  "contribution": "Game design and development with Praiya Chinagarn and Solkin Keizer.",
+  "contribution": "I designed and developed the game with Praiya Chinagarn and Solkin Keizer. Together, we explored how printed cards and origami could become part of an augmented reality skate adventure.",
   "technologies": [
     "C++",
     "Shaders",

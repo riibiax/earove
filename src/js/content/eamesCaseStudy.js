@@ -40,7 +40,7 @@ const eamesCaseStudy = {
   "context": "For Salone del Mobile in Milan in 2013, students from the Haute école d’art et de design in Geneva revisited educational multimedia spectacles, taking inspiration from Charles and Ray Eames’ 1964 Think Theater.",
   "approach": "We created a multi-screen environment presenting 700 unreleased images from the Eames collection, alongside an interactive wall where visitors could answer questions about design practice and the exhibition. As part of the student design team, I contributed to the concept and realisation of the wall.",
   "impact": "The exhibition connected the Eames’ archive with contemporary interaction. Answers collected in Milan were displayed in a parallel exhibition in Geneva, extending visitors’ contributions beyond the original space.",
-  "contribution": "Exhibition concept development and realisation of the interactive wall within the student design team.",
+  "contribution": "I helped develop the exhibition concept and realise the interactive wall within the student design team. My contribution brought the shared concept into an installation that invited visitors to engage with the Eames' archive.",
   "technologies": [
     "Max/MSP",
     "Arduino",

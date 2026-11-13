@@ -43,7 +43,7 @@ const spyMuseumCaseStudy = {
   "context": "In September 2015, I worked with Ars Electronica Solutions on interactive installations for the Spy Museum in Berlin. Across more than 3,000 square metres, the permanent exhibition tells stories of covert operations, espionage cases and legendary spies.",
   "approach": "The exhibition combines historical objects, documents, photographs, films, interviews and expert testimony with multimedia and museum technology. Interactive experiences make exploration and discovery part of the visit.",
   "impact": "Historical material and interactive encounters sit together within the permanent exhibition, giving visitors different ways to explore the people, methods and stories behind espionage.",
-  "contribution": "Work on interactive installations as part of the Ars Electronica Solutions team.",
+  "contribution": "I worked on the interactive installations with the Ars Electronica Solutions team. My contribution formed part of the museum's approach to bringing the history of espionage into experiences visitors could explore for themselves.",
   "technologies": [],
   "hero": {
     "src": "img/spymuseum/pic01.jpg",

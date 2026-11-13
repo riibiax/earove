@@ -40,7 +40,7 @@ const beehiveCaseStudy = {
   "context": "In March 2015, I delivered my first project with Ars Electronica Solutions: GeoPulse BeeHive Mons. At Café Europa in Mons, the European Capital of Culture, visitors could explore video stories from across the city.",
   "approach": "An Android and iOS app let participants record georeferenced video, stored and indexed in a database. An interactive table made the collection browsable by topic or place. Like bees returning to a hive, participants gathered events from different perspectives into a collective pool.",
   "impact": "The project connected mobile capture with a shared public interface, bringing individual perspectives on the city into a collection that visitors could explore together.",
-  "contribution": "Work on GeoPulse BeeHive Mons as part of the Ars Electronica Solutions team.",
+  "contribution": "I worked on GeoPulse BeeHive Mons with the Ars Electronica Solutions team. My contribution formed part of an experience that connected video stories recorded around the city with a shared interactive table.",
   "technologies": [],
   "notes": [
     {

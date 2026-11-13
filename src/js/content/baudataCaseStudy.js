@@ -44,7 +44,7 @@ const baudataCaseStudy = {
   "context": "In 2017, I founded BauData, a collective exploring the web through bots, data animation and generative visualisation. It became a diary of visual stories published on the collective’s website.",
   "approach": "Sky Gradients is a bot that travels through cities, reads weather data and uses mathematical functions to generate skies from local light and colour conditions. Hop Mountains abstracts landscapes into colour, line and form, translating mountains and sky into changing generative compositions.",
   "impact": "The projects turn environmental information into an ongoing visual exploration of place, using data as material for animated skies and abstract landscapes.",
-  "contribution": "Founding the collective and developing bots, data-driven animations and generative visualisation projects.",
+  "contribution": "I founded BauData as a space to explore generative visual stories through code. I developed the bots, data-driven animations and visualisation projects, turning environmental information into changing compositions.",
   "technologies": [
     "Node.js",
     "p5.js",

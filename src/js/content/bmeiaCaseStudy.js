@@ -37,7 +37,7 @@ const bmeiaCaseStudy = {
   "context": "In December 2015, Ars Electronica Solutions created an interactive media wall for the Austrian Federal Ministry for Europe, Integration and Foreign Affairs. It used data visualisation to help visitors explore Austria’s international activities and compare information across countries.",
   "approach": "Three landscape screens formed a wall powered by a customised GeoPulse application, with content managed through a CMS. Features included gigapixel imagery and geospatial visualisation. Active mode supported up to three people at once, while presentation mode used the full display.",
   "impact": "The same installation supported shared exploration and full-screen presentations, bringing Austria’s international activities into a visual, navigable format.",
-  "contribution": "Implementation of the media wall and its customised GeoPulse application as part of Ars Electronica Solutions.",
+  "contribution": "As part of Ars Electronica Solutions, I implemented the media wall and its customised GeoPulse application. My work helped bring geospatial information and gigapixel imagery into a display designed for both shared exploration and presentations.",
   "technologies": [
     "C++",
     "JUCE",

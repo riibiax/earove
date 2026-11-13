@@ -39,7 +39,7 @@ const lightscapeCaseStudy = {
   "context": "Lightscape is an interactive and performative installation depicting the landscape seen by a migrant during a journey. It explores how the qualities of a place can be translated into a physical, changing composition.",
   "approach": "Using GPS location, the artwork combines landscape images from Flickr with live weather data to recreate local colours and light. The upper part represents the sky, the lower part visualises the soil and a mechanical silhouette suggests someone moving through the landscape.",
   "impact": "Weather forecasts continuously animate the composition, bringing images, environmental information and mechanical movement together in a landscape that changes over time.",
-  "contribution": "Work on the interactive and performative installation, combining location-based imagery, weather information and physical movement.",
+  "contribution": "I worked on the interactive and performative installation, bringing together location-based imagery, weather information and physical movement. My contribution explored how these different materials could form a changing representation of a journey.",
   "technologies": [
     "openFrameworks",
     "Arduino",

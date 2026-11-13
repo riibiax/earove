@@ -41,7 +41,7 @@ const aefCaseStudy = {
   "context": "For Ars Electronica Festival 2016, I worked on interactive installations presenting content from the European Space Agency and organisations including Reporters, Engineers, Architects and Doctors Without Borders.",
   "approach": "A 4K projection wall controlled by a touch terminal let visitors explore a simulation of Earth, ESA satellite models, high-resolution planetary images and points of interest from space research. A second 4K touch screen focused on geodata and the participating organisations’ field activities.",
   "impact": "The installations brought space research and field activity into an explorable format. GeoStage, Ars Electronica Solutions’ geovisualisation system, processed heat maps, points of interest, media and text for the interactive displays.",
-  "contribution": "Development work on the interactive installations and their geospatial visualisations as part of the Ars Electronica Solutions team.",
+  "contribution": "I developed interactive installations and geospatial visualisations as part of the Ars Electronica Solutions team. My work supported the displays through which visitors explored space research and the participating organisations' activities.",
   "technologies": [
     "C#",
     "Unity 3D",

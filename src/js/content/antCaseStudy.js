@@ -14,16 +14,11 @@ const antCaseStudy = {
     { label: "My role", value: "Lead developer & visual creation" },
   ],
   hero: {
-    src: "img/ant/ant.jpg",
-    alt: "A wide view of the ANT installation with warm bands of light reflected across the wall and floor.",
-    width: 2400,
-    height: 1350,
-    sources: [
-      { src: "img/ant/responsive/ant-800.jpg", width: 800 },
-      { src: "img/ant/responsive/ant-1600.jpg", width: 1600 },
-      { src: "img/ant/ant.jpg", width: 2400 },
-    ],
-    caption: "The ANT project on display.",
+    src: "img/ant/hero-lab.jpg",
+    alt: "ANT's neurofeedback visualisation presented at EPFL+ECAL Lab.",
+    width: 1536,
+    height: 1152,
+    caption: "ANT. Photography © EPFL+ECAL Lab / Marvin Merkel.",
   },
   context: "Tinnitus is the perception of sound without an external source. ANT brought together design, neuroscience and psychology to study how neurofeedback training could be adapted for people with tinnitus.",
   approach: "During training, real-time visual feedback reflects changes in measured brain activity. For example, changes in alpha activity can make a pattern expand or alter its speed. The team explored how these visual cues affect understanding and engagement.",
@@ -69,6 +64,11 @@ const antCaseStudy = {
       caption: `Visitors explore the ANT installation. ${exhibitionPhotoCredit}`,
     },
     {
+      src: "img/ant/ant.jpg", width: 2400, height: 1350,
+      alt: "A wide view of the ANT installation with warm bands of light reflected across the wall and floor.",
+      caption: "The ANT project on display.",
+    },
+    {
       src: "img/ant/pic01.jpg", width: 1800, height: 2400,
       alt: "Side view of the ANT display with its screen and research panel.",
       thumbnail: "img/ant/responsive/pic01-800.jpg",
@@ -80,14 +80,8 @@ const antCaseStudy = {
       ],
     },
     {
-      src: "img/ant/pic02.jpg", width: 2400, height: 1636,
+      src: "img/ant/pic02-aligned.jpg", width: 2400, height: 1636,
       alt: "The full exhibition setup with a tablet, an upright feedback screen and a red EEG cap.",
-      thumbnail: "img/ant/responsive/pic02-800.jpg",
-      sources: [
-        { src: "img/ant/responsive/pic02-800.jpg", width: 800 },
-        { src: "img/ant/responsive/pic02-1600.jpg", width: 1600 },
-        { src: "img/ant/pic02.jpg", width: 2400 },
-      ],
     },
   ],
 };

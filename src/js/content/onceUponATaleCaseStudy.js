@@ -41,7 +41,7 @@ const onceUponATaleCaseStudy = {
   "context": "Once Upon a Tale is a tactile book and interactive storytelling application based on well-known children’s stories. It invites readers to reinvent familiar tales and build their own combinations.",
   "approach": "Through a card game or touch interface, players select characters and settings from different stories to generate combinations of text and illustration. Stories can be changed at any moment: Cinderella might become the big bad wolf in Bluebeard’s castle.",
   "impact": "The project makes storytelling an activity to shape and remix, connecting physical play with a digital application and illustrations that respond to the chosen narrative.",
-  "contribution": "Application development with Praiya Chinagarn, with illustrations by Benjamin Ben Kemoun.",
+  "contribution": "I developed the application with Praiya Chinagarn, bringing the storytelling interactions into a digital experience. We worked with illustrations by Benjamin Ben Kemoun so that readers could combine characters and settings and see their stories take shape on screen.",
   "technologies": [],
   "notes": [
     {
@@ -65,6 +65,16 @@ const onceUponATaleCaseStudy = {
     "caption": "Once Upon a Tale · Physical cards and interactive storytelling"
   },
   gallery,
+  exhibitions: [
+    "Once Upon a Tale, Mudac 2016",
+    "Swiss Gaming Corner 2014",
+    "Lift China 2014",
+    "The Book Lab EPFL 2014",
+    "Grafik14 Zurich",
+    "Milan Salone del Mobile 2014",
+    "Swissnex Boston 2014",
+    "Mobilisable Paris 2013",
+  ],
 };
 
 export default onceUponATaleCaseStudy;

@@ -92,7 +92,7 @@ for (const url of urls) {
     checked++;
   }
   for (const [, candidates] of html.matchAll(/\s(?:srcset|imagesrcset)="([^"]+)"/gi)) {
-    for (const candidate of candidates.split(",")) {
+    for (const candidate of candidates.split(/,\s+/)) {
       const [reference, width] = candidate.trim().split(/\s+/);
       assert.ok(reference.startsWith(publicPath), `Responsive image bypasses the Pages base path: ${reference}`);
       assert.match(width, /^[1-9]\d*w$/, `Invalid responsive image width: ${candidate}`);

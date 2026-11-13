@@ -41,7 +41,7 @@ const saltMineCaseStudy = {
   "context": "The Treasure Chamber is one of the main attractions of the Berchtesgaden Salt Mine’s SaltTimeJourney guided tour. Ars Electronica Solutions redesigned this large underground space carved into the rock.",
   "approach": "Across four projection screens, abstract crystalline animations tell the story of salt through nature, humankind, history and technology. A dedicated soundtrack supports the imagery, while a pulsating salt lamp created by one of the mine’s associates provides another focal point.",
   "impact": "Light, image, sound and the underground setting combine into an immersive environment that forms part of the SaltTimeJourney visitor experience.",
-  "contribution": "Concept design as part of the Ars Electronica Solutions team.",
+  "contribution": "I contributed to the concept design with the Ars Electronica Solutions team. Our work considered how imagery, light and sound could work with the underground chamber to shape the visitor experience.",
   "technologies": [],
   "hero": {
     "src": "img/saltmine/pic01.jpg",
