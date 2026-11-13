@@ -8,16 +8,16 @@ const projects = [
     thumbnail: "img/evoka/evoka.jpg",
   },
   {
-    path: "/ant",
-    title: "Advancing Neurofeedback in Tinnitus",
-    thumbnail: "img/ant/ant.jpg",
-    navigationAfter: "/evoka",
-  },
-  {
     path: "/switch-miso",
     title: "SWITCH Miso",
     thumbnail: "img/miso/conversation.jpg",
-    navigationAfter: "/ant",
+    navigationAfter: "/evoka",
+  },
+  {
+    path: "/ant",
+    title: "Advancing Neurofeedback in Tinnitus",
+    thumbnail: "img/ant/ant.jpg",
+    navigationAfter: "/switch-miso",
   },
   {
     path: "/kf",

@@ -11,6 +11,13 @@ function renderDocument(page, siteName, publicPath, tags) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  ${page.bodyClass === "case-study-active" ? `<script>
+    // Set this before loading the app so native restoration cannot override it.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.addEventListener("pageshow", function () {
+      if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    });
+  </script>` : ""}
   <title>${title}</title>
   <meta name="description" content="${description}">
   <meta name="robots" content="max-image-preview:large">
