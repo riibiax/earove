@@ -35,7 +35,7 @@ const projects = [
   },
   {
     path: "/spinny",
-    title: "Spinny",
+    title: "Spinny's Journey",
     thumbnail: "img/spinny/spinny.png",
     showTitleOnHome: false,
   },

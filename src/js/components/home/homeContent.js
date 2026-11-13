@@ -19,9 +19,9 @@ const featuredPaths = new Set(selection.map(({ path }) => path));
 // Evoka leads the expanded list as well as the featured cards.
 export const archiveProjects = projects.filter(({ path }) => path === "/evoka" || !featuredPaths.has(path));
 
-// Follow the expanded list first; include the other featured projects once at the end.
-const archivePaths = new Set(archiveProjects.map(({ path }) => path));
-export const projectOrder = [...archiveProjects, ...featuredProjects.filter(({ path }) => !archivePaths.has(path))];
+// Case-study navigation follows every project in its original sequence,
+// independently of which projects are featured on the homepage.
+export const projectOrder = projects;
 
 // Introductory and contact text is kept together for the next content pass.
 export const homeContent = {
@@ -58,6 +58,11 @@ export const aboutContent = {
       { text: "My experience also includes " },
       { text: "technical leadership", emphasis: true },
       { text: ", team coordination and collaboration with external partners." },
+    ],
+    [
+      { text: "My interest in computational design led me to collaborate on " },
+      { text: "The Book of Shaders", href: "https://thebookofshaders.com/" },
+      { text: ", an interactive guide through the abstract and complex universe of fragment shaders." },
     ],
   ],
   education: [

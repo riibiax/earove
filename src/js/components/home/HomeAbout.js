@@ -12,9 +12,12 @@ export default function HomeAbout() {
         <h2 id="home-about-heading" className="home-editorial-heading">About</h2>
         <div className="home-about-copy">
           {aboutContent.paragraphs.map((fragments, index) => (
-            <p key={index}>{fragments.map(({ text, emphasis }, fragmentIndex) => emphasis
-              ? <span className="home-highlight" key={fragmentIndex}>{text}</span>
-              : <React.Fragment key={fragmentIndex}>{text}</React.Fragment>)}</p>
+            <p key={index}>{fragments.map(({ text, emphasis, href }, fragmentIndex) => {
+              if (href) return <a key={fragmentIndex} href={href} target="_blank" rel="noopener noreferrer">{text}</a>;
+              return emphasis
+                ? <span className="home-highlight" key={fragmentIndex}>{text}</span>
+                : <React.Fragment key={fragmentIndex}>{text}</React.Fragment>;
+            })}</p>
           ))}
         </div>
       </div>
