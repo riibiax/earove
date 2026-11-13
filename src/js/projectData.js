@@ -84,12 +84,12 @@ const projects = [
   {
     path: "/spymuseum",
     title: "Spy Museum",
-    thumbnail: "img/spymuseum/spymuseum.jpg",
+    thumbnail: "img/spymuseum/spymuseum-enhanced.jpg",
   },
   {
     path: "/metec",
     title: "Metec",
-    thumbnail: "img/metec/metec.jpg",
+    thumbnail: "img/metec/metec-enhanced.jpg",
   },
   {
     path: "/mons",

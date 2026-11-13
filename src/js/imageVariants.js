@@ -2572,6 +2572,26 @@ export default {
       }
     ]
   },
+  "img/metec/metec-enhanced.jpg": {
+    "width": 1498,
+    "height": 1050,
+    "thumbnail": "img/metec/optimised/metec-enhanced-jpg-480.webp",
+    "src": "img/metec/optimised/metec-enhanced-jpg-1498.webp",
+    "sources": [
+      {
+        "src": "img/metec/optimised/metec-enhanced-jpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "img/metec/optimised/metec-enhanced-jpg-800.webp",
+        "width": 800
+      },
+      {
+        "src": "img/metec/optimised/metec-enhanced-jpg-1498.webp",
+        "width": 1498
+      }
+    ]
+  },
   "img/metec/metec.jpg": {
     "width": 914,
     "height": 640,
@@ -4115,6 +4135,26 @@ export default {
       {
         "src": "img/spymuseum/optimised/pic10-jpg-1920.webp",
         "width": 1920
+      }
+    ]
+  },
+  "img/spymuseum/spymuseum-enhanced.jpg": {
+    "width": 1254,
+    "height": 1254,
+    "thumbnail": "img/spymuseum/optimised/spymuseum-enhanced-jpg-480.webp",
+    "src": "img/spymuseum/optimised/spymuseum-enhanced-jpg-1254.webp",
+    "sources": [
+      {
+        "src": "img/spymuseum/optimised/spymuseum-enhanced-jpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "img/spymuseum/optimised/spymuseum-enhanced-jpg-800.webp",
+        "width": 800
+      },
+      {
+        "src": "img/spymuseum/optimised/spymuseum-enhanced-jpg-1254.webp",
+        "width": 1254
       }
     ]
   },

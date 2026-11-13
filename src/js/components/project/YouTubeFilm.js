@@ -37,6 +37,8 @@ export default function YouTubeFilm({ video }) {
   videoUrl.searchParams.set("enablejsapi", "1");
   videoUrl.searchParams.set("playsinline", "1");
   videoUrl.searchParams.set("controls", "1");
+  // Do not force captions through an embed URL; initialise them below instead.
+  videoUrl.searchParams.delete("cc_load_policy");
   if (typeof window !== "undefined") videoUrl.searchParams.set("origin", window.location.origin);
   const videoId = videoUrl.pathname.split("/").pop();
   const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
@@ -45,19 +47,35 @@ export default function YouTubeFilm({ video }) {
     if (!started) return undefined;
     let disposed = false;
     let readyTimeout;
+    let captionsInitialised = false;
+    const initialiseCaptions = ({ target }) => {
+      if (disposed || captionsInitialised) return;
+      // Caption modules can arrive after onReady. Unload once so later CC
+      // selections remain under the viewer's control. This optional method
+      // is not guaranteed by YouTube's documented API; playback must not depend on it.
+      try {
+        if (typeof target.unloadModule !== "function" || !target.getOptions?.()?.includes("captions")) return;
+        captionsInitialised = true;
+        target.unloadModule("captions");
+      } catch {
+        // Some player versions do not expose caption module control.
+      }
+    };
     loadYouTubeApi().then((YT) => {
       if (disposed) return;
       readyTimeout = window.setTimeout(() => { if (!disposed) setError(true); }, 15000);
       playerRef.current = new YT.Player(frameRef.current, {
         events: {
-          onReady: () => {
+          onReady: (event) => {
             window.clearTimeout(readyTimeout);
             if (!disposed) {
               setReady(true);
               setError(false);
+              initialiseCaptions(event);
               playerRef.current.playVideo();
             }
           },
+          onApiChange: initialiseCaptions,
           onStateChange: ({ data }) => { if (!disposed) setPlaying(data === YT.PlayerState.PLAYING); },
           onError: () => {
             window.clearTimeout(readyTimeout);
