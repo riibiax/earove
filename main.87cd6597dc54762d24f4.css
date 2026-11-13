@@ -240,7 +240,7 @@ body.case-study-active { background: #fff !important; color: #202020 !important;
 .case-study .case-hero > img { display: block; width: 100%; height: auto; background: #000; }
 /* FIELD-inspired opacity reveal; preserve a visible no-JavaScript fallback. */
 .portfolio-js .case-study .case-hero-image { opacity: 0; }
-.portfolio-js .case-study .case-hero-image.is-ready { opacity: 1; animation: case-hero-reveal .8s ease-out both; }
+.portfolio-js .case-study .case-hero-image.is-ready { opacity: 1; animation: case-hero-reveal 1.4s ease-out both; }
 @keyframes case-hero-reveal { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
   .portfolio-js .case-study .case-hero-image, .portfolio-js .case-study .case-hero-image.is-ready { opacity: 1; animation: none; }
