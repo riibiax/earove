@@ -15,7 +15,7 @@ const projects = [
   {
     path: "/ant",
     title: "Advancing Neurofeedback in Tinnitus",
-    thumbnail: "img/ant/ant.jpg",
+    thumbnail: "img/ant/enhanced/ant.jpg",
   },
   {
     path: "/kf",
@@ -25,7 +25,7 @@ const projects = [
   {
     path: "/ecole42",
     title: "42",
-    thumbnail: "img/42/42.png",
+    thumbnail: "img/42/enhanced/42.jpg",
     showTitleOnHome: false,
   },
   {
@@ -79,7 +79,7 @@ const projects = [
   {
     path: "/bmeia",
     title: "Bmeia",
-    thumbnail: "img/bmeia/bmeia.jpg",
+    thumbnail: "img/bmeia/enhanced/bmeia.jpg",
   },
   {
     path: "/spymuseum",
@@ -115,7 +115,7 @@ const projects = [
   {
     path: "/eames",
     title: "Re-Think the Eames",
-    thumbnail: "img/eames/eames.png",
+    thumbnail: "img/eames/enhanced/eames.jpg",
   },
   {
     path: "/onceUponATale",
@@ -125,7 +125,7 @@ const projects = [
   {
     path: "/skater",
     title: "The Skater",
-    thumbnail: "img/skater/skater.jpg",
+    thumbnail: "img/skater/enhanced/skater.jpg",
   },
 ];
 

@@ -2,13 +2,13 @@ import createGallery from "./createGallery";
 
 // Reorder images here; every local path is validated before publication.
 const gallery = createGallery("Re-Think the Eames", [
-  "img/eames/pic01.jpg",
-  "img/eames/pic02.jpg",
-  "img/eames/pic03.jpeg",
-  "img/eames/pic04.jpg",
-  "img/eames/pic05.jpg",
-  "img/eames/pic06.jpg",
-  "img/eames/pic07.jpg"
+  "img/eames/enhanced/pic01.jpg",
+  "img/eames/enhanced/pic02.jpg",
+  "img/eames/enhanced/pic03.jpg",
+  "img/eames/enhanced/pic04.jpg",
+  "img/eames/enhanced/pic05.jpg",
+  "img/eames/enhanced/pic06.jpg",
+  "img/eames/enhanced/pic07.jpg"
 ]);
 
 /** Project copy and credits, kept separate from the shared page layout. */
@@ -54,10 +54,10 @@ const eamesCaseStudy = {
     }
   ],
   "hero": {
-    "src": "img/eames/pic01.jpg",
+    "src": "img/eames/enhanced/pic01.jpg",
     "alt": "Re-Think the Eames, project overview",
-    "width": 1500,
-    "height": 1000,
+    "width": 3000,
+    "height": 2000,
     "caption": "Re-Think the Eames · Salone del Mobile, Milan 2013"
   },
   gallery,

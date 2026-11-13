@@ -2,15 +2,15 @@ import createGallery from "./createGallery";
 
 // Reorder images here; every local path is validated before publication.
 const gallery = createGallery("The Skater", [
-  "img/skater/pic01.png",
-  "img/skater/pic02.png",
-  "img/skater/pic03.png",
-  "img/skater/pic04.png",
-  "img/skater/pic05.png",
-  "img/skater/pic06.png",
-  "img/skater/pic07.png",
-  "img/skater/pic09.png",
-  "img/skater/pic10.png"
+  "img/skater/enhanced/pic01.jpg",
+  "img/skater/enhanced/pic02.jpg",
+  "img/skater/enhanced/pic03.jpg",
+  "img/skater/enhanced/pic04.jpg",
+  "img/skater/enhanced/pic05.jpg",
+  "img/skater/enhanced/pic06.jpg",
+  "img/skater/enhanced/pic07.jpg",
+  "img/skater/enhanced/pic09.jpg",
+  "img/skater/enhanced/pic10.jpg"
 ]);
 
 /** Project copy and credits, kept separate from the shared page layout. */
@@ -50,10 +50,10 @@ const skaterCaseStudy = {
     "Cinema 4D"
   ],
   "hero": {
-    "src": "img/skater/pic01.png",
+    "src": "img/skater/enhanced/pic01.jpg",
     "alt": "The Skater, project overview",
-    "width": 1400,
-    "height": 934,
+    "width": 2800,
+    "height": 1868,
     "caption": "The Skater · A physical paper world meets augmented reality"
   },
   gallery,

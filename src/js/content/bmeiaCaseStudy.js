@@ -2,10 +2,10 @@ import createGallery from "./createGallery";
 
 // Reorder images here; every local path is validated before publication.
 const gallery = createGallery("BMEIA Touchwall", [
-  "img/bmeia/pic01.jpg",
-  "img/bmeia/pic02.jpg",
-  "img/bmeia/pic03.jpg",
-  "img/bmeia/pic04.jpg"
+  "img/bmeia/enhanced/pic01.jpg",
+  "img/bmeia/enhanced/pic02.jpg",
+  "img/bmeia/enhanced/pic03.jpg",
+  "img/bmeia/enhanced/pic04.jpg"
 ]);
 
 /** Project copy and credits, kept separate from the shared page layout. */
@@ -46,10 +46,10 @@ const bmeiaCaseStudy = {
     "PostgreSQL"
   ],
   "hero": {
-    "src": "img/bmeia/pic01.jpg",
+    "src": "img/bmeia/enhanced/pic01.jpg",
     "alt": "BMEIA Touchwall, project overview",
-    "width": 1920,
-    "height": 1080,
+    "width": 3840,
+    "height": 2160,
     "caption": "BMEIA Touchwall · Geospatial data and gigapixel imagery"
   },
   gallery,

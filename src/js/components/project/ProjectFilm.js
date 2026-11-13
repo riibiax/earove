@@ -1,6 +1,7 @@
 import React from "react";
 import { assetUrl } from "../../sitePaths";
 import YouTubeFilm from "./YouTubeFilm";
+import { responsiveImage } from "../../responsiveImage";
 
 /** Standalone video, never mixed into the image gallery.
  * Embed: { type: "embed", src: "https://www.youtube-nocookie.com/embed/ID", title, caption }
@@ -8,12 +9,15 @@ import YouTubeFilm from "./YouTubeFilm";
  * Use provider embed URLs without autoplay parameters. */
 export default function ProjectFilm({ video }) {
   const isYouTube = /^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//.test(video.src);
+  const poster = video.poster ? responsiveImage({ src: video.poster }) : null;
+  // Video posters have no srcset; use a web-sized candidate for the preview.
+  const posterSrc = poster?.sources?.find((source) => source.width >= 1280)?.src || poster?.src;
   return (
     <figure className="case-film">
       {isYouTube ? <YouTubeFilm video={video} /> : (
         <div className="case-film-player">
           {video.type === "file" ? (
-            <video controls playsInline preload="none" poster={assetUrl(video.poster)} aria-label={video.title}>
+            <video controls playsInline preload="none" poster={posterSrc ? assetUrl(posterSrc) : undefined} aria-label={video.title}>
               <source src={assetUrl(video.src)} />
             </video>
           ) : (

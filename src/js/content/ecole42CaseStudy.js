@@ -2,11 +2,11 @@ import createGallery from "./createGallery";
 
 // Reorder images here; every local path is validated before publication.
 const gallery = createGallery("42 Lausanne", [
-  "img/42/pic01.png",
-  "img/42/pic02.png",
-  "img/42/pic03.png",
-  "img/42/pic04.png",
-  "img/42/pic05.png"
+  "img/42/enhanced/pic01.jpg",
+  "img/42/enhanced/pic02.jpg",
+  "img/42/enhanced/pic03.jpg",
+  "img/42/enhanced/pic04.jpg",
+  "img/42/enhanced/pic05.jpg"
 ]);
 
 /** Project copy and credits, kept separate from the shared page layout. */
@@ -48,10 +48,10 @@ const ecole42CaseStudy = {
     "Blender"
   ],
   "hero": {
-    "src": "img/42/pic01.png",
+    "src": "img/42/enhanced/pic01.jpg",
     "alt": "42 Lausanne, project overview",
-    "width": 1920,
-    "height": 1080,
+    "width": 3840,
+    "height": 2160,
     "caption": "42 Lausanne · Interactive installations and an AR treasure hunt"
   },
   gallery,

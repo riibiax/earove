@@ -1,0 +1,618 @@
+{
+  "method": "AI photographic restoration, then Lanczos export sizing and responsive WebP compression. Export dimensions are distinct from native model output dimensions; reconstruction may alter fine details.",
+  "originals_preserved": true,
+  "images": [
+    {
+      "key": "42-42",
+      "source": "img/42/42.png",
+      "original_size": [
+        960,
+        540
+      ],
+      "enhanced": "img/42/enhanced/42.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "key": "42-pic01",
+      "source": "img/42/pic01.png",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/42/enhanced/pic01.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "42-pic02",
+      "source": "img/42/pic02.png",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/42/enhanced/pic02.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "42-pic03",
+      "source": "img/42/pic03.png",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/42/enhanced/pic03.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "42-pic04",
+      "source": "img/42/pic04.png",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/42/enhanced/pic04.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "42-pic05",
+      "source": "img/42/pic05.png",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/42/enhanced/pic05.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "ant-ant",
+      "source": "img/ant/ant.jpg",
+      "original_size": [
+        2400,
+        1350
+      ],
+      "enhanced": "img/ant/enhanced/ant.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "ant-exhibition-visitors",
+      "source": "img/ant/exhibition-visitors.jpg",
+      "original_size": [
+        1800,
+        2400
+      ],
+      "enhanced": "img/ant/enhanced/exhibition-visitors.jpg",
+      "model_size": [
+        1086,
+        1448
+      ],
+      "export_size": [
+        2880,
+        3840
+      ]
+    },
+    {
+      "key": "ant-hero-lab",
+      "source": "img/ant/hero-lab.jpg",
+      "original_size": [
+        1536,
+        1152
+      ],
+      "enhanced": "img/ant/enhanced/hero-lab.jpg",
+      "model_size": [
+        1448,
+        1086
+      ],
+      "export_size": [
+        3072,
+        2304
+      ]
+    },
+    {
+      "key": "ant-pic01",
+      "source": "img/ant/pic01.jpg",
+      "original_size": [
+        1800,
+        2400
+      ],
+      "enhanced": "img/ant/enhanced/pic01.jpg",
+      "model_size": [
+        1086,
+        1448
+      ],
+      "export_size": [
+        2880,
+        3840
+      ]
+    },
+    {
+      "key": "ant-pic02-aligned",
+      "source": "img/ant/pic02-aligned.jpg",
+      "original_size": [
+        2400,
+        1636
+      ],
+      "enhanced": "img/ant/enhanced/pic02-aligned.jpg",
+      "model_size": [
+        1519,
+        1036
+      ],
+      "export_size": [
+        3840,
+        2618
+      ]
+    },
+    {
+      "key": "ant-pic03",
+      "source": "img/ant/pic03.jpg",
+      "original_size": [
+        1800,
+        2400
+      ],
+      "enhanced": "img/ant/enhanced/pic03.jpg",
+      "model_size": [
+        1086,
+        1448
+      ],
+      "export_size": [
+        2880,
+        3840
+      ]
+    },
+    {
+      "key": "ant-rts-poster",
+      "source": "img/ant/rts-poster.jpg",
+      "original_size": [
+        1280,
+        720
+      ],
+      "enhanced": "img/ant/enhanced/rts-poster.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        2560,
+        1440
+      ]
+    },
+    {
+      "key": "bmeia-bmeia",
+      "source": "img/bmeia/bmeia.jpg",
+      "original_size": [
+        960,
+        540
+      ],
+      "enhanced": "img/bmeia/enhanced/bmeia.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "key": "bmeia-pic01",
+      "source": "img/bmeia/pic01.jpg",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/bmeia/enhanced/pic01.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "bmeia-pic02",
+      "source": "img/bmeia/pic02.jpg",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/bmeia/enhanced/pic02.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "bmeia-pic03",
+      "source": "img/bmeia/pic03.jpg",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/bmeia/enhanced/pic03.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "bmeia-pic04",
+      "source": "img/bmeia/pic04.jpg",
+      "original_size": [
+        1920,
+        1080
+      ],
+      "enhanced": "img/bmeia/enhanced/pic04.jpg",
+      "model_size": [
+        1672,
+        941
+      ],
+      "export_size": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "key": "eames-eames",
+      "source": "img/eames/eames.png",
+      "original_size": [
+        611,
+        370
+      ],
+      "enhanced": "img/eames/enhanced/eames.jpg",
+      "model_size": [
+        1612,
+        976
+      ],
+      "export_size": [
+        1222,
+        740
+      ]
+    },
+    {
+      "key": "eames-pic01",
+      "source": "img/eames/pic01.jpg",
+      "original_size": [
+        1500,
+        1000
+      ],
+      "enhanced": "img/eames/enhanced/pic01.jpg",
+      "model_size": [
+        1536,
+        1024
+      ],
+      "export_size": [
+        3000,
+        2000
+      ]
+    },
+    {
+      "key": "eames-pic02",
+      "source": "img/eames/pic02.jpg",
+      "original_size": [
+        1500,
+        1000
+      ],
+      "enhanced": "img/eames/enhanced/pic02.jpg",
+      "model_size": [
+        1536,
+        1024
+      ],
+      "export_size": [
+        3000,
+        2000
+      ]
+    },
+    {
+      "key": "eames-pic03",
+      "source": "img/eames/pic03.jpeg",
+      "original_size": [
+        920,
+        614
+      ],
+      "enhanced": "img/eames/enhanced/pic03.jpg",
+      "model_size": [
+        1535,
+        1024
+      ],
+      "export_size": [
+        1840,
+        1228
+      ]
+    },
+    {
+      "key": "eames-pic04",
+      "source": "img/eames/pic04.jpg",
+      "original_size": [
+        736,
+        490
+      ],
+      "enhanced": "img/eames/enhanced/pic04.jpg",
+      "model_size": [
+        1538,
+        1023
+      ],
+      "export_size": [
+        1472,
+        980
+      ]
+    },
+    {
+      "key": "eames-pic05",
+      "source": "img/eames/pic05.jpg",
+      "original_size": [
+        1500,
+        1000
+      ],
+      "enhanced": "img/eames/enhanced/pic05.jpg",
+      "model_size": [
+        1536,
+        1024
+      ],
+      "export_size": [
+        3000,
+        2000
+      ]
+    },
+    {
+      "key": "eames-pic06",
+      "source": "img/eames/pic06.jpg",
+      "original_size": [
+        1500,
+        1000
+      ],
+      "enhanced": "img/eames/enhanced/pic06.jpg",
+      "model_size": [
+        1536,
+        1024
+      ],
+      "export_size": [
+        3000,
+        2000
+      ]
+    },
+    {
+      "key": "eames-pic07",
+      "source": "img/eames/pic07.jpg",
+      "original_size": [
+        800,
+        533
+      ],
+      "enhanced": "img/eames/enhanced/pic07.jpg",
+      "model_size": [
+        1536,
+        1024
+      ],
+      "export_size": [
+        1600,
+        1066
+      ]
+    },
+    {
+      "key": "skater-pic01",
+      "source": "img/skater/pic01.png",
+      "original_size": [
+        1400,
+        934
+      ],
+      "enhanced": "img/skater/enhanced/pic01.jpg",
+      "model_size": [
+        1535,
+        1025
+      ],
+      "export_size": [
+        2800,
+        1868
+      ]
+    },
+    {
+      "key": "skater-pic02",
+      "source": "img/skater/pic02.png",
+      "original_size": [
+        1400,
+        934
+      ],
+      "enhanced": "img/skater/enhanced/pic02.jpg",
+      "model_size": [
+        1534,
+        1025
+      ],
+      "export_size": [
+        2800,
+        1868
+      ]
+    },
+    {
+      "key": "skater-pic03",
+      "source": "img/skater/pic03.png",
+      "original_size": [
+        1400,
+        934
+      ],
+      "enhanced": "img/skater/enhanced/pic03.jpg",
+      "model_size": [
+        1535,
+        1024
+      ],
+      "export_size": [
+        2800,
+        1868
+      ]
+    },
+    {
+      "key": "skater-pic04",
+      "source": "img/skater/pic04.png",
+      "original_size": [
+        1400,
+        934
+      ],
+      "enhanced": "img/skater/enhanced/pic04.jpg",
+      "model_size": [
+        1535,
+        1025
+      ],
+      "export_size": [
+        2800,
+        1868
+      ]
+    },
+    {
+      "key": "skater-pic05",
+      "source": "img/skater/pic05.png",
+      "original_size": [
+        1400,
+        934
+      ],
+      "enhanced": "img/skater/enhanced/pic05.jpg",
+      "model_size": [
+        1535,
+        1024
+      ],
+      "export_size": [
+        2800,
+        1868
+      ]
+    },
+    {
+      "key": "skater-pic06",
+      "source": "img/skater/pic06.png",
+      "original_size": [
+        1400,
+        927
+      ],
+      "enhanced": "img/skater/enhanced/pic06.jpg",
+      "model_size": [
+        1541,
+        1021
+      ],
+      "export_size": [
+        2800,
+        1854
+      ]
+    },
+    {
+      "key": "skater-pic07",
+      "source": "img/skater/pic07.png",
+      "original_size": [
+        1400,
+        927
+      ],
+      "enhanced": "img/skater/enhanced/pic07.jpg",
+      "model_size": [
+        1541,
+        1021
+      ],
+      "export_size": [
+        2800,
+        1854
+      ]
+    },
+    {
+      "key": "skater-pic09",
+      "source": "img/skater/pic09.png",
+      "original_size": [
+        1400,
+        927
+      ],
+      "enhanced": "img/skater/enhanced/pic09.jpg",
+      "model_size": [
+        1541,
+        1021
+      ],
+      "export_size": [
+        2800,
+        1854
+      ]
+    },
+    {
+      "key": "skater-pic10",
+      "source": "img/skater/pic10.png",
+      "original_size": [
+        1400,
+        927
+      ],
+      "enhanced": "img/skater/enhanced/pic10.jpg",
+      "model_size": [
+        1541,
+        1021
+      ],
+      "export_size": [
+        2800,
+        1854
+      ]
+    },
+    {
+      "key": "skater-skater",
+      "source": "img/skater/skater.jpg",
+      "original_size": [
+        950,
+        540
+      ],
+      "enhanced": "img/skater/enhanced/skater.jpg",
+      "model_size": [
+        1663,
+        945
+      ],
+      "export_size": [
+        1900,
+        1080
+      ]
+    }
+  ]
+}
