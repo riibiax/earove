@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import { projectPath } from "../../sitePaths";
-import { archiveProjects, featuredProjects, homeContent } from "../home/homeContent";
+import { projectOrder, homeContent } from "../home/homeContent";
 import HomeFooter from "../home/HomeFooter";
 import ProjectGallery from "./ProjectGallery";
 import ProjectFilm from "./ProjectFilm";
@@ -10,16 +10,6 @@ import ProjectRecognition from "./ProjectRecognition";
 import ProjectHero from "./ProjectHero";
 import "../../../css/homepage.css";
 import "../../../css/caseStudy.css";
-
-// Archive entries can follow a related case study without becoming featured.
-const projectOrder = [...featuredProjects, ...archiveProjects];
-for (const project of archiveProjects) {
-  if (!project.navigationAfter) continue;
-  const anchor = projectOrder.find(({ path }) => path === project.navigationAfter);
-  if (!anchor || anchor === project) continue;
-  projectOrder.splice(projectOrder.indexOf(project), 1);
-  projectOrder.splice(projectOrder.indexOf(anchor) + 1, 0, project);
-}
 
 function StorySection({ title, children, highlights }) {
   return (

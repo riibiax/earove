@@ -11,13 +11,11 @@ const projects = [
     path: "/switch-miso",
     title: "SWITCH Miso",
     thumbnail: "img/miso/conversation.jpg",
-    navigationAfter: "/evoka",
   },
   {
     path: "/ant",
     title: "Advancing Neurofeedback in Tinnitus",
     thumbnail: "img/ant/ant.jpg",
-    navigationAfter: "/switch-miso",
   },
   {
     path: "/kf",

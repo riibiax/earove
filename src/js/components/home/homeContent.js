@@ -16,7 +16,12 @@ export const featuredProjects = selection.map((entry) => ({
   ...entry,
 }));
 const featuredPaths = new Set(selection.map(({ path }) => path));
-export const archiveProjects = projects.filter(({ path }) => !featuredPaths.has(path));
+// Evoka leads the expanded list as well as the featured cards.
+export const archiveProjects = projects.filter(({ path }) => path === "/evoka" || !featuredPaths.has(path));
+
+// Follow the expanded list first; include the other featured projects once at the end.
+const archivePaths = new Set(archiveProjects.map(({ path }) => path));
+export const projectOrder = [...archiveProjects, ...featuredProjects.filter(({ path }) => !archivePaths.has(path))];
 
 // Introductory and contact text is kept together for the next content pass.
 export const homeContent = {
